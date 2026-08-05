@@ -24,7 +24,7 @@ The goal was to make institutional information easier to understand while keepin
 
 The brochure provides a portable introduction to NAGPRA and CalNAGPRA, explains Stanislaus State’s responsibilities, identifies university contacts, and directs readers to additional resources.
 
-I organized the information across six panels so that readers could move from introductory material to university-specific information, contacts, and resource access.
+I organized the information across six panels so readers could move from introductory material to university-specific information, contacts, and resource access.
 
 The visual system combines university colors, California landscape and plant imagery, cultural-resource imagery, and a QR code directing readers to additional information.
 
@@ -32,30 +32,79 @@ The visual system combines university colors, California landscape and plant ima
 
 The inside panels present information about Stanislaus State’s responsibilities and provide official campus contacts.
 
-<figure class="project-hero">
-  <a
-    href="/nagpra-brochure-inside.png"
-    target="_blank"
-    rel="noopener noreferrer"
-    title="Open the full-size inside brochure panels"
+<figure
+  class="project-hero"
+  style="
+    width: min(980px, max(100%, calc(100vw - 340px)));
+    max-width: none;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  "
+>
+  <button
+    class="project-image-button"
+    type="button"
+    aria-label="Open the inside brochure panels at full size"
+    onclick="document.getElementById('brochure-inside-dialog').showModal()"
   >
     <img
       src="/nagpra-brochure-inside.png"
       alt="Inside panels of the Stanislaus State NAGPRA informational brochure"
     >
-  </a>
+
+    <span class="image-expand-label">
+      View Full Size
+    </span>
+  </button>
 
   <figcaption class="project-hero-actions">
+    <button
+      class="button secondary"
+      type="button"
+      onclick="document.getElementById('brochure-inside-dialog').showModal()"
+    >
+      View Full-Size Image
+    </button>
+
     <a
       class="button secondary"
       href="/nagpra-brochure-inside.png"
       target="_blank"
       rel="noopener noreferrer"
     >
-      View Full-Size Image ↗
+      Open in New Tab ↗
     </a>
   </figcaption>
 </figure>
+
+<dialog
+  class="image-dialog"
+  id="brochure-inside-dialog"
+  aria-label="Full-size inside brochure panels"
+  onclick="if (event.target === this) this.close()"
+>
+  <div class="image-dialog-toolbar">
+    <span class="image-dialog-title">
+      NAGPRA Brochure — Inside Panels
+    </span>
+
+    <button
+      class="image-dialog-close"
+      type="button"
+      aria-label="Close full-size image"
+      onclick="document.getElementById('brochure-inside-dialog').close()"
+    >
+      ×
+    </button>
+  </div>
+
+  <div class="image-dialog-content">
+    <img
+      src="/nagpra-brochure-inside.png"
+      alt="Inside panels of the Stanislaus State NAGPRA informational brochure"
+    >
+  </div>
+</dialog>
 
 ## Smudging Space Dedication Flyer
 
@@ -65,34 +114,83 @@ The flyer needed to communicate the ceremony’s date, time, location, and purpo
 
 I used photographs of the campus setting, stone landscape, pine elements, and ceremonial imagery to create a strong visual connection to the location and event.
 
-<figure class="project-hero">
-  <a
-    href="/smudging-space-dedication-flyer.png"
-    target="_blank"
-    rel="noopener noreferrer"
-    title="Open the full-size Smudging Space Dedication Ceremony flyer"
+<figure
+  class="project-hero"
+  style="
+    width: min(980px, max(100%, calc(100vw - 340px)));
+    max-width: none;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  "
+>
+  <button
+    class="project-image-button"
+    type="button"
+    aria-label="Open the Smudging Space Dedication flyer at full size"
+    onclick="document.getElementById('dedication-flyer-dialog').showModal()"
   >
     <img
       src="/smudging-space-dedication-flyer.png"
       alt="Promotional flyer for the Smudging Space Dedication Ceremony at Stanislaus State"
     >
-  </a>
+
+    <span class="image-expand-label">
+      View Full Size
+    </span>
+  </button>
 
   <figcaption class="project-hero-actions">
+    <button
+      class="button secondary"
+      type="button"
+      onclick="document.getElementById('dedication-flyer-dialog').showModal()"
+    >
+      View Full-Size Image
+    </button>
+
     <a
       class="button secondary"
       href="/smudging-space-dedication-flyer.png"
       target="_blank"
       rel="noopener noreferrer"
     >
-      View Full-Size Image ↗
+      Open in New Tab ↗
     </a>
   </figcaption>
 </figure>
 
+<dialog
+  class="image-dialog"
+  id="dedication-flyer-dialog"
+  aria-label="Full-size Smudging Space Dedication flyer"
+  onclick="if (event.target === this) this.close()"
+>
+  <div class="image-dialog-toolbar">
+    <span class="image-dialog-title">
+      Smudging Space Dedication Ceremony Flyer
+    </span>
+
+    <button
+      class="image-dialog-close"
+      type="button"
+      aria-label="Close full-size image"
+      onclick="document.getElementById('dedication-flyer-dialog').close()"
+    >
+      ×
+    </button>
+  </div>
+
+  <div class="image-dialog-content">
+    <img
+      src="/smudging-space-dedication-flyer.png"
+      alt="Promotional flyer for the Smudging Space Dedication Ceremony at Stanislaus State"
+    >
+  </div>
+</dialog>
+
 ## Design Approach
 
-For the brochure, I focused on educational clarity, resource access, and a visual sequence that would guide readers naturally across the folded panels.
+For the brochure, I focused on educational clarity, resource access, and a visual sequence that guides readers naturally across the folded panels.
 
 For the event flyer, I created a more promotional layout centered on the ceremony location, event details, and visual connection to the outdoor space.
 
