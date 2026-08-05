@@ -1,0 +1,63 @@
+---
+layout: default
+---
+
+<article>
+
+  <header class="page-header">
+    <div class="eyebrow">
+      {{ page.project_type | default: "Case Study" }}
+    </div>
+
+    <h1>{{ page.title }}</h1>
+
+    {% if page.summary %}
+      <p class="lede">{{ page.summary }}</p>
+    {% endif %}
+  </header>
+
+  {% if page.image %}
+    <figure class="project-hero">
+      <img
+        src="{{ page.image | relative_url }}"
+        alt="{{ page.image_alt | default: page.title }}"
+      >
+    </figure>
+  {% endif %}
+
+  <div class="project-details">
+
+    {% if page.role %}
+      <div class="detail-card">
+        <div class="detail-label">My Role</div>
+        <div class="detail-value">{{ page.role }}</div>
+      </div>
+    {% endif %}
+
+    {% if page.tools %}
+      <div class="detail-card">
+        <div class="detail-label">Tools &amp; Methods</div>
+        <div class="detail-value">{{ page.tools }}</div>
+      </div>
+    {% endif %}
+
+    {% if page.year %}
+      <div class="detail-card">
+        <div class="detail-label">Year</div>
+        <div class="detail-value">{{ page.year }}</div>
+      </div>
+    {% endif %}
+
+  </div>
+
+  <div class="case-study">
+    {{ content }}
+
+    <section>
+      <a class="button secondary" href="{{ '/cultural-resources.html' | relative_url }}">
+        ← Back to Cultural Resources
+      </a>
+    </section>
+  </div>
+
+</article>
