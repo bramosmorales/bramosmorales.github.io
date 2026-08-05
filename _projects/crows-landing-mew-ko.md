@@ -1,23 +1,15 @@
 ---
 layout: project
 permalink: /projects/crows-landing-mew-ko/
-title: Crows Landing & Mew-ko Geography
-project_type: Historical GIS & Cultural Geography
-summary: A historical-source interpretation comparing Crows Landing with recorded Tu-ol-um-ne and Yatch-a-chum-ne geographic descriptions.
-image: /crows-landing-map.jpg
-image_alt: Map comparing Crows Landing with geographic descriptions recorded for Tu-ol-um-ne and Yatch-a-chum-ne
-role: Research, historical-source interpretation, GIS mapping, and cartographic design
-tools: GIS, spatial reasoning, source interpretation, and cartography
-section: cultural-resources
-------
-title: Crows Landing & Mew-ko Geography
-project_type: Historical GIS & Cultural Geography
-summary: A historical-source interpretation comparing Crows Landing with recorded Tu-ol-um-ne and Yatch-a-chum-ne geographic descriptions.
-image: /crows-landing-map.jpg
-image_alt: Map comparing Crows Landing with geographic descriptions recorded for Tu-ol-um-ne and Yatch-a-chum-ne
-role: Research, historical-source interpretation, GIS mapping, and cartographic design
-tools: GIS, spatial reasoning, source interpretation, and cartography
-section: cultural-resources
+title: "Crows Landing & Mew-ko Geography"
+project_type: "Historical GIS & Cultural Geography"
+summary: "A historical-source interpretation comparing Crows Landing with recorded Tu-ol-um-ne and Yatch-a-chum-ne geographic descriptions."
+image: "/crows-landing-map.jpg"
+image_alt: "Map comparing Crows Landing with geographic descriptions recorded for Tu-ol-um-ne and Yatch-a-chum-ne"
+role: "Research, historical-source interpretation, GIS mapping, and cartographic design"
+tools: "GIS, spatial reasoning, source interpretation, and cartography"
+year: "2026"
+section: "cultural-resources"
 ---
 
 ## Project Overview
