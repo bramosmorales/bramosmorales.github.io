@@ -81,7 +81,6 @@ The inside panels present information about Stanislaus State’s responsibilitie
   class="image-dialog"
   id="brochure-inside-dialog"
   aria-label="Full-size inside brochure panels"
-  onclick="if (event.target === this) this.close()"
 >
   <div class="image-dialog-toolbar">
     <span class="image-dialog-title">
@@ -163,7 +162,6 @@ I used photographs of the campus setting, stone landscape, pine elements, and ce
   class="image-dialog"
   id="dedication-flyer-dialog"
   aria-label="Full-size Smudging Space Dedication flyer"
-  onclick="if (event.target === this) this.close()"
 >
   <div class="image-dialog-toolbar">
     <span class="image-dialog-title">
@@ -215,3 +213,22 @@ The flyer helped communicate the location, timing, and purpose of a significant 
 ## Skills Demonstrated
 
 Graphic Design · Public-Facing Communication · Information Hierarchy · Educational Media · Event Promotion · Cultural-Resource Communication · Image Selection · Layout Design · Collaborative Review
+
+<script>
+  const additionalImageDialogs = [
+    document.getElementById("brochure-inside-dialog"),
+    document.getElementById("dedication-flyer-dialog")
+  ];
+
+  additionalImageDialogs.forEach(function (dialog) {
+    if (!dialog) {
+      return;
+    }
+
+    dialog.addEventListener("click", function (event) {
+      if (event.target === dialog) {
+        dialog.close();
+      }
+    });
+  });
+</script>
