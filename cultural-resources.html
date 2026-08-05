@@ -1,340 +1,126 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+---
+layout: default
+title: Cultural Resources & NAGPRA
+description: Cultural resources, historical geography, NAGPRA, public communication, and institutional projects.
+section: cultural-resources
+---
 
-  <title>Cultural Resources & NAGPRA | Bryan Ramos-Morales</title>
+<header class="page-header">
+  <div class="eyebrow">Project Library</div>
 
-  <style>
-    :root {
-      --background: #f7f4ea;
-      --sidebar: #f3efe4;
-      --text: #222222;
-      --muted: #6f6f6f;
-      --accent: #a91f3b;
-      --accent-dark: #85162d;
-      --border: #ded8ca;
-      --card: #fffdf7;
-    }
+  <h1>Cultural Resources &amp; NAGPRA</h1>
 
-    * {
-      box-sizing: border-box;
-    }
+  <p class="lede">
+    Projects involving historical geography, cultural-resource communication,
+    NAGPRA and CalNAGPRA education, public-facing design, institutional
+    resources, and respectful interpretation.
+  </p>
+</header>
 
-    body {
-      margin: 0;
-      background: var(--background);
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-    }
+<section class="project-grid">
 
-    .layout {
-      display: grid;
-      grid-template-columns: 285px 1fr;
-      min-height: 100vh;
-    }
-
-    .sidebar {
-      position: sticky;
-      top: 0;
-      height: 100vh;
-      padding: 48px 30px;
-      background: var(--sidebar);
-      border-right: 1px solid var(--border);
-      text-align: center;
-    }
-
-    .name {
-      margin-bottom: 45px;
-      font-size: 25px;
-      font-weight: 800;
-      line-height: 1;
-      letter-spacing: 1px;
-    }
-
-    .nav-label {
-      margin-top: 30px;
-      margin-bottom: 12px;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.7px;
-      text-transform: uppercase;
-    }
-
-    .sidebar a {
-      display: block;
-      margin: 11px 0;
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 14px;
-      line-height: 1.35;
-    }
-
-    .sidebar a:hover,
-    .sidebar a.active {
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    main {
-      padding: 65px 60px 80px;
-    }
-
-    .page-header {
-      max-width: 850px;
-      margin: 0 auto 55px;
-      text-align: center;
-    }
-
-    .eyebrow {
-      margin-bottom: 14px;
-      color: var(--accent);
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 43px;
-      font-weight: 500;
-      line-height: 1.15;
-    }
-
-    .intro {
-      max-width: 720px;
-      margin: 24px auto 0;
-      color: #555555;
-      font-size: 17px;
-      line-height: 1.7;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 26px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .project-card {
-      display: flex;
-      flex-direction: column;
-      min-height: 295px;
-      padding: 30px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-top: 6px solid var(--accent);
-      border-radius: 18px;
-      box-shadow: 0 8px 22px rgba(40, 33, 20, 0.06);
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 14px 30px rgba(40, 33, 20, 0.1);
-    }
-
-    .project-type {
-      margin-bottom: 14px;
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-    }
-
-    .project-card h2 {
-      margin: 0 0 16px;
-      font-size: 24px;
-      line-height: 1.25;
-    }
-
-    .project-card p {
-      margin: 0 0 24px;
-      color: #5e5e5e;
-      font-size: 15px;
-      line-height: 1.65;
-    }
-
-    .project-link {
-      display: inline-block;
-      align-self: flex-start;
-      margin-top: auto;
-      padding: 12px 18px;
-      background: var(--accent);
-      border-radius: 999px;
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .project-link:hover {
-      background: var(--accent-dark);
-    }
-
-    footer {
-      margin-top: 70px;
-      color: #888888;
-      text-align: center;
-      font-size: 13px;
-    }
-
-    @media (max-width: 850px) {
-      .layout {
-        display: block;
-      }
-
-      .sidebar {
-        position: static;
-        width: 100%;
-        height: auto;
-        padding: 30px 20px;
-        border-right: none;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .name {
-        margin-bottom: 25px;
-      }
-
-      main {
-        padding: 45px 20px 65px;
-      }
-
-      h1 {
-        font-size: 34px;
-      }
-
-      .project-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <div class="layout">
-
-    <nav class="sidebar">
-      <div class="name">
-        BRYAN RAMOS-<br>MORALES
+  <article class="project-card">
+    <div class="project-card-body">
+      <div class="project-meta">
+        Historical GIS &amp; Cultural Geography
       </div>
 
-      <a href="index.html">Home</a>
+      <h2>Crows Landing &amp; Mew-ko Geography</h2>
 
-      <div class="nav-label">Portfolio</div>
-      <a class="active" href="cultural-resources.html">
-        Cultural Resources &amp; NAGPRA
+      <p>
+        A historical-source interpretation comparing Crows Landing with
+        recorded Tu-ol-um-ne and Yatch-a-chum-ne geographic descriptions
+        through GIS, named places, rivers, and spatial reasoning.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">Historical GIS</span>
+        <span class="tag">Cultural Geography</span>
+        <span class="tag">Source Interpretation</span>
+      </div>
+
+      <a class="button" href="#">
+        View Case Study
       </a>
-      <a href="geography-spatial-analysis.html">
-        Geography &amp; Spatial Analysis
+    </div>
+  </article>
+
+  <article class="project-card">
+    <div class="project-card-body">
+      <div class="project-meta">
+        Public Interpretation &amp; Design
+      </div>
+
+      <h2>Smudging Space Dedication &amp; Plaque</h2>
+
+      <p>
+        Plaque design, visual communication, and project coordination for
+        the Smudging Space at Stanislaus State, including support for its
+        public dedication and interpretation.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">Plaque Design</span>
+        <span class="tag">Public Interpretation</span>
+        <span class="tag">Project Coordination</span>
+      </div>
+
+      <a class="button" href="#">
+        View Case Study
       </a>
-      <a href="environmental-geography.html">
-        Environmental Geography
+    </div>
+  </article>
+
+  <article class="project-card">
+    <div class="project-card-body">
+      <div class="project-meta">
+        Website Development &amp; Communication
+      </div>
+
+      <h2>CSU Stanislaus NAGPRA Website</h2>
+
+      <p>
+        Development and continued maintenance of the university’s public
+        NAGPRA and CalNAGPRA web resources, including page organization,
+        published notices, contacts, policies, and educational information.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">Web Content</span>
+        <span class="tag">Information Architecture</span>
+        <span class="tag">Public Resources</span>
+      </div>
+
+      <a class="button" href="#">
+        View Case Study
       </a>
-      <a href="data-programming.html">
-        Data &amp; Programming
+    </div>
+  </article>
+
+  <article class="project-card">
+    <div class="project-card-body">
+      <div class="project-meta">
+        Educational Media &amp; Outreach
+      </div>
+
+      <h2>NAGPRA Educational Media</h2>
+
+      <p>
+        Public-facing brochures and event materials created to support
+        NAGPRA and CalNAGPRA education, resource access, campus
+        communication, and the Smudging Space dedication.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">Graphic Design</span>
+        <span class="tag">Educational Media</span>
+        <span class="tag">Campus Outreach</span>
+      </div>
+
+      <a class="button" href="#">
+        View Case Study
       </a>
+    </div>
+  </article>
 
-      <div class="nav-label">About</div>
-      <a href="#">Professional Experience</a>
-      <a href="#">About</a>
-      <a href="#">Résumé</a>
-      <a href="#">Contact</a>
-    </nav>
-
-    <main>
-      <header class="page-header">
-        <div class="eyebrow">Project Library</div>
-
-        <h1>Cultural Resources &amp; NAGPRA</h1>
-
-        <p class="intro">
-          Projects involving cultural-resource communication, historical
-          geography, NAGPRA and CalNAGPRA education, public-facing design,
-          institutional resources, and respectful interpretation.
-        </p>
-      </header>
-
-      <section class="project-grid">
-
-        <article class="project-card">
-          <div class="project-type">Historical GIS &amp; Cultural Geography</div>
-
-          <h2>Crows Landing &amp; Mew-ko Geography</h2>
-
-          <p>
-            A historical-source interpretation comparing Crows Landing with
-            recorded Tu-ol-um-ne and Yatch-a-chum-ne geographic descriptions
-            through GIS, named places, rivers, and spatial reasoning.
-          </p>
-
-          <a class="project-link" href="#">
-            View Project
-          </a>
-        </article>
-
-        <article class="project-card">
-          <div class="project-type">Public Interpretation &amp; Design</div>
-
-          <h2>Smudging Space Dedication &amp; Plaque</h2>
-
-          <p>
-            Plaque design, visual communication, and project coordination for
-            the Smudging Space at Stanislaus State, including support for its
-            public dedication and interpretation.
-          </p>
-
-          <a class="project-link" href="#">
-            View Project
-          </a>
-        </article>
-
-        <article class="project-card">
-          <div class="project-type">Website Development &amp; Communication</div>
-
-          <h2>CSU Stanislaus NAGPRA Website</h2>
-
-          <p>
-            Development and continued maintenance of the university’s public
-            NAGPRA and CalNAGPRA web resources, including page organization,
-            published notices, contacts, policies, and educational information.
-          </p>
-
-          <a class="project-link" href="#">
-            View Project
-          </a>
-        </article>
-
-        <article class="project-card">
-          <div class="project-type">Educational Media &amp; Outreach</div>
-
-          <h2>NAGPRA Educational Media</h2>
-
-          <p>
-            Public-facing brochures and event materials created to support
-            NAGPRA and CalNAGPRA education, resource access, campus
-            communication, and the Smudging Space dedication.
-          </p>
-
-          <a class="project-link" href="#">
-            View Project
-          </a>
-        </article>
-
-      </section>
-
-      <footer>
-        © 2026 Bryan Ramos-Morales
-      </footer>
-    </main>
-
-  </div>
-</body>
-</html>
+</section>
