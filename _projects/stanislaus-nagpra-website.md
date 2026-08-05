@@ -27,9 +27,25 @@ Because this work involves sensitive cultural, legal, and institutional responsi
     target="_blank"
     rel="noopener noreferrer"
   >
-    View Live Website ↗
+    View the Complete Live Website ↗
   </a>
 </p>
+
+<div class="detail-card">
+  <div class="detail-label">
+    Selected Portfolio Examples
+  </div>
+
+  <div class="detail-value">
+    This case study does not reproduce the entire NAGPRA and CalNAGPRA
+    website section. I selected a limited number of pages to demonstrate
+    the section’s organization, visual consistency, public resources, and
+    range of information. The complete website contains additional pages,
+    notices, policies, contacts, reporting information, navigation elements,
+    and other resources. Visitors can use the link above to explore the
+    full live website.
+  </div>
+</div>
 
 <div class="detail-card">
   <div class="detail-label">
@@ -37,11 +53,13 @@ Because this work involves sensitive cultural, legal, and institutional responsi
   </div>
 
   <div class="detail-value">
-    This website section is actively maintained and may change over time.
+    This website section is actively maintained and may change at any time.
     I am one of multiple authorized contributors, so page content, notices,
-    navigation, contacts, and resources may also be revised by other university
-    staff. These screenshots document the website as it appeared in August
-    2026. I expect to continue contributing to the section through graduation.
+    navigation, contacts, and resources may also be revised by other
+    university staff. These screenshots document selected pages as they
+    appeared in August 2026. I currently expect to continue contributing
+    to the section through graduation, but the live site may continue to
+    evolve during and after my involvement.
   </div>
 </div>
 
@@ -63,9 +81,11 @@ The navigation and page hierarchy were designed to keep important information vi
 
 ## Selected Site Pages
 
-The examples below represent selected pages from a larger NAGPRA and CalNAGPRA website section that I created and continue to help maintain.
+The screenshots below represent only a selection from the larger NAGPRA and CalNAGPRA website section.
 
-The complete section includes additional informational pages, campus contacts, published notices, reporting resources, policies, navigation elements, and ongoing content updates.
+They were chosen to demonstrate different parts of the website, including educational information, official notices, public resources, campus contacts, and information intended for Tribal claims, inquiries, and requests.
+
+The complete live website contains additional pages and resources that are not reproduced in this portfolio.
 
 ### Educational Resources and Reporting Information
 
