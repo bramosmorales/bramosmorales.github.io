@@ -12,68 +12,41 @@ section: "resume"
   </div>
 
   <h1>
-    Experience, Education &amp; Technical Skills
+    Experience &amp; Technical Background
   </h1>
 
   <p class="lede">
-    Geography and Environmental Resources student with experience across
-    GIS, environmental analysis, cultural resources, NAGPRA/CalNAGPRA
-    communication, university operations, records management, and
-    public-facing digital work.
+    Geography and Environmental Resources student working across GIS,
+    environmental analysis, cultural resources, university operations,
+    public communication, and digital information management.
   </p>
 
 </header>
 
 
-<section class="project-details">
+<figure class="project-hero">
 
-  <div class="detail-card">
-    <div class="detail-label">
-      Current Focus
-    </div>
-
-    <div class="detail-value">
-      Geography · Environmental Resources · GIS · Cultural Resources
-    </div>
-  </div>
-
-
-  <div class="detail-card">
-    <div class="detail-label">
-      Education
-    </div>
-
-    <div class="detail-value">
-      California State University, Stanislaus<br>
-      Expected May 2028
-    </div>
-  </div>
-
-
-  <div class="detail-card">
-    <div class="detail-label">
-      Current Role
-    </div>
-
-    <div class="detail-value">
-      President’s Office Student Assistant
-    </div>
-  </div>
-
-</section>
-
-
-<div class="case-study">
-
-  <section
-    style="
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 28px;
-    "
+  <a
+    class="project-image-button"
+    href="{{ '/bryan-ramos-morales-resume.pdf' | relative_url }}"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Open résumé PDF"
   >
+
+    <img
+      src="{{ '/bryan-ramos-morales-resume.png' | relative_url }}"
+      alt="Résumé of Bryan Ramos-Morales"
+    >
+
+    <span class="image-expand-label">
+      Open Résumé PDF
+    </span>
+
+  </a>
+
+
+  <figcaption class="project-hero-actions">
 
     <a
       class="button"
@@ -89,48 +62,78 @@ section: "resume"
       href="{{ '/bryan-ramos-morales-resume.pdf' | relative_url }}"
       download
     >
-      Download Résumé
+      Download PDF
     </a>
 
-  </section>
+  </figcaption>
+
+</figure>
 
 
-  <div
-    style="
-      width: 100%;
-      min-height: 900px;
-      background: #ffffff;
-      border: 1px solid rgba(40, 35, 30, 0.14);
-      border-radius: 22px;
-      overflow: hidden;
-      box-shadow: 0 14px 35px rgba(40, 35, 30, 0.08);
-    "
-  >
+<section class="project-details">
 
-    <iframe
-      src="{{ '/bryan-ramos-morales-resume.pdf' | relative_url }}#view=FitH"
-      title="Bryan Ramos-Morales résumé"
-      style="
-        width: 100%;
-        height: 1000px;
-        border: 0;
-        display: block;
-      "
-    >
-    </iframe>
+  <div class="detail-card">
+
+    <div class="detail-label">
+      Focus
+    </div>
+
+    <div class="detail-value">
+      GIS · Environmental Geography · Cultural Resources
+    </div>
 
   </div>
 
 
-  <p
-    style="
-      text-align: center;
-      margin-top: 18px;
-      opacity: 0.72;
-    "
-  >
-    If the embedded résumé does not display in your browser,
-    use the View Résumé PDF or Download Résumé button above.
+  <div class="detail-card">
+
+    <div class="detail-label">
+      Current Role
+    </div>
+
+    <div class="detail-value">
+      President’s Office Student Assistant
+    </div>
+
+  </div>
+
+
+  <div class="detail-card">
+
+    <div class="detail-label">
+      Education
+    </div>
+
+    <div class="detail-value">
+      CSU Stanislaus · Expected 2028
+    </div>
+
+  </div>
+
+</section>
+
+
+<div class="case-study">
+
+  <h2>
+    Looking for more than the résumé?
+  </h2>
+
+  <p>
+    The project sections of this portfolio provide deeper case studies,
+    maps, methods, visual work, and project context beyond what can fit
+    on a one-page résumé.
   </p>
+
+  <section class="project-return">
+
+    <a
+      class="button"
+      href="{{ '/' | relative_url }}"
+    >
+      Explore Portfolio
+    </a>
+
+  </section>
 
 </div>
