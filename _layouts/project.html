@@ -38,6 +38,7 @@ layout: default
       </button>
 
       <figcaption class="project-hero-actions">
+
         <button
           class="button secondary"
           type="button"
@@ -54,6 +55,7 @@ layout: default
         >
           Open in New Tab ↗
         </a>
+
       </figcaption>
 
     </figure>
@@ -133,12 +135,24 @@ layout: default
     {{ content }}
 
     <section class="project-return">
-      <a
-        class="button secondary"
-        href="{{ '/cultural-resources.html' | relative_url }}"
-      >
-        ← Back to Cultural Resources
-      </a>
+
+      {% if page.back_url %}
+        <a
+          class="button secondary"
+          href="{{ page.back_url | relative_url }}"
+        >
+          ← Back to {{ page.back_label | default: "Projects" }}
+        </a>
+
+      {% else %}
+        <a
+          class="button secondary"
+          href="{{ '/cultural-resources.html' | relative_url }}"
+        >
+          ← Back to Cultural Resources
+        </a>
+      {% endif %}
+
     </section>
   </div>
 
