@@ -4,7 +4,7 @@ permalink: /projects/ghost-rivers-governed-land/
 title: "Ghost Rivers and Governed Land"
 project_type: "Environmental Geography & GIS"
 summary: "An environmental geography project examining how historic floodplains, wetlands, and river corridors continue to influence modern flood risk, infrastructure, and water management in Stanislaus County."
-image: "/ghost-rivers-governed-land-enhanced.png"
+image: "/ghost-rivers-governed-land-poster-2026.png"
 image_alt: "Poster mapping historic ecological landscapes, FEMA flood hazard zones, irrigation districts, flood-control districts, and city boundaries in Stanislaus County"
 role: "GIS analysis, environmental interpretation, map synthesis, spatial comparison, cartographic design, and research communication"
 tools: "Historic vegetation mapping, FEMA flood hazard data, administrative boundaries, GIS overlay analysis, and cartographic synthesis"
