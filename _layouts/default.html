@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
 
   <meta
@@ -10,26 +9,24 @@
     content="width=device-width, initial-scale=1"
   >
 
+  <meta
+    name="description"
+    content="{{ page.description | default: site.description }}"
+  >
+
   <title>
     {% if page.title %}
       {{ page.title }} | Bryan Ramos-Morales
     {% else %}
-      Bryan Ramos-Morales
+      Bryan Ramos-Morales | Portfolio
     {% endif %}
   </title>
-
-  {% if page.description %}
-    <meta
-      name="description"
-      content="{{ page.description }}"
-    >
-  {% endif %}
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,wght@0,500;0,600;1,500;1,600&family=Space+Grotesk:wght@500;600;700&display=swap"
     rel="stylesheet"
   >
 
@@ -37,7 +34,6 @@
     rel="stylesheet"
     href="{{ '/assets/css/site.css' | relative_url }}"
   >
-
 </head>
 
 
@@ -46,129 +42,120 @@
   <div class="site-shell">
 
 
-    <!-- ==================================================
-         TOP IDENTITY STRIP
-    =================================================== -->
+    <!-- TOP RAIL -->
 
-    <div class="identity-strip">
+    <div class="top-rail">
 
-      <div class="identity-strip-track">
+      <div class="top-rail-inner">
 
-        <span>GEOGRAPHY</span>
-        <span>GIS</span>
-        <span>ENVIRONMENTAL SYSTEMS</span>
-        <span>CULTURAL RESOURCES</span>
-        <span>SPATIAL ANALYSIS</span>
-        <span>RESEARCH</span>
+        <span class="rail-left">
+          BRYAN RAMOS-MORALES
+        </span>
 
-        <span>GEOGRAPHY</span>
-        <span>GIS</span>
-        <span>ENVIRONMENTAL SYSTEMS</span>
-        <span>CULTURAL RESOURCES</span>
-        <span>SPATIAL ANALYSIS</span>
-        <span>RESEARCH</span>
+        <span class="rail-center">
+          GEOGRAPHY · GIS · FIELD · CULTURAL RESOURCES
+        </span>
+
+        <span class="rail-right">
+          PORTFOLIO / 2026
+        </span>
 
       </div>
 
     </div>
 
 
-    <!-- ==================================================
-         NAVIGATION
-    =================================================== -->
+    <!-- MAIN NAV -->
 
     <header class="site-header">
 
-      <a
-        class="site-brand"
-        href="{{ '/' | relative_url }}"
-        aria-label="Bryan Ramos-Morales home"
-      >
-
-        <span class="site-brand-name">
-          BRYAN RAMOS-MORALES
-        </span>
-
-        <span class="site-brand-subtitle">
-          Geography · GIS · Environmental Resources
-        </span>
-
-      </a>
-
-
-      <button
-        class="nav-toggle"
-        type="button"
-        aria-label="Open navigation"
-        aria-expanded="false"
-        aria-controls="primary-navigation"
-      >
-        <span></span>
-        <span></span>
-      </button>
-
-
-      <nav
-        class="site-nav"
-        id="primary-navigation"
-        aria-label="Primary navigation"
-      >
+      <div class="site-header-inner">
 
         <a
+          class="site-brand"
           href="{{ '/' | relative_url }}"
-          {% if page.url == "/" %}
-            class="active"
-          {% endif %}
         >
-          Work
+
+          <span class="site-brand-mark">
+            BRM
+          </span>
+
+          <span class="site-brand-copy">
+            Geography &amp;<br>
+            Environmental Resources
+          </span>
+
         </a>
 
 
-        <a
-          href="{{ '/professional-experience.html' | relative_url }}"
-          {% if page.section == "experience" %}
-            class="active"
-          {% endif %}
+        <nav
+          class="site-nav"
+          id="primary-navigation"
+          aria-label="Primary navigation"
         >
-          Experience
-        </a>
+
+          <a
+            href="{{ '/' | relative_url }}"
+            {% if page.url == '/' or page.layout == 'project' or page.section == 'cultural-resources' or page.section == 'geography' or page.section == 'environmental' or page.section == 'data' %}
+              class="active"
+            {% endif %}
+          >
+            Work
+          </a>
+
+          <a
+            href="{{ '/professional-experience.html' | relative_url }}"
+            {% if page.section == 'experience' %}
+              class="active"
+            {% endif %}
+          >
+            Experience
+          </a>
+
+          <a
+            href="{{ '/about.html' | relative_url }}"
+            {% if page.section == 'about' %}
+              class="active"
+            {% endif %}
+          >
+            About
+          </a>
+
+          <a
+            href="{{ '/contact.html' | relative_url }}"
+            {% if page.section == 'contact' %}
+              class="active"
+            {% endif %}
+          >
+            Contact
+          </a>
+
+        </nav>
 
 
         <a
-          href="{{ '/about.html' | relative_url }}"
-          {% if page.section == "about" %}
-            class="active"
-          {% endif %}
-        >
-          About
-        </a>
-
-
-        <a
-          href="{{ '/contact.html' | relative_url }}"
-          {% if page.section == "contact" %}
-            class="active"
-          {% endif %}
-        >
-          Contact
-        </a>
-
-
-        <a
-          class="nav-resume {% if page.section == 'resume' %}active{% endif %}"
+          class="header-resume {% if page.section == 'resume' %}active{% endif %}"
           href="{{ '/resume.html' | relative_url }}"
         >
           Résumé ↗
         </a>
 
-      </nav>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
 
     </header>
 
-
-    <!-- ==================================================
-         MAIN CONTENT
-    =================================================== -->
 
     <main class="site-main">
 
@@ -177,27 +164,28 @@
     </main>
 
 
-    <!-- ==================================================
-         FOOTER
-    =================================================== -->
-
     <footer class="site-footer">
 
-      <div class="footer-name">
-        BRYAN
-        <br>
-        RAMOS-MORALES
+      <div class="footer-lead">
+
+        <span class="footer-small">
+          BRYAN RAMOS-MORALES
+        </span>
+
+        <div class="footer-big">
+          KEEP<br>
+          LOOKING.
+        </div>
+
       </div>
 
 
-      <div class="footer-meta">
+      <div class="footer-copy">
 
         <p>
-          Geography · GIS · Environmental Resources
-        </p>
-
-        <p>
-          California · 2026
+          Geography, GIS, environmental systems,
+          cultural resources, field observation,
+          research, and work still being built.
         </p>
 
       </div>
@@ -205,25 +193,34 @@
 
       <div class="footer-links">
 
+        <a href="{{ '/' | relative_url }}">
+          Work ↗
+        </a>
+
+        <a href="{{ '/about.html' | relative_url }}">
+          About ↗
+        </a>
+
         <a href="{{ '/contact.html' | relative_url }}">
-          Contact
+          Contact ↗
         </a>
 
         <a href="{{ '/resume.html' | relative_url }}">
-          Résumé
-        </a>
-
-        <a href="{{ '/' | relative_url }}">
-          Back to Work ↑
+          Résumé ↗
         </a>
 
       </div>
 
 
-      <div class="footer-copyright">
+      <div class="footer-bottom">
 
-        © 2026 Bryan Ramos-Morales.
-        All rights reserved.
+        <span>
+          © 2026 Bryan Ramos-Morales
+        </span>
+
+        <span>
+          California
+        </span>
 
       </div>
 
@@ -248,39 +245,17 @@
         "click",
         function () {
 
-          const isOpen =
+          const open =
             siteNav.classList.toggle("open");
 
           navToggle.classList.toggle(
             "open",
-            isOpen
+            open
           );
 
           navToggle.setAttribute(
             "aria-expanded",
-            isOpen
-          );
-
-        }
-      );
-
-
-      siteNav.querySelectorAll("a").forEach(
-        function (link) {
-
-          link.addEventListener(
-            "click",
-            function () {
-
-              siteNav.classList.remove("open");
-              navToggle.classList.remove("open");
-
-              navToggle.setAttribute(
-                "aria-expanded",
-                "false"
-              );
-
-            }
+            open
           );
 
         }
@@ -289,6 +264,7 @@
     }
 
   </script>
+
 
 </body>
 
