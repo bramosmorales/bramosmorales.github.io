@@ -23,16 +23,20 @@
     {% endif %}
   </title>
 
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
-  <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,wght@0,500;0,600;1,500;1,600&family=Space+Grotesk:wght@500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Pixelify+Sans:wght@400;500;600;700&family=Poiret+One&display=swap"
     rel="stylesheet"
   >
+
 
   <link
     rel="stylesheet"
@@ -42,21 +46,64 @@
 </head>
 
 
-<body>
+<body
+  class="
+    {% if page.url == '/' %}
+      is-home
+    {% endif %}
+    page-{{ page.section | default: 'work' }}
+  "
+>
 
 
-  <!-- SCROLL PROGRESS -->
+  <!-- ====================================================
+       IMMERSIVE BACKGROUND
+  ===================================================== -->
+
+  <div
+    class="world-art"
+    aria-hidden="true"
+  >
+
+    <div class="world-base"></div>
+
+    <div class="world-primary"></div>
+
+    <div class="world-alt"></div>
+
+    <div class="world-vignette"></div>
+
+    <div class="world-grain"></div>
+
+
+    <img
+      class="world-foreground"
+      src="{{ '/assets/art/foreground-frame.png' | relative_url }}"
+      alt=""
+    >
+
+  </div>
+
+
+
+  <!-- ====================================================
+       TOP PROGRESS
+  ===================================================== -->
 
   <div
     class="scroll-progress"
     aria-hidden="true"
   >
+
     <span id="scroll-progress-bar"></span>
+
   </div>
 
 
 
-  <!-- HEADER -->
+  <!-- ====================================================
+       SITE HEADER
+  ===================================================== -->
 
   <header class="site-header">
 
@@ -66,16 +113,22 @@
       <a
         class="site-brand"
         href="{{ '/' | relative_url }}"
-        aria-label="Bryan Ramos-Morales portfolio home"
       >
 
-        <span class="brand-mark">
+        <span class="brand-symbol">
           BRM
         </span>
 
         <span class="brand-copy">
-          Geography / GIS<br>
-          Environmental Resources
+
+          <span class="brand-name">
+            BRYAN RAMOS-MORALES
+          </span>
+
+          <span class="brand-field">
+            GEOGRAPHY / GIS / ENVIRONMENT
+          </span>
+
         </span>
 
       </a>
@@ -94,7 +147,7 @@
             class="active"
           {% endif %}
         >
-          Work
+          WORK
         </a>
 
 
@@ -104,7 +157,7 @@
             class="active"
           {% endif %}
         >
-          Experience
+          EXPERIENCE
         </a>
 
 
@@ -114,7 +167,7 @@
             class="active"
           {% endif %}
         >
-          About
+          ABOUT
         </a>
 
 
@@ -124,19 +177,34 @@
             class="active"
           {% endif %}
         >
-          Contact
+          CONTACT
         </a>
 
       </nav>
 
 
 
-      <a
-        class="header-resume"
-        href="{{ '/resume.html' | relative_url }}"
-      >
-        Résumé ↗
-      </a>
+      <div class="header-right">
+
+
+        <div class="world-status">
+
+          <span class="status-dot"></span>
+
+          PORTFOLIO_2026
+
+        </div>
+
+
+        <a
+          class="resume-link"
+          href="{{ '/resume.html' | relative_url }}"
+        >
+          RÉSUMÉ ↗
+        </a>
+
+
+      </div>
 
 
 
@@ -160,7 +228,9 @@
 
 
 
-  <!-- CONTENT -->
+  <!-- ====================================================
+       CONTENT
+  ===================================================== -->
 
   <main class="site-main">
 
@@ -170,71 +240,84 @@
 
 
 
-  <!-- FOOTER -->
+  <!-- ====================================================
+       FOOTER
+  ===================================================== -->
 
   <footer class="site-footer">
 
 
-    <div class="footer-main">
+    <div class="footer-coordinate">
+      37°N / 120°W / PORTFOLIO ARCHIVE
+    </div>
 
-      <div>
 
-        <div class="footer-kicker">
-          BRYAN RAMOS-MORALES / 2026
+    <div class="footer-grid">
+
+
+      <div class="footer-identity">
+
+        <div class="footer-name">
+          BRYAN
+          <br>
+          RAMOS-MORALES
         </div>
 
-        <div class="footer-title">
-          KEEP<br>
-          LOOKING.
+        <div class="footer-sub">
+          GEOGRAPHY / GIS / ENVIRONMENTAL RESOURCES
         </div>
 
       </div>
+
 
 
       <div class="footer-description">
 
-        Geography, GIS, environmental systems,
-        cultural resources, field observation,
-        research, and projects still being built.
+        GIS, environmental geography, cultural resources,
+        spatial research, field observation, cartography,
+        and a growing collection of independent work.
 
       </div>
+
 
 
       <nav class="footer-links">
 
         <a href="{{ '/' | relative_url }}">
-          Work ↗
+          WORK ↗
         </a>
 
         <a href="{{ '/professional-experience.html' | relative_url }}">
-          Experience ↗
+          EXPERIENCE ↗
         </a>
 
         <a href="{{ '/about.html' | relative_url }}">
-          About ↗
+          ABOUT ↗
         </a>
 
         <a href="{{ '/contact.html' | relative_url }}">
-          Contact ↗
+          CONTACT ↗
         </a>
 
         <a href="{{ '/resume.html' | relative_url }}">
-          Résumé ↗
+          RÉSUMÉ ↗
         </a>
 
       </nav>
 
+
     </div>
+
 
 
     <div class="footer-bottom">
 
       <span>
-        © 2026 Bryan Ramos-Morales
+        © 2026 BRYAN RAMOS-MORALES
       </span>
 
       <span>
-        Geography / Environment / Research
+        END OF CURRENT MAP
       </span>
 
     </div>
@@ -244,39 +327,71 @@
 
 
 
-  <!-- CUSTOM POINTER -->
+  <!-- ====================================================
+       MOTH FOLLOWER
+  ===================================================== -->
 
   <div
-    class="cursor-badge"
-    id="cursor-badge"
+    class="moth-guide"
+    id="moth-guide"
     aria-hidden="true"
   >
-    OPEN ↗
+
+    <img
+      src="{{ '/assets/art/moth-guide.png' | relative_url }}"
+      alt=""
+    >
+
+    <span class="moth-label">
+      EXPLORE
+    </span>
+
   </div>
 
 
 
+  <!-- ====================================================
+       JAVASCRIPT
+  ===================================================== -->
+
   <script>
 
-    /* ==============================================
-       MOBILE NAVIGATION
-    ============================================== */
+
+    const reducedMotion =
+      window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+
+
+    /* ----------------------------------------------------
+       MOBILE NAV
+    ----------------------------------------------------- */
 
     const navToggle =
-      document.querySelector(".nav-toggle");
+      document.querySelector(
+        ".nav-toggle"
+      );
 
     const siteNav =
-      document.querySelector(".site-nav");
+      document.querySelector(
+        ".site-nav"
+      );
 
 
-    if (navToggle && siteNav) {
+    if (
+      navToggle &&
+      siteNav
+    ) {
 
       navToggle.addEventListener(
         "click",
         function () {
 
           const open =
-            siteNav.classList.toggle("open");
+            siteNav.classList.toggle(
+              "open"
+            );
 
           navToggle.classList.toggle(
             "open",
@@ -295,11 +410,11 @@
 
 
 
-    /* ==============================================
+    /* ----------------------------------------------------
        SCROLL PROGRESS
-    ============================================== */
+    ----------------------------------------------------- */
 
-    const progressBar =
+    const progress =
       document.getElementById(
         "scroll-progress-bar"
       );
@@ -307,23 +422,20 @@
 
     function updateProgress() {
 
-      if (!progressBar) return;
+      if (!progress) return;
 
-      const scrollTop =
-        window.scrollY;
-
-      const scrollHeight =
+      const max =
         document.documentElement.scrollHeight
         -
         window.innerHeight;
 
-      const progress =
-        scrollHeight > 0
-          ? scrollTop / scrollHeight
+      const value =
+        max > 0
+          ? window.scrollY / max
           : 0;
 
-      progressBar.style.transform =
-        `scaleX(${progress})`;
+      progress.style.transform =
+        `scaleX(${value})`;
 
     }
 
@@ -334,20 +446,48 @@
     window.addEventListener(
       "scroll",
       updateProgress,
-      { passive: true }
+      {
+        passive: true
+      }
     );
 
 
 
-    /* ==============================================
-       SCROLL REVEALS
-    ============================================== */
+    /* ----------------------------------------------------
+       BACKGROUND REVEAL
+    ----------------------------------------------------- */
 
-    const reduceMotion =
+    if (
+      !reducedMotion &&
       window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-      ).matches;
+        "(pointer: fine)"
+      ).matches
+    ) {
 
+      document.addEventListener(
+        "pointermove",
+        function (event) {
+
+          document.documentElement.style.setProperty(
+            "--pointer-x",
+            event.clientX + "px"
+          );
+
+          document.documentElement.style.setProperty(
+            "--pointer-y",
+            event.clientY + "px"
+          );
+
+        }
+      );
+
+    }
+
+
+
+    /* ----------------------------------------------------
+       REVEALS
+    ----------------------------------------------------- */
 
     const revealItems =
       document.querySelectorAll(
@@ -355,12 +495,12 @@
       );
 
 
-    if (reduceMotion) {
+    if (reducedMotion) {
 
       revealItems.forEach(
         item =>
           item.classList.add(
-            "is-visible"
+            "visible"
           )
       );
 
@@ -368,7 +508,7 @@
 
     else {
 
-      const revealObserver =
+      const observer =
         new IntersectionObserver(
 
           entries => {
@@ -376,13 +516,15 @@
             entries.forEach(
               entry => {
 
-                if (entry.isIntersecting) {
+                if (
+                  entry.isIntersecting
+                ) {
 
                   entry.target.classList.add(
-                    "is-visible"
+                    "visible"
                   );
 
-                  revealObserver.unobserve(
+                  observer.unobserve(
                     entry.target
                   );
 
@@ -394,7 +536,7 @@
           },
 
           {
-            threshold: 0.12
+            threshold: 0.08
           }
 
         );
@@ -402,7 +544,7 @@
 
       revealItems.forEach(
         item =>
-          revealObserver.observe(
+          observer.observe(
             item
           )
       );
@@ -411,93 +553,71 @@
 
 
 
-    /* ==============================================
-       HERO COLLAGE PARALLAX
-    ============================================== */
+    /* ----------------------------------------------------
+       PROJECT TILT
+    ----------------------------------------------------- */
 
-    const parallaxArea =
-      document.querySelector(
-        ".hero-art"
+    const tiltTargets =
+      document.querySelectorAll(
+        "[data-tilt]"
       );
 
 
     if (
-      parallaxArea &&
-      !reduceMotion &&
+      !reducedMotion &&
       window.matchMedia(
         "(pointer: fine)"
       ).matches
     ) {
 
-      const layers =
-        parallaxArea.querySelectorAll(
-          "[data-parallax]"
-        );
+      tiltTargets.forEach(
+        element => {
 
+          element.addEventListener(
+            "pointermove",
+            function (event) {
 
-      parallaxArea.addEventListener(
-        "pointermove",
-        function (event) {
+              const rect =
+                element.getBoundingClientRect();
 
-          const rect =
-            parallaxArea.getBoundingClientRect();
-
-          const x =
-            (
-              event.clientX
-              -
-              rect.left
-            )
-            /
-            rect.width
-            -
-            0.5;
-
-          const y =
-            (
-              event.clientY
-              -
-              rect.top
-            )
-            /
-            rect.height
-            -
-            0.5;
-
-
-          layers.forEach(
-            layer => {
-
-              const speed =
-                Number(
-                  layer.dataset.parallax
+              const x =
+                (
+                  event.clientX -
+                  rect.left
                 )
-                ||
-                10;
+                /
+                rect.width
+                -
+                0.5;
 
-              layer.style.transform =
-                `translate3d(
-                  ${x * speed}px,
-                  ${y * speed}px,
-                  0
-                )`;
+              const y =
+                (
+                  event.clientY -
+                  rect.top
+                )
+                /
+                rect.height
+                -
+                0.5;
+
+              element.style.transform =
+                `
+                perspective(1100px)
+                rotateX(${y * -2.4}deg)
+                rotateY(${x * 3.5}deg)
+                translateY(-5px)
+                `;
 
             }
           );
 
-        }
-      );
 
+          element.addEventListener(
+            "pointerleave",
+            function () {
 
-      parallaxArea.addEventListener(
-        "pointerleave",
-        function () {
-
-          layers.forEach(
-            layer => {
-
-              layer.style.transform =
-                "translate3d(0,0,0)";
+              element.style.transform =
+                "";
 
             }
           );
@@ -509,70 +629,137 @@
 
 
 
-    /* ==============================================
-       PROJECT CURSOR
-    ============================================== */
+    /* ----------------------------------------------------
+       MOTH FOLLOWER
+    ----------------------------------------------------- */
 
-    const cursorBadge =
+    const moth =
       document.getElementById(
-        "cursor-badge"
+        "moth-guide"
       );
 
 
     if (
-      cursorBadge &&
+      moth &&
+      !reducedMotion &&
       window.matchMedia(
         "(pointer: fine)"
       ).matches
     ) {
 
-      const cursorTargets =
-        document.querySelectorAll(
-          "[data-cursor]"
-        );
+      let pointerX =
+        window.innerWidth / 2;
 
+      let pointerY =
+        window.innerHeight / 2;
 
-      let mouseX = 0;
-      let mouseY = 0;
+      let mothX =
+        pointerX;
+
+      let mothY =
+        pointerY;
+
+      let previousX =
+        mothX;
 
 
       document.addEventListener(
         "pointermove",
         function (event) {
 
-          mouseX =
-            event.clientX;
+          pointerX =
+            event.clientX + 45;
 
-          mouseY =
-            event.clientY;
+          pointerY =
+            event.clientY + 32;
 
-          cursorBadge.style.left =
-            `${mouseX}px`;
-
-          cursorBadge.style.top =
-            `${mouseY}px`;
+          moth.classList.add(
+            "awake"
+          );
 
         }
       );
 
 
-      cursorTargets.forEach(
-        target => {
+      function animateMoth() {
 
-          target.addEventListener(
+        mothX +=
+          (
+            pointerX - mothX
+          )
+          *
+          0.075;
+
+        mothY +=
+          (
+            pointerY - mothY
+          )
+          *
+          0.075;
+
+        const movement =
+          mothX -
+          previousX;
+
+        previousX =
+          mothX;
+
+        const rotation =
+          Math.max(
+            -12,
+            Math.min(
+              12,
+              movement * 2
+            )
+          );
+
+        moth.style.transform =
+          `
+          translate3d(
+            ${mothX}px,
+            ${mothY}px,
+            0
+          )
+          rotate(${rotation}deg)
+          `;
+
+        requestAnimationFrame(
+          animateMoth
+        );
+
+      }
+
+
+      animateMoth();
+
+
+
+      const discoveries =
+        document.querySelectorAll(
+          "[data-discover]"
+        );
+
+
+      discoveries.forEach(
+        item => {
+
+          item.addEventListener(
             "pointerenter",
             function () {
 
-              cursorBadge.classList.add(
-                "visible"
+              moth.classList.add(
+                "discovering"
               );
 
-              if (
-                target.dataset.cursor
-              ) {
+              const label =
+                moth.querySelector(
+                  ".moth-label"
+                );
 
-                cursorBadge.textContent =
-                  target.dataset.cursor;
+              if (label) {
+
+                label.textContent =
+                  "OPEN FILE";
 
               }
 
@@ -580,17 +767,118 @@
           );
 
 
-          target.addEventListener(
+          item.addEventListener(
             "pointerleave",
             function () {
 
-              cursorBadge.classList.remove(
-                "visible"
+              moth.classList.remove(
+                "discovering"
               );
+
+              const label =
+                moth.querySelector(
+                  ".moth-label"
+                );
+
+              if (label) {
+
+                label.textContent =
+                  "EXPLORE";
+
+              }
 
             }
           );
 
+        }
+      );
+
+    }
+
+
+
+    /* ----------------------------------------------------
+       CLICK STAR
+    ----------------------------------------------------- */
+
+    if (
+      !reducedMotion &&
+      window.matchMedia(
+        "(pointer: fine)"
+      ).matches
+    ) {
+
+      document.addEventListener(
+        "click",
+        function (event) {
+
+          const burst =
+            document.createElement(
+              "span"
+            );
+
+          burst.className =
+            "click-burst";
+
+          burst.textContent =
+            "✦";
+
+          burst.style.left =
+            event.clientX + "px";
+
+          burst.style.top =
+            event.clientY + "px";
+
+          document.body.appendChild(
+            burst
+          );
+
+
+          setTimeout(
+            () =>
+              burst.remove(),
+            650
+          );
+
+        }
+      );
+
+    }
+
+
+
+    /* ----------------------------------------------------
+       FOREGROUND PARALLAX
+    ----------------------------------------------------- */
+
+    const foreground =
+      document.querySelector(
+        ".world-foreground"
+      );
+
+
+    if (
+      foreground &&
+      !reducedMotion
+    ) {
+
+      window.addEventListener(
+        "scroll",
+        function () {
+
+          foreground.style.transform =
+            `
+            translate3d(
+              0,
+              ${window.scrollY * 0.015}px,
+              0
+            )
+            `;
+
+        },
+
+        {
+          passive: true
         }
       );
 
