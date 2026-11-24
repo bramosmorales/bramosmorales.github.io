@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
 
   <meta
@@ -23,7 +24,10 @@
   </title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,wght@0,500;0,600;1,500;1,600&family=Space+Grotesk:wght@500;600;700&display=swap"
@@ -34,145 +38,152 @@
     rel="stylesheet"
     href="{{ '/assets/css/site.css' | relative_url }}"
   >
+
 </head>
 
 
 <body>
 
-  <div class="site-shell">
+
+  <!-- SCROLL PROGRESS -->
+
+  <div
+    class="scroll-progress"
+    aria-hidden="true"
+  >
+    <span id="scroll-progress-bar"></span>
+  </div>
 
 
-    <!-- TOP RAIL -->
 
-    <div class="top-rail">
+  <!-- HEADER -->
 
-      <div class="top-rail-inner">
+  <header class="site-header">
 
-        <span class="rail-left">
-          BRYAN RAMOS-MORALES
+    <div class="site-header-inner">
+
+
+      <a
+        class="site-brand"
+        href="{{ '/' | relative_url }}"
+        aria-label="Bryan Ramos-Morales portfolio home"
+      >
+
+        <span class="brand-mark">
+          BRM
         </span>
 
-        <span class="rail-center">
-          GEOGRAPHY · GIS · FIELD · CULTURAL RESOURCES
+        <span class="brand-copy">
+          Geography / GIS<br>
+          Environmental Resources
         </span>
 
-        <span class="rail-right">
-          PORTFOLIO / 2026
-        </span>
+      </a>
 
-      </div>
+
+
+      <nav
+        class="site-nav"
+        id="primary-navigation"
+        aria-label="Primary navigation"
+      >
+
+        <a
+          href="{{ '/' | relative_url }}"
+          {% if page.url == '/' or page.layout == 'project' or page.section == 'cultural-resources' or page.section == 'geography' or page.section == 'environmental' or page.section == 'data' %}
+            class="active"
+          {% endif %}
+        >
+          Work
+        </a>
+
+
+        <a
+          href="{{ '/professional-experience.html' | relative_url }}"
+          {% if page.section == 'experience' %}
+            class="active"
+          {% endif %}
+        >
+          Experience
+        </a>
+
+
+        <a
+          href="{{ '/about.html' | relative_url }}"
+          {% if page.section == 'about' %}
+            class="active"
+          {% endif %}
+        >
+          About
+        </a>
+
+
+        <a
+          href="{{ '/contact.html' | relative_url }}"
+          {% if page.section == 'contact' %}
+            class="active"
+          {% endif %}
+        >
+          Contact
+        </a>
+
+      </nav>
+
+
+
+      <a
+        class="header-resume"
+        href="{{ '/resume.html' | relative_url }}"
+      >
+        Résumé ↗
+      </a>
+
+
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+      >
+
+        <span></span>
+        <span></span>
+
+      </button>
+
 
     </div>
 
-
-    <!-- MAIN NAV -->
-
-    <header class="site-header">
-
-      <div class="site-header-inner">
-
-        <a
-          class="site-brand"
-          href="{{ '/' | relative_url }}"
-        >
-
-          <span class="site-brand-mark">
-            BRM
-          </span>
-
-          <span class="site-brand-copy">
-            Geography &amp;<br>
-            Environmental Resources
-          </span>
-
-        </a>
+  </header>
 
 
-        <nav
-          class="site-nav"
-          id="primary-navigation"
-          aria-label="Primary navigation"
-        >
 
-          <a
-            href="{{ '/' | relative_url }}"
-            {% if page.url == '/' or page.layout == 'project' or page.section == 'cultural-resources' or page.section == 'geography' or page.section == 'environmental' or page.section == 'data' %}
-              class="active"
-            {% endif %}
-          >
-            Work
-          </a>
+  <!-- CONTENT -->
 
-          <a
-            href="{{ '/professional-experience.html' | relative_url }}"
-            {% if page.section == 'experience' %}
-              class="active"
-            {% endif %}
-          >
-            Experience
-          </a>
+  <main class="site-main">
 
-          <a
-            href="{{ '/about.html' | relative_url }}"
-            {% if page.section == 'about' %}
-              class="active"
-            {% endif %}
-          >
-            About
-          </a>
+    {{ content }}
 
-          <a
-            href="{{ '/contact.html' | relative_url }}"
-            {% if page.section == 'contact' %}
-              class="active"
-            {% endif %}
-          >
-            Contact
-          </a>
-
-        </nav>
+  </main>
 
 
-        <a
-          class="header-resume {% if page.section == 'resume' %}active{% endif %}"
-          href="{{ '/resume.html' | relative_url }}"
-        >
-          Résumé ↗
-        </a>
+
+  <!-- FOOTER -->
+
+  <footer class="site-footer">
 
 
-        <button
-          class="nav-toggle"
-          type="button"
-          aria-label="Open navigation"
-          aria-expanded="false"
-          aria-controls="primary-navigation"
-        >
-          <span></span>
-          <span></span>
-        </button>
+    <div class="footer-main">
 
-      </div>
+      <div>
 
-    </header>
+        <div class="footer-kicker">
+          BRYAN RAMOS-MORALES / 2026
+        </div>
 
-
-    <main class="site-main">
-
-      {{ content }}
-
-    </main>
-
-
-    <footer class="site-footer">
-
-      <div class="footer-lead">
-
-        <span class="footer-small">
-          BRYAN RAMOS-MORALES
-        </span>
-
-        <div class="footer-big">
+        <div class="footer-title">
           KEEP<br>
           LOOKING.
         </div>
@@ -180,21 +191,23 @@
       </div>
 
 
-      <div class="footer-copy">
+      <div class="footer-description">
 
-        <p>
-          Geography, GIS, environmental systems,
-          cultural resources, field observation,
-          research, and work still being built.
-        </p>
+        Geography, GIS, environmental systems,
+        cultural resources, field observation,
+        research, and projects still being built.
 
       </div>
 
 
-      <div class="footer-links">
+      <nav class="footer-links">
 
         <a href="{{ '/' | relative_url }}">
           Work ↗
+        </a>
+
+        <a href="{{ '/professional-experience.html' | relative_url }}">
+          Experience ↗
         </a>
 
         <a href="{{ '/about.html' | relative_url }}">
@@ -209,28 +222,45 @@
           Résumé ↗
         </a>
 
-      </div>
+      </nav>
+
+    </div>
 
 
-      <div class="footer-bottom">
+    <div class="footer-bottom">
 
-        <span>
-          © 2026 Bryan Ramos-Morales
-        </span>
+      <span>
+        © 2026 Bryan Ramos-Morales
+      </span>
 
-        <span>
-          California
-        </span>
+      <span>
+        Geography / Environment / Research
+      </span>
 
-      </div>
-
-    </footer>
+    </div>
 
 
+  </footer>
+
+
+
+  <!-- CUSTOM POINTER -->
+
+  <div
+    class="cursor-badge"
+    id="cursor-badge"
+    aria-hidden="true"
+  >
+    OPEN ↗
   </div>
 
 
+
   <script>
+
+    /* ==============================================
+       MOBILE NAVIGATION
+    ============================================== */
 
     const navToggle =
       document.querySelector(".nav-toggle");
@@ -262,6 +292,310 @@
       );
 
     }
+
+
+
+    /* ==============================================
+       SCROLL PROGRESS
+    ============================================== */
+
+    const progressBar =
+      document.getElementById(
+        "scroll-progress-bar"
+      );
+
+
+    function updateProgress() {
+
+      if (!progressBar) return;
+
+      const scrollTop =
+        window.scrollY;
+
+      const scrollHeight =
+        document.documentElement.scrollHeight
+        -
+        window.innerHeight;
+
+      const progress =
+        scrollHeight > 0
+          ? scrollTop / scrollHeight
+          : 0;
+
+      progressBar.style.transform =
+        `scaleX(${progress})`;
+
+    }
+
+
+    updateProgress();
+
+
+    window.addEventListener(
+      "scroll",
+      updateProgress,
+      { passive: true }
+    );
+
+
+
+    /* ==============================================
+       SCROLL REVEALS
+    ============================================== */
+
+    const reduceMotion =
+      window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+
+    const revealItems =
+      document.querySelectorAll(
+        ".reveal"
+      );
+
+
+    if (reduceMotion) {
+
+      revealItems.forEach(
+        item =>
+          item.classList.add(
+            "is-visible"
+          )
+      );
+
+    }
+
+    else {
+
+      const revealObserver =
+        new IntersectionObserver(
+
+          entries => {
+
+            entries.forEach(
+              entry => {
+
+                if (entry.isIntersecting) {
+
+                  entry.target.classList.add(
+                    "is-visible"
+                  );
+
+                  revealObserver.unobserve(
+                    entry.target
+                  );
+
+                }
+
+              }
+            );
+
+          },
+
+          {
+            threshold: 0.12
+          }
+
+        );
+
+
+      revealItems.forEach(
+        item =>
+          revealObserver.observe(
+            item
+          )
+      );
+
+    }
+
+
+
+    /* ==============================================
+       HERO COLLAGE PARALLAX
+    ============================================== */
+
+    const parallaxArea =
+      document.querySelector(
+        ".hero-art"
+      );
+
+
+    if (
+      parallaxArea &&
+      !reduceMotion &&
+      window.matchMedia(
+        "(pointer: fine)"
+      ).matches
+    ) {
+
+      const layers =
+        parallaxArea.querySelectorAll(
+          "[data-parallax]"
+        );
+
+
+      parallaxArea.addEventListener(
+        "pointermove",
+        function (event) {
+
+          const rect =
+            parallaxArea.getBoundingClientRect();
+
+          const x =
+            (
+              event.clientX
+              -
+              rect.left
+            )
+            /
+            rect.width
+            -
+            0.5;
+
+          const y =
+            (
+              event.clientY
+              -
+              rect.top
+            )
+            /
+            rect.height
+            -
+            0.5;
+
+
+          layers.forEach(
+            layer => {
+
+              const speed =
+                Number(
+                  layer.dataset.parallax
+                )
+                ||
+                10;
+
+              layer.style.transform =
+                `translate3d(
+                  ${x * speed}px,
+                  ${y * speed}px,
+                  0
+                )`;
+
+            }
+          );
+
+        }
+      );
+
+
+      parallaxArea.addEventListener(
+        "pointerleave",
+        function () {
+
+          layers.forEach(
+            layer => {
+
+              layer.style.transform =
+                "translate3d(0,0,0)";
+
+            }
+          );
+
+        }
+      );
+
+    }
+
+
+
+    /* ==============================================
+       PROJECT CURSOR
+    ============================================== */
+
+    const cursorBadge =
+      document.getElementById(
+        "cursor-badge"
+      );
+
+
+    if (
+      cursorBadge &&
+      window.matchMedia(
+        "(pointer: fine)"
+      ).matches
+    ) {
+
+      const cursorTargets =
+        document.querySelectorAll(
+          "[data-cursor]"
+        );
+
+
+      let mouseX = 0;
+      let mouseY = 0;
+
+
+      document.addEventListener(
+        "pointermove",
+        function (event) {
+
+          mouseX =
+            event.clientX;
+
+          mouseY =
+            event.clientY;
+
+          cursorBadge.style.left =
+            `${mouseX}px`;
+
+          cursorBadge.style.top =
+            `${mouseY}px`;
+
+        }
+      );
+
+
+      cursorTargets.forEach(
+        target => {
+
+          target.addEventListener(
+            "pointerenter",
+            function () {
+
+              cursorBadge.classList.add(
+                "visible"
+              );
+
+              if (
+                target.dataset.cursor
+              ) {
+
+                cursorBadge.textContent =
+                  target.dataset.cursor;
+
+              }
+
+            }
+          );
+
+
+          target.addEventListener(
+            "pointerleave",
+            function () {
+
+              cursorBadge.classList.remove(
+                "visible"
+              );
+
+            }
+          );
+
+        }
+      );
+
+    }
+
 
   </script>
 
