@@ -11,9 +11,9 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   --section-gap:
     clamp(
-      110px,
-      12vw,
-      185px
+      115px,
+      13vw,
+      190px
     );
 
 }
@@ -24,85 +24,163 @@ description: Geography, GIS, environmental research, cultural resources, and spa
    HERO
 ========================================================= */
 
-.hero {
+.home-hero {
+
+  position: relative;
 
   min-height:
-    620px;
+    680px;
 
-  display:
-    flex;
+  display: flex;
 
-  align-items:
-    center;
+  align-items: center;
 
   padding:
-    60px 0
-    90px;
+    45px 0
+    120px;
 
 }
 
 
 
-/* MAIN INTRO */
+/* HERO DECOR */
 
-.hero-inner {
+.hero-topography {
+
+  position: absolute;
+
+  top: 0;
+
+  right: 2%;
 
   width:
     min(
-      1050px,
-      100%
+      410px,
+      31vw
     );
+
+  opacity: 0.25;
+
+  mix-blend-mode: screen;
+
+  transform:
+
+    translateY(
+      var(--parallax-y,0)
+    )
+
+    rotate(4deg);
+
+}
+
+
+.hero-orbit {
+
+  position: absolute;
+
+  right: 30%;
+
+  bottom: 17%;
+
+  width: 150px;
+
+  opacity: 0.23;
+
+  mix-blend-mode: screen;
+
+  transform:
+
+    translateY(
+      var(--parallax-y,0)
+    );
+
+}
+
+
+.hero-root {
+
+  position: absolute;
+
+  right: -4%;
+
+  bottom: -2%;
+
+  width:
+    min(
+      490px,
+      37vw
+    );
+
+  opacity: 0.18;
+
+  mix-blend-mode: screen;
+
+  transform:
+
+    translateY(
+      var(--parallax-y,0)
+    );
+
+}
+
+
+
+/* HERO COPY */
+
+.hero-copy {
+
+  position: relative;
+
+  z-index: 5;
+
+  width:
+    min(
+      100%,
+      970px
+    );
+
+  padding:
+    38px 42px;
+
+  background:
+
+    linear-gradient(
+      90deg,
+
+      rgba(0,0,0,0.93),
+
+      rgba(0,0,0,0.73)
+      70%,
+
+      rgba(0,0,0,0.28)
+    );
+
+  border-left:
+    4px solid
+    var(--red);
+
+  backdrop-filter:
+    blur(11px);
 
 }
 
 
 .hero-meta {
 
-  display:
-    flex;
+  display: flex;
 
-  flex-wrap:
-    wrap;
+  flex-wrap: wrap;
 
   gap:
-    12px 24px;
+    9px 19px;
 
-  margin-bottom:
-    28px;
+  margin-bottom: 24px;
 
-  color:
-    var(--red);
+  color: var(--red);
 
-  font-family:
-    var(--pixel);
+  font-family: var(--pixel);
 
-  font-size:
-    0.64rem;
-
-}
-
-
-.hero-meta span {
-
-  position:
-    relative;
-
-}
-
-
-.hero-meta span:not(:last-child)::after {
-
-  position:
-    absolute;
-
-  right:
-    -14px;
-
-  color:
-    #615c58;
-
-  content:
-    "/";
+  font-size: 0.61rem;
 
 }
 
@@ -112,60 +190,48 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 .hero-name {
 
-  margin:
-    0;
+  margin: 0;
 
-  max-width:
-    1050px;
-
-  font-family:
-    var(--display);
+  font-family: var(--display);
 
   font-size:
     clamp(
-      4.3rem,
+      4.5rem,
       8vw,
       8.8rem
     );
 
-  letter-spacing:
-    -0.075em;
+  letter-spacing: -0.078em;
 
-  line-height:
-    0.82;
+  line-height: 0.82;
 
 }
 
 
 .hero-name span {
 
-  display:
-    block;
+  display: block;
 
 }
 
 
 .hero-name-red {
 
-  color:
-    var(--red);
+  color: var(--red);
 
 }
 
 
 
-/* SUBHEAD */
+/* ROLE */
 
 .hero-role {
 
-  max-width:
-    850px;
+  max-width: 830px;
 
-  margin:
-    35px 0 0;
+  margin-top: 34px;
 
-  color:
-    white;
+  color: white;
 
   font-size:
     clamp(
@@ -174,74 +240,55 @@ description: Geography, GIS, environmental research, cultural resources, and spa
       1.7rem
     );
 
-  font-weight:
-    700;
+  font-weight: 700;
 
-  line-height:
-    1.4;
+  line-height: 1.4;
 
 }
 
-
-
-/* DESCRIPTION */
 
 .hero-description {
 
-  max-width:
-    730px;
+  max-width: 720px;
 
   margin:
-    20px 0 0;
+    18px 0 0;
 
-  color:
-    #aaa49f;
+  color: #aaa39d;
 
-  font-size:
-    0.98rem;
-
-  line-height:
-    1.8;
+  line-height: 1.8;
 
 }
 
 
 
-/* BUTTONS */
+/* ACTIONS */
 
 .hero-actions {
 
-  display:
-    flex;
+  display: flex;
 
-  flex-wrap:
-    wrap;
+  flex-wrap: wrap;
 
-  gap:
-    14px;
+  gap: 13px;
 
-  margin-top:
-    34px;
+  margin-top: 30px;
 
 }
 
 
 
-/* QUICK FIELDS */
+/* FIELDS */
 
 .hero-fields {
 
-  display:
-    flex;
+  display: flex;
 
-  flex-wrap:
-    wrap;
+  flex-wrap: wrap;
 
-  gap:
-    9px;
+  gap: 8px;
 
-  margin-top:
-    45px;
+  margin-top: 38px;
 
 }
 
@@ -249,281 +296,209 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 .hero-field {
 
   padding:
-    7px 10px;
+    6px 9px;
 
   background:
-    rgba(
-      0,
-      0,
-      0,
-      0.75
-    );
+    rgba(0,0,0,0.65);
 
   border:
     1px solid
     var(--line);
 
-  color:
-    #b1aba5;
+  color: #918a85;
 
-  font-family:
-    var(--pixel);
+  font-family: var(--pixel);
 
-  font-size:
-    0.57rem;
+  font-size: 0.55rem;
+
+  transition:
+
+    border-color
+    130ms ease,
+
+    color
+    130ms ease,
+
+    transform
+    130ms ease;
 
 }
 
 
 .hero-field:hover {
 
-  border-color:
-    var(--red);
+  color: white;
 
-  color:
-    white;
+  border-color: var(--red);
+
+  transform:
+    translateY(-2px);
 
 }
 
 
 
 /* =========================================================
-   ART BREAK
+   LAND / WATER TRANSITION
 ========================================================= */
 
-.art-break {
+.land-transition {
 
-  position:
-    relative;
+  position: relative;
 
   height:
     clamp(
-      180px,
-      20vw,
-      300px
+      280px,
+      34vw,
+      500px
     );
 
   margin:
-    15px
+
+    -120px
+
     calc(
       50% - 50vw
     )
-    90px;
 
-  overflow:
-    hidden;
+    -70px;
 
-  border-top:
-    1px solid
-    var(--line);
+  pointer-events: none;
 
-  border-bottom:
-    1px solid
-    var(--line);
+  overflow: hidden;
 
 }
 
 
+.land-transition img {
 
-/* PRIMARY ART */
+  position: absolute;
 
-.art-break-primary {
+  right: 0;
 
-  position:
-    absolute;
+  bottom: 0;
 
-  inset:
-    0;
+  left: 0;
 
-  background-image:
-    url("/assets/art/botanical-alt.png");
+  width: 100%;
 
-  background-position:
-    center 46%;
+  min-width: 1050px;
 
-  background-repeat:
-    no-repeat;
+  margin: auto;
 
-  background-size:
-    cover;
+  opacity: 0.83;
 
-  filter:
+  mix-blend-mode: screen;
 
-    grayscale(1)
-    sepia(1)
-    saturate(10)
-    hue-rotate(315deg)
-    contrast(1.45)
-    brightness(0.6);
+  transform:
 
-  opacity:
-    0.72;
-
-  transition:
-
-    transform
-    800ms ease,
-
-    filter
-    500ms ease;
+    translateY(
+      var(--parallax-y,0)
+    );
 
 }
 
 
+.land-transition::before {
 
-/* SECOND IMAGE */
+  position: absolute;
 
-.art-break-secondary {
+  inset: 0;
 
-  position:
-    absolute;
-
-  inset:
-    0;
-
-  background-image:
-    url("/assets/art/botanical-red.png");
-
-  background-position:
-    center;
-
-  background-repeat:
-    no-repeat;
-
-  background-size:
-    cover;
-
-  mix-blend-mode:
-    screen;
-
-  opacity:
-    0;
-
-  transition:
-    opacity 500ms ease;
-
-}
-
-
-
-/* BLACK FADE */
-
-.art-break::after {
-
-  position:
-    absolute;
-
-  inset:
-    0;
+  z-index: 2;
 
   background:
 
     linear-gradient(
-      90deg,
+      to bottom,
 
-      rgba(0,0,0,0.95)
-      0%,
+      rgba(0,0,0,0.95),
 
-      rgba(0,0,0,0.22)
-      28%,
+      transparent 24%,
 
-      rgba(0,0,0,0.18)
-      70%,
+      transparent 78%,
 
-      rgba(0,0,0,0.9)
-      100%
+      rgba(0,0,0,0.72)
     );
 
-  content:
-    "";
+  content: "";
 
 }
 
 
 
-/* HOVER */
+/* =========================================================
+   SECTION HEADER
+========================================================= */
 
-.art-break:hover
-.art-break-primary {
+.section-head {
 
-  transform:
-    scale(1.035);
+  position: relative;
 
-  filter:
+  display: flex;
 
-    grayscale(0.75)
-    sepia(1)
-    saturate(11)
-    hue-rotate(315deg)
-    contrast(1.5)
-    brightness(0.68);
+  align-items: end;
 
-}
+  justify-content: space-between;
 
+  gap: 30px;
 
-.art-break:hover
-.art-break-secondary {
-
-  opacity:
-    0.22;
+  margin-bottom: 36px;
 
 }
 
 
+.section-head-left {
 
-/* SMALL DECORATIVE CORNERS */
+  display: flex;
 
-.art-corner {
+  align-items: end;
 
-  position:
-    absolute;
-
-  z-index:
-    4;
-
-  width:
-    24px;
-
-  height:
-    24px;
+  gap: 20px;
 
 }
 
 
-.art-corner-one {
+.section-number {
 
-  top:
-    18px;
+  padding-bottom: 8px;
 
-  left:
-    28px;
+  color: var(--red);
 
-  border-top:
-    2px solid
-    var(--red);
+  font-family: var(--pixel);
 
-  border-left:
-    2px solid
-    var(--red);
+  font-size: 0.62rem;
 
 }
 
 
-.art-corner-two {
+.section-head h2 {
 
-  right:
-    28px;
+  margin: 0;
 
-  bottom:
-    18px;
+  font-family: var(--display);
 
-  border-right:
-    2px solid
-    var(--red);
+  font-size:
+    clamp(
+      3rem,
+      6vw,
+      6rem
+    );
 
-  border-bottom:
-    2px solid
-    var(--red);
+  letter-spacing: -0.07em;
+
+  line-height: 0.9;
+
+}
+
+
+.section-note {
+
+  color: #7a746f;
+
+  font-family: var(--pixel);
+
+  font-size: 0.55rem;
 
 }
 
@@ -533,136 +508,88 @@ description: Geography, GIS, environmental research, cultural resources, and spa
    SELECTED WORK
 ========================================================= */
 
-.featured {
+.selected-work {
 
-  margin-top:
-    0;
+  position: relative;
 
-}
-
-
-.featured-heading {
-
-  display:
-    flex;
-
-  align-items:
-    end;
-
-  justify-content:
-    space-between;
-
-  gap:
-    30px;
-
-  margin-bottom:
-    34px;
+  margin-top: 0;
 
 }
 
 
-.featured-heading-left {
 
-  display:
-    flex;
+/* DECOR */
 
-  align-items:
-    end;
+.selected-root {
 
-  gap:
-    18px;
+  position: absolute;
 
-}
+  top: 25%;
 
+  left: -10%;
 
-.featured-number {
+  z-index: -1;
 
-  padding-bottom:
-    8px;
+  width: 420px;
 
-  color:
-    var(--red);
+  opacity: 0.13;
 
-  font-family:
-    var(--pixel);
+  mix-blend-mode: screen;
 
-  font-size:
-    0.63rem;
+  transform:
 
-}
-
-
-.featured-heading h2 {
-
-  margin:
-    0;
-
-  font-family:
-    var(--display);
-
-  font-size:
-    clamp(
-      3rem,
-      5.5vw,
-      5.8rem
+    translateY(
+      var(--parallax-y,0)
     );
 
-  letter-spacing:
-    -0.06em;
+}
+
+
+.selected-star {
+
+  position: absolute;
+
+  top: -50px;
+
+  right: 4%;
+
+  z-index: -1;
+
+  width: 110px;
+
+  opacity: 0.28;
+
+  mix-blend-mode: screen;
 
 }
 
 
-.featured-note {
 
-  color:
-    #7d7772;
+/* GRID */
 
-  font-family:
-    var(--pixel);
+.selected-grid {
 
-  font-size:
-    0.56rem;
-
-}
-
-
-
-/* THREE FEATURED PROJECTS */
-
-.featured-grid {
-
-  display:
-    grid;
+  display: grid;
 
   grid-template-columns:
-    minmax(
-      0,
-      1.35fr
-    )
-    minmax(
-      300px,
-      0.65fr
-    );
+    minmax(0,1.32fr)
+    minmax(300px,0.68fr);
 
-  gap:
-    20px;
+  gap: 22px;
 
 }
 
 
-.featured-main {
+.selected-primary {
 
-  min-height:
-    560px;
+  min-height: 570px;
 
 }
 
 
-.featured-stack {
+.selected-stack {
 
-  display:
-    grid;
+  display: grid;
 
   grid-template-rows:
     repeat(
@@ -670,72 +597,60 @@ description: Geography, GIS, environmental research, cultural resources, and spa
       1fr
     );
 
-  gap:
-    20px;
+  gap: 22px;
 
 }
 
 
 
-/* CARD */
+/* PROJECT CARD */
 
-.featured-card {
+.work-feature {
 
-  position:
-    relative;
+  position: relative;
 
-  display:
-    block;
+  display: block;
 
-  height:
-    100%;
+  height: 100%;
 
-  min-height:
-    270px;
+  min-height: 270px;
 
-  padding:
-    8px;
+  padding: 8px;
 
-  overflow:
-    hidden;
+  overflow: hidden;
 
-  background:
-    black;
+  background: black;
 
   border:
     1px solid
     var(--line);
 
-  color:
-    white;
+  color: white;
 
-  text-decoration:
-    none;
+  text-decoration: none;
 
   transition:
 
     border-color
-    150ms ease,
+    160ms ease,
 
     box-shadow
-    150ms ease;
+    160ms ease;
 
 }
 
 
-.featured-card:hover {
+.work-feature:hover {
 
-  border-color:
-    var(--red);
+  border-color: var(--red);
 
   box-shadow:
+
     0 0 38px
-    rgba(
-      223,
-      16,
-      29,
-      0.23
-    );
+    rgba(223,16,29,0.22),
+
+    10px 10px 0
+    rgba(100,0,8,0.38);
 
 }
 
@@ -743,788 +658,114 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 /* IMAGE */
 
-.featured-card img {
+.work-feature
+.project-image {
 
-  width:
-    100%;
+  width: 100%;
 
-  height:
-    100%;
+  height: 100%;
 
-  object-fit:
-    cover;
+  object-fit: cover;
 
   filter:
 
-    grayscale(
-      0.85
-    )
+    grayscale(0.92)
 
-    brightness(
-      0.66
-    )
+    brightness(0.58)
 
-    contrast(
-      1.05
-    );
+    contrast(1.12);
 
   transition:
 
     filter
-    180ms ease,
+    220ms ease,
 
     transform
-    230ms ease;
+    260ms ease;
 
 }
 
 
-.featured-card:hover img {
+.work-feature:hover
+.project-image {
 
-  filter:
-    none;
+  filter: none;
 
   transform:
-    scale(
-      1.018
-    );
+    scale(1.02);
 
 }
 
 
 
-/* SCANLINES */
+/* HALFTONE SCAN */
 
-.featured-card::after {
+.work-feature::after {
 
-  position:
-    absolute;
+  position: absolute;
 
-  inset:
-    8px;
+  inset: 8px;
 
-  z-index:
-    2;
-
-  pointer-events:
-    none;
+  z-index: 3;
 
   background:
 
     repeating-linear-gradient(
       to bottom,
 
-      transparent
-      0,
+      transparent 0,
+      transparent 5px,
 
-      transparent
-      5px,
-
-      rgba(
-        255,
-        255,
-        255,
-        0.045
-      )
+      rgba(255,255,255,0.046)
       6px
     );
 
-  content:
-    "";
+  content: "";
 
-  opacity:
-    0;
+  opacity: 0;
 
-}
-
-
-.featured-card:hover::after {
-
-  opacity:
-    1;
+  pointer-events: none;
 
 }
 
 
+.work-feature:hover::after {
 
-/* NUMBER */
-
-.project-number {
-
-  position:
-    absolute;
-
-  top:
-    16px;
-
-  left:
-    16px;
-
-  z-index:
-    5;
-
-  padding:
-    5px 8px;
-
-  background:
-    rgba(
-      0,
-      0,
-      0,
-      0.9
-    );
-
-  border:
-    1px solid
-    white;
-
-  color:
-    var(--red);
-
-  font-family:
-    var(--pixel);
-
-  font-size:
-    0.58rem;
+  opacity: 1;
 
 }
 
 
 
-/* INFO */
+/* TARGET ART */
 
-.featured-info {
+.hover-target {
 
-  position:
-    absolute;
+  position: absolute;
 
-  right:
-    18px;
+  top: 50%;
 
-  bottom:
-    18px;
+  left: 50%;
 
-  left:
-    18px;
+  z-index: 5;
 
-  z-index:
-    5;
+  width: 170px;
 
-  display:
-    grid;
+  pointer-events: none;
 
-  grid-template-columns:
-    1fr auto;
+  opacity: 0;
 
-  align-items:
-    end;
-
-  gap:
-    20px;
-
-  padding:
-    18px;
-
-  background:
-    rgba(
-      0,
-      0,
-      0,
-      0.88
-    );
-
-  border-left:
-    3px solid
-    var(--red);
-
-  backdrop-filter:
-    blur(
-      12px
-    );
-
-}
-
-
-.featured-title {
-
-  margin:
-    0;
-
-  font-family:
-    var(--body);
-
-  font-size:
-    clamp(
-      1.3rem,
-      2.5vw,
-      2.25rem
-    );
-
-  font-weight:
-    800;
-
-  letter-spacing:
-    -0.045em;
-
-  line-height:
-    1;
-
-}
-
-
-.featured-meta {
-
-  margin-top:
-    7px;
-
-  color:
-    #918b86;
-
-  font-family:
-    var(--pixel);
-
-  font-size:
-    0.52rem;
-
-}
-
-
-.featured-arrow {
-
-  color:
-    var(--red);
-
-  font-family:
-    var(--pixel);
-
-  font-size:
-    1.4rem;
-
-}
-
-
-
-/* =========================================================
-   BROWSE AREAS
-========================================================= */
-
-.explore {
-
-  margin-top:
-    var(--section-gap);
-
-}
-
-
-.explore-heading {
-
-  display:
-    flex;
-
-  align-items:
-    end;
-
-  justify-content:
-    space-between;
-
-  gap:
-    25px;
-
-  margin-bottom:
-    35px;
-
-}
-
-
-.explore-heading h2 {
-
-  margin:
-    0;
-
-  font-family:
-    var(--display);
-
-  font-size:
-    clamp(
-      3.5rem,
-      6vw,
-      6.5rem
-    );
-
-  letter-spacing:
-    -0.07em;
-
-}
-
-
-.explore-heading span {
-
-  color:
-    #817b76;
-
-  font-family:
-    var(--pixel);
-
-  font-size:
-    0.57rem;
-
-}
-
-
-
-/* ROW */
-
-.explore-list {
-
-  border-top:
-    1px solid
-    var(--line);
-
-}
-
-
-.explore-row {
-
-  display:
-    grid;
-
-  grid-template-columns:
-    52px
-    minmax(
-      0,
-      1fr
-    )
-    320px
-    45px;
-
-  gap:
-    22px;
-
-  align-items:
-    center;
-
-  min-height:
-    140px;
-
-  padding:
-    20px 0;
-
-  border-bottom:
-    1px solid
-    var(--line);
-
-  color:
-    white;
-
-  text-decoration:
-    none;
-
-  transition:
-
-    background
-    150ms ease,
-
-    padding
-    150ms ease;
-
-}
-
-
-.explore-row:hover {
-
-  padding-right:
-    18px;
-
-  padding-left:
-    18px;
-
-  background:
-    rgba(
-      90,
-      0,
-      6,
-      0.46
-    );
-
-}
-
-
-.explore-number {
-
-  color:
-    var(--red);
-
-  font-family:
-    var(--pixel);
-
-}
-
-
-.explore-name {
-
-  margin:
-    0;
-
-  font-family:
-    var(--body);
-
-  font-size:
-    clamp(
-      1.7rem,
-      3vw,
-      3rem
-    );
-
-  font-weight:
-    800;
-
-  letter-spacing:
-    -0.05em;
-
-}
-
-
-
-/* PREVIEW */
-
-.explore-preview {
-
-  height:
-    95px;
-
-  overflow:
-    hidden;
-
-  border:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.08
-    );
-
-}
-
-
-.explore-preview img {
-
-  width:
-    100%;
-
-  height:
-    100%;
-
-  object-fit:
-    cover;
-
-  filter:
-
-    grayscale(
-      1
-    )
-
-    brightness(
-      0.4
-    )
-
-    contrast(
-      1.3
-    );
-
-  opacity:
-    0.58;
-
-  transition:
-
-    filter
-    180ms ease,
-
-    opacity
-    180ms ease,
-
-    transform
-    180ms ease;
-
-}
-
-
-.explore-row:hover
-.explore-preview img {
-
-  filter:
-    none;
-
-  opacity:
-    1;
+  mix-blend-mode: screen;
 
   transform:
-    scale(
-      1.04
-    );
 
-}
-
-
-
-/* EMPTY DATA PREVIEW */
-
-.explore-preview-empty {
-
-  display:
-    grid;
-
-  place-items:
-    center;
-
-  background:
-
-    linear-gradient(
-      45deg,
-
-      rgba(
-        223,
-        16,
-        29,
-        0.07
-      )
-      25%,
-
-      transparent
-      25%,
-
-      transparent
-      50%,
-
-      rgba(
-        223,
-        16,
-        29,
-        0.07
-      )
-      50%,
-
-      rgba(
-        223,
-        16,
-        29,
-        0.07
-      )
-      75%,
-
-      transparent
-      75%
-    );
-
-  background-size:
-    14px 14px;
-
-}
-
-
-.explore-preview-empty span {
-
-  padding:
-    6px 9px;
-
-  background:
-    black;
-
-  border:
-    1px solid
-    rgba(
-      223,
-      16,
-      29,
-      0.7
-    );
-
-  color:
-    #817b76;
-
-  font-family:
-    var(--pixel);
-
-  font-size:
-    0.51rem;
-
-}
-
-
-.explore-row:hover
-.explore-preview-empty span {
-
-  color:
-    white;
-
-}
-
-
-.explore-arrow {
-
-  color:
-    var(--red);
-
-  font-family:
-    var(--pixel);
-
-  font-size:
-    1.4rem;
-
-}
-
-
-
-/* =========================================================
-   ARCHIVE
-========================================================= */
-
-.archive {
-
-  margin-top:
-    var(--section-gap);
-
-  padding:
-    40px;
-
-  background:
-    rgba(
-      0,
-      0,
-      0,
-      0.8
-    );
-
-  border:
-    1px solid
-    var(--line);
-
-  backdrop-filter:
-    blur(
-      14px
-    );
-
-}
-
-
-.archive-top {
-
-  display:
-    grid;
-
-  grid-template-columns:
-    0.7fr
-    1.3fr;
-
-  gap:
-    60px;
-
-  margin-bottom:
-    35px;
-
-}
-
-
-.archive h2 {
-
-  margin:
-    0;
-
-  font-family:
-    var(--display);
-
-  font-size:
-    clamp(
-      2.8rem,
-      5vw,
-      5rem
-    );
-
-  letter-spacing:
-    -0.055em;
-
-}
-
-
-.archive p {
-
-  max-width:
-    620px;
-
-  margin:
-    0;
-
-  color:
-    #918b86;
-
-}
-
-
-
-/* ARCHIVE PROJECTS */
-
-.archive-grid {
-
-  display:
-    grid;
-
-  grid-template-columns:
-    repeat(
-      3,
-      1fr
-    );
-
-  gap:
-    14px;
-
-}
-
-
-.archive-item {
-
-  position:
-    relative;
-
-  display:
-    block;
-
-  min-height:
-    250px;
-
-  overflow:
-    hidden;
-
-  border:
-    1px solid
-    var(--line);
-
-}
-
-
-.archive-item img {
-
-  width:
-    100%;
-
-  height:
-    100%;
-
-  object-fit:
-    cover;
-
-  filter:
-
-    grayscale(
-      1
-    )
-
-    brightness(
-      0.5
-    );
+    translate(-50%,-50%)
+    scale(0.7)
+    rotate(-8deg);
 
   transition:
 
-    filter
+    opacity
     170ms ease,
 
     transform
@@ -1533,56 +774,854 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 }
 
 
-.archive-item:hover img {
+.work-feature:hover
+.hover-target {
 
-  filter:
-    none;
+  opacity: 0.62;
 
   transform:
-    scale(
-      1.035
+
+    translate(-50%,-50%)
+    scale(1)
+    rotate(0);
+
+}
+
+
+
+/* CORNERS */
+
+.hover-corners {
+
+  position: absolute;
+
+  inset: 14px;
+
+  z-index: 5;
+
+  width:
+    calc(100% - 28px);
+
+  height:
+    calc(100% - 28px);
+
+  pointer-events: none;
+
+  object-fit: fill;
+
+  opacity: 0;
+
+  mix-blend-mode: screen;
+
+  transition:
+    opacity
+    170ms ease;
+
+}
+
+
+.work-feature:hover
+.hover-corners {
+
+  opacity: 0.8;
+
+}
+
+
+
+/* NUMBER */
+
+.work-number {
+
+  position: absolute;
+
+  top: 16px;
+
+  left: 16px;
+
+  z-index: 6;
+
+  padding:
+    5px 8px;
+
+  background:
+    rgba(0,0,0,0.9);
+
+  border:
+    1px solid
+    white;
+
+  color: var(--red);
+
+  font-family: var(--pixel);
+
+  font-size: 0.56rem;
+
+}
+
+
+
+/* INFO */
+
+.work-info {
+
+  position: absolute;
+
+  right: 18px;
+
+  bottom: 18px;
+
+  left: 18px;
+
+  z-index: 7;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    auto;
+
+  align-items: end;
+
+  gap: 20px;
+
+  padding: 18px;
+
+  background:
+    rgba(0,0,0,0.89);
+
+  border-left:
+    3px solid
+    var(--red);
+
+  backdrop-filter:
+    blur(12px);
+
+}
+
+
+.work-title {
+
+  margin: 0;
+
+  font-family: var(--body);
+
+  font-size:
+    clamp(
+      1.25rem,
+      2.3vw,
+      2.25rem
+    );
+
+  font-weight: 800;
+
+  letter-spacing: -0.05em;
+
+  line-height: 1;
+
+}
+
+
+.work-meta {
+
+  margin-top: 8px;
+
+  color: #928b86;
+
+  font-family: var(--pixel);
+
+  font-size: 0.50rem;
+
+}
+
+
+.work-view {
+
+  color: var(--red);
+
+  font-family: var(--pixel);
+
+  font-size: 0.58rem;
+
+}
+
+
+
+/* =========================================================
+   BROWSE
+========================================================= */
+
+.browse-section {
+
+  position: relative;
+
+  margin-top:
+    var(--section-gap);
+
+}
+
+
+
+/* DECOR */
+
+.browse-fern {
+
+  position: absolute;
+
+  top: -80px;
+
+  right: -5%;
+
+  z-index: -1;
+
+  width: 360px;
+
+  opacity: 0.15;
+
+  mix-blend-mode: screen;
+
+  transform:
+
+    translateY(
+      var(--parallax-y,0)
+    )
+    rotate(-8deg);
+
+}
+
+
+.browse-moon {
+
+  position: absolute;
+
+  left: 38%;
+
+  bottom: -110px;
+
+  z-index: -1;
+
+  width: 300px;
+
+  opacity: 0.14;
+
+  mix-blend-mode: screen;
+
+}
+
+
+
+/* BROWSE LAYOUT */
+
+.browse-layout {
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0,0.95fr)
+    minmax(360px,1.05fr);
+
+  gap: 60px;
+
+  align-items: start;
+
+}
+
+
+
+/* ROWS */
+
+.browse-list {
+
+  border-top:
+    1px solid
+    var(--line);
+
+}
+
+
+.browse-row {
+
+  display: grid;
+
+  grid-template-columns:
+    42px
+    1fr
+    28px;
+
+  gap: 16px;
+
+  align-items: center;
+
+  min-height: 118px;
+
+  padding:
+    19px 0;
+
+  border-bottom:
+    1px solid
+    var(--line);
+
+  color: white;
+
+  text-decoration: none;
+
+  transition:
+
+    padding
+    150ms ease,
+
+    background
+    150ms ease;
+
+}
+
+
+.browse-row:hover,
+.browse-row.active {
+
+  padding-right: 16px;
+
+  padding-left: 16px;
+
+  background:
+    rgba(90,0,7,0.38);
+
+}
+
+
+.browse-number {
+
+  color: var(--red);
+
+  font-family: var(--pixel);
+
+  font-size: 0.58rem;
+
+}
+
+
+.browse-name {
+
+  margin: 0;
+
+  font-family: var(--body);
+
+  font-size:
+    clamp(
+      1.45rem,
+      2.5vw,
+      2.55rem
+    );
+
+  font-weight: 800;
+
+  letter-spacing: -0.05em;
+
+  line-height: 1.05;
+
+}
+
+
+.browse-description {
+
+  margin-top: 7px;
+
+  color: #817a75;
+
+  font-size: 0.77rem;
+
+}
+
+
+.browse-arrow {
+
+  color: var(--red);
+
+  font-family: var(--pixel);
+
+}
+
+
+
+/* PREVIEW */
+
+.browse-preview {
+
+  position: sticky;
+
+  top: 125px;
+
+  min-height: 500px;
+
+  overflow: hidden;
+
+  background: black;
+
+  border:
+    1px solid
+    var(--line);
+
+}
+
+
+.browse-preview::before {
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  background:
+
+    repeating-linear-gradient(
+      to bottom,
+
+      transparent 0,
+      transparent 5px,
+
+      rgba(255,255,255,0.04)
+      6px
+    );
+
+  content: "";
+
+  pointer-events: none;
+
+}
+
+
+.browse-preview-image {
+
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  filter:
+
+    grayscale(1)
+
+    brightness(0.56);
+
+  transition:
+
+    opacity
+    180ms ease,
+
+    filter
+    180ms ease,
+
+    transform
+    250ms ease;
+
+}
+
+
+.browse-preview:hover
+.browse-preview-image {
+
+  filter: none;
+
+  transform:
+    scale(1.02);
+
+}
+
+
+
+/* EMPTY */
+
+.browse-preview.empty {
+
+  background:
+
+    linear-gradient(
+      45deg,
+
+      rgba(223,16,29,0.05)
+      25%,
+
+      transparent
+      25%,
+
+      transparent
+      50%,
+
+      rgba(223,16,29,0.05)
+      50%,
+
+      rgba(223,16,29,0.05)
+      75%,
+
+      transparent
+      75%
+    ),
+
+    black;
+
+  background-size:
+    18px 18px;
+
+}
+
+
+.browse-preview.empty
+.browse-preview-image {
+
+  opacity: 0;
+
+}
+
+
+
+/* PREVIEW ART */
+
+.preview-topography {
+
+  position: absolute;
+
+  top: -2%;
+
+  left: -5%;
+
+  z-index: 3;
+
+  width: 53%;
+
+  opacity: 0.32;
+
+  mix-blend-mode: screen;
+
+}
+
+
+.preview-celestial {
+
+  position: absolute;
+
+  top: 5%;
+
+  right: 5%;
+
+  z-index: 3;
+
+  width: 36%;
+
+  opacity: 0.25;
+
+  mix-blend-mode: screen;
+
+}
+
+
+
+/* INFO */
+
+.browse-preview-info {
+
+  position: absolute;
+
+  right: 20px;
+
+  bottom: 20px;
+
+  left: 20px;
+
+  z-index: 5;
+
+  padding: 19px;
+
+  background:
+    rgba(0,0,0,0.89);
+
+  border-left:
+    3px solid
+    var(--red);
+
+}
+
+
+.browse-preview-info span {
+
+  color: var(--red);
+
+  font-family: var(--pixel);
+
+  font-size: 0.54rem;
+
+}
+
+
+.browse-preview-info h3 {
+
+  margin:
+    7px 0 0;
+
+  font-size:
+    clamp(
+      1.5rem,
+      2vw,
+      2.2rem
+    );
+
+  font-weight: 800;
+
+  letter-spacing: -0.045em;
+
+}
+
+
+.browse-preview-info p {
+
+  margin:
+    8px 0 0;
+
+  color: #98918b;
+
+  font-size: 0.78rem;
+
+}
+
+
+
+/* =========================================================
+   ART DIVIDER
+========================================================= */
+
+.art-divider {
+
+  position: relative;
+
+  height: 250px;
+
+  margin:
+    var(--section-gap)
+    calc(50% - 50vw)
+    0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+}
+
+
+.art-divider
+.divider-river {
+
+  position: absolute;
+
+  left: 5%;
+
+  bottom: -20%;
+
+  width: 57%;
+
+  opacity: 0.25;
+
+  mix-blend-mode: screen;
+
+  transform:
+
+    translateY(
+      var(--parallax-y,0)
     );
 
 }
 
 
-.archive-label {
+.art-divider
+.divider-roots {
 
-  position:
-    absolute;
+  position: absolute;
 
-  right:
-    10px;
+  right: -4%;
 
-  bottom:
-    10px;
+  bottom: -20%;
 
-  left:
-    10px;
+  width: 47%;
 
-  padding:
-    9px;
+  opacity: 0.20;
+
+  mix-blend-mode: screen;
+
+  transform:
+
+    translateY(
+      var(--parallax-y,0)
+    );
+
+}
+
+
+
+/* =========================================================
+   OTHER WORK
+========================================================= */
+
+.other-work {
+
+  margin-top: 60px;
+
+  padding: 40px;
 
   background:
-    rgba(
-      0,
-      0,
-      0,
-      0.88
+    rgba(0,0,0,0.80);
+
+  border:
+    1px solid
+    var(--line);
+
+  backdrop-filter:
+    blur(14px);
+
+}
+
+
+.other-top {
+
+  display: grid;
+
+  grid-template-columns:
+    0.7fr
+    1.3fr;
+
+  gap: 55px;
+
+  margin-bottom: 34px;
+
+}
+
+
+.other-top h2 {
+
+  margin: 0;
+
+  font-family: var(--display);
+
+  font-size:
+    clamp(
+      2.8rem,
+      5vw,
+      5rem
     );
+
+  letter-spacing: -0.06em;
+
+}
+
+
+.other-top p {
+
+  margin: 0;
+
+  color: #928b86;
+
+}
+
+
+
+/* GRID */
+
+.other-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      1fr
+    );
+
+  gap: 15px;
+
+}
+
+
+.other-item {
+
+  position: relative;
+
+  display: block;
+
+  min-height: 260px;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    var(--line);
+
+  color: white;
+
+  text-decoration: none;
+
+}
+
+
+.other-item img {
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  filter:
+
+    grayscale(1)
+
+    brightness(0.50);
+
+  transition:
+
+    filter
+    180ms ease,
+
+    transform
+    220ms ease;
+
+}
+
+
+.other-item:hover img {
+
+  filter: none;
+
+  transform:
+    scale(1.035);
+
+}
+
+
+.other-item-label {
+
+  position: absolute;
+
+  right: 10px;
+
+  bottom: 10px;
+
+  left: 10px;
+
+  padding: 10px;
+
+  background:
+    rgba(0,0,0,0.88);
 
   border-left:
     2px solid
     var(--red);
 
-  color:
-    white;
+  font-family: var(--pixel);
 
-  font-family:
-    var(--pixel);
-
-  font-size:
-    0.57rem;
+  font-size: 0.55rem;
 
 }
 
@@ -1594,69 +1633,43 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 .home-contact {
 
-  display:
-    grid;
+  position: relative;
+
+  display: grid;
 
   grid-template-columns:
     1fr
     auto;
 
-  align-items:
-    center;
+  align-items: center;
 
-  gap:
-    50px;
+  gap: 50px;
 
   margin-top:
     var(--section-gap);
 
-  padding:
-    42px;
+  padding: 43px;
+
+  overflow: hidden;
 
   background:
-    rgba(
-      0,
-      0,
-      0,
-      0.82
-    );
+    rgba(0,0,0,0.85);
 
   border:
     1px solid
     var(--red);
-
-  backdrop-filter:
-    blur(
-      14px
-    );
-
-}
-
-
-.home-contact span {
-
-  color:
-    var(--red);
-
-  font-family:
-    var(--pixel);
-
-  font-size:
-    0.58rem;
 
 }
 
 
 .home-contact h2 {
 
-  max-width:
-    850px;
+  max-width: 850px;
 
   margin:
-    10px 0 0;
+    8px 0 0;
 
-  font-family:
-    var(--display);
+  font-family: var(--display);
 
   font-size:
     clamp(
@@ -1665,25 +1678,53 @@ description: Geography, GIS, environmental research, cultural resources, and spa
       5rem
     );
 
-  letter-spacing:
-    -0.06em;
+  letter-spacing: -0.06em;
 
-  line-height:
-    0.95;
+  line-height: 0.95;
+
+}
+
+
+.home-contact-label {
+
+  color: var(--red);
+
+  font-family: var(--pixel);
+
+  font-size: 0.57rem;
+
+}
+
+
+.contact-star {
+
+  position: absolute;
+
+  top: -25px;
+
+  right: 18%;
+
+  width: 170px;
+
+  opacity: 0.18;
+
+  mix-blend-mode: screen;
+
+  pointer-events: none;
 
 }
 
 
 
 /* =========================================================
-   TABLET
+   RESPONSIVE
 ========================================================= */
 
 @media (
   max-width: 1050px
 ) {
 
-  .featured-grid {
+  .selected-grid {
 
     grid-template-columns:
       1fr;
@@ -1691,15 +1732,14 @@ description: Geography, GIS, environmental research, cultural resources, and spa
   }
 
 
-  .featured-main {
+  .selected-primary {
 
-    min-height:
-      470px;
+    min-height: 470px;
 
   }
 
 
-  .featured-stack {
+  .selected-stack {
 
     grid-template-columns:
       1fr
@@ -1711,22 +1751,29 @@ description: Geography, GIS, environmental research, cultural resources, and spa
   }
 
 
-  .featured-stack
-  .featured-card {
+  .selected-stack
+  .work-feature {
 
-    min-height:
-      330px;
+    min-height: 330px;
 
   }
 
 
-  .explore-row {
+  .browse-layout {
 
     grid-template-columns:
-      45px
-      1fr
-      230px
-      35px;
+      1fr;
+
+  }
+
+
+  .browse-preview {
+
+    position: relative;
+
+    top: auto;
+
+    min-height: 420px;
 
   }
 
@@ -1734,21 +1781,22 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
 
-/* =========================================================
-   MOBILE
-========================================================= */
-
 @media (
-  max-width: 700px
+  max-width: 720px
 ) {
 
-  .hero {
+  .home-hero {
 
-    min-height:
-      auto;
+    min-height: auto;
 
-    padding-top:
-      20px;
+    padding-top: 20px;
+
+  }
+
+
+  .hero-copy {
+
+    padding: 26px;
 
   }
 
@@ -1765,50 +1813,41 @@ description: Geography, GIS, environmental research, cultural resources, and spa
   }
 
 
-  .hero-meta {
+  .hero-topography,
+  .hero-orbit,
+  .hero-root {
 
-    gap:
-      8px 15px;
-
-  }
-
-
-  .hero-meta span::after {
-
-    display:
-      none;
+    opacity: 0.12;
 
   }
 
 
-  .art-break {
+  .land-transition {
 
-    height:
-      190px;
+    height: 240px;
 
-  }
-
-
-  .featured-heading {
-
-    align-items:
-      start;
-
-    flex-direction:
-      column;
+    margin-bottom: -30px;
 
   }
 
 
-  .featured-main {
+  .section-head {
 
-    min-height:
-      350px;
+    align-items: start;
+
+    flex-direction: column;
 
   }
 
 
-  .featured-stack {
+  .selected-primary {
+
+    min-height: 350px;
+
+  }
+
+
+  .selected-stack {
 
     grid-template-columns:
       1fr;
@@ -1816,66 +1855,38 @@ description: Geography, GIS, environmental research, cultural resources, and spa
   }
 
 
-  .explore-heading {
+  .browse-preview {
 
-    align-items:
-      start;
-
-    flex-direction:
-      column;
+    min-height: 340px;
 
   }
 
 
-  .explore-row {
+  .browse-description {
 
-    grid-template-columns:
-      34px
-      1fr
-      25px;
-
-    min-height:
-      105px;
+    display: none;
 
   }
 
 
-  .explore-preview {
+  .other-work {
 
-    display:
-      none;
-
-  }
-
-
-  .explore-name {
-
-    font-size:
-      1.6rem;
+    padding: 24px;
 
   }
 
 
-  .archive {
-
-    padding:
-      24px;
-
-  }
-
-
-  .archive-top {
+  .other-top {
 
     grid-template-columns:
       1fr;
 
-    gap:
-      20px;
+    gap: 18px;
 
   }
 
 
-  .archive-grid {
+  .other-grid {
 
     grid-template-columns:
       1fr;
@@ -1888,8 +1899,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     grid-template-columns:
       1fr;
 
-    padding:
-      26px;
+    padding: 26px;
 
   }
 
@@ -1906,29 +1916,49 @@ description: Geography, GIS, environmental research, cultural resources, and spa
        INTRO
   ====================================================== -->
 
-  <section class="hero">
+  <section class="home-hero">
 
 
-    <div class="hero-inner reveal">
+    <img
+      class="hero-topography"
+      data-parallax="-0.035"
+      src="{{ '/assets/art/topography-03.png' | relative_url }}"
+      alt=""
+      aria-hidden="true"
+    >
+
+
+    <img
+      class="hero-orbit"
+      data-parallax="0.05"
+      src="{{ '/assets/art/orbit-01.png' | relative_url }}"
+      alt=""
+      aria-hidden="true"
+    >
+
+
+    <img
+      class="hero-root"
+      data-parallax="-0.055"
+      src="{{ '/assets/art/root-network-01.png' | relative_url }}"
+      alt=""
+      aria-hidden="true"
+    >
+
+
+
+    <div class="hero-copy reveal">
 
 
       <div class="hero-meta">
 
-        <span>
-          GEOGRAPHY
-        </span>
+        <span>GEOGRAPHY</span>
 
-        <span>
-          GIS
-        </span>
+        <span>GIS</span>
 
-        <span>
-          ENVIRONMENTAL RESOURCES
-        </span>
+        <span>ENVIRONMENTAL RESOURCES</span>
 
-        <span>
-          CULTURAL RESOURCES
-        </span>
+        <span>CULTURAL RESOURCES</span>
 
       </div>
 
@@ -1951,8 +1981,8 @@ description: Geography, GIS, environmental research, cultural resources, and spa
       <div class="hero-role">
 
         Geography &amp; Environmental Resources student
-        building work across GIS, environmental analysis,
-        cultural resources, and spatial research.
+        working across GIS, environmental analysis,
+        cultural resources, cartography, and spatial research.
 
       </div>
 
@@ -1960,11 +1990,11 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
       <p class="hero-description">
 
-        My portfolio includes university work,
-        independent GIS projects, cartography,
-        public-facing cultural-resource projects,
-        and research into environmental and geographic
-        systems.
+        This portfolio includes university work,
+        independent GIS projects, cultural-resource
+        communication, environmental research,
+        and an expanding collection of field-based
+        and technical work.
 
       </p>
 
@@ -1974,7 +2004,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
         <a
           class="button"
-          href="#featured"
+          href="#selected-work"
         >
           VIEW SELECTED WORK ↓
         </a>
@@ -2002,7 +2032,11 @@ description: Geography, GIS, environmental research, cultural resources, and spa
         </span>
 
         <span class="hero-field">
-          ENVIRONMENTAL GEOGRAPHY
+          WATER
+        </span>
+
+        <span class="hero-field">
+          PHYSICAL GEOGRAPHY
         </span>
 
         <span class="hero-field">
@@ -2024,23 +2058,21 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
   <!-- =====================================================
-       ART TRANSITION
+       LAND / WATER ART FLOW
   ====================================================== -->
 
-  <section
-    class="art-break reveal"
-    aria-hidden="true"
-  >
+  <div class="land-transition">
 
-    <div class="art-break-primary"></div>
 
-    <div class="art-break-secondary"></div>
+    <img
+      data-parallax="-0.025"
+      src="{{ '/assets/art/section-transition-land-water.png' | relative_url }}"
+      alt=""
+      aria-hidden="true"
+    >
 
-    <div class="art-corner art-corner-one"></div>
 
-    <div class="art-corner art-corner-two"></div>
-
-  </section>
+  </div>
 
 
 
@@ -2049,19 +2081,38 @@ description: Geography, GIS, environmental research, cultural resources, and spa
   ====================================================== -->
 
   <section
-    class="featured"
-    id="featured"
+    class="selected-work"
+    id="selected-work"
   >
 
 
-    <header class="featured-heading reveal">
+    <img
+      class="selected-root"
+      data-parallax="0.035"
+      src="{{ '/assets/art/roots-large-02.png' | relative_url }}"
+      alt=""
+      aria-hidden="true"
+    >
 
 
-      <div class="featured-heading-left">
+    <img
+      class="selected-star"
+      src="{{ '/assets/art/compass-star-01.png' | relative_url }}"
+      alt=""
+      aria-hidden="true"
+    >
 
-        <span class="featured-number">
+
+
+    <header class="section-head reveal">
+
+
+      <div class="section-head-left">
+
+        <span class="section-number">
           01 /
         </span>
+
 
         <h2>
           SELECTED WORK
@@ -2070,49 +2121,65 @@ description: Geography, GIS, environmental research, cultural resources, and spa
       </div>
 
 
-      <div class="featured-note">
+      <span class="section-note">
         CURRENT FEATURED PROJECTS
-      </div>
+      </span>
 
 
     </header>
 
 
 
-    <div class="featured-grid">
+    <div class="selected-grid">
 
 
       <!-- GHOST RIVERS -->
 
       <div
-        class="featured-main reveal"
+        class="selected-primary reveal"
         data-tilt
       >
 
         <a
-          class="featured-card"
+          class="work-feature"
           data-discover
-          data-log="GHOST RIVERS"
           href="{{ '/projects/ghost-rivers-governed-land/' | relative_url }}"
         >
 
           <img
+            class="project-image"
             src="{{ '/ghost-rivers-governed-land-poster-2026.png' | relative_url }}"
             alt="Ghost Rivers and Governed Land"
           >
 
 
-          <span class="project-number">
+          <img
+            class="hover-target"
+            src="{{ '/assets/art/target-01.png' | relative_url }}"
+            alt=""
+            aria-hidden="true"
+          >
+
+
+          <img
+            class="hover-corners"
+            src="{{ '/assets/art/corner-brackets-01.png' | relative_url }}"
+            alt=""
+            aria-hidden="true"
+          >
+
+
+          <span class="work-number">
             01
           </span>
 
 
-          <div class="featured-info">
+          <div class="work-info">
 
 
             <div>
 
-              <h3 class="featured-title">
+              <h3 class="work-title">
 
                 Ghost Rivers &amp;
                 Governed Land
@@ -2120,7 +2187,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
               </h3>
 
 
-              <div class="featured-meta">
+              <div class="work-meta">
 
                 ENVIRONMENTAL GEOGRAPHY /
                 WATER / GIS
@@ -2130,8 +2197,8 @@ description: Geography, GIS, environmental research, cultural resources, and spa
             </div>
 
 
-            <span class="featured-arrow">
-              ↗
+            <span class="work-view">
+              VIEW ↗
             </span>
 
 
@@ -2143,7 +2210,9 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
 
-      <div class="featured-stack">
+      <!-- STACK -->
+
+      <div class="selected-stack">
 
 
         <!-- ICELAND -->
@@ -2154,34 +2223,50 @@ description: Geography, GIS, environmental research, cultural resources, and spa
         >
 
           <a
-            class="featured-card"
+            class="work-feature"
             data-discover
-            data-log="ICELAND SYSTEMS"
             href="{{ '/projects/iceland-volcanic-glacial-systems/' | relative_url }}"
           >
 
             <img
+              class="project-image"
               src="{{ '/iceland-volcanic-glacial-systems-enhanced.png' | relative_url }}"
               alt="Iceland volcanic and glacial systems"
             >
 
 
-            <span class="project-number">
+            <img
+              class="hover-target"
+              src="{{ '/assets/art/target-01.png' | relative_url }}"
+              alt=""
+              aria-hidden="true"
+            >
+
+
+            <img
+              class="hover-corners"
+              src="{{ '/assets/art/corner-brackets-02.png' | relative_url }}"
+              alt=""
+              aria-hidden="true"
+            >
+
+
+            <span class="work-number">
               02
             </span>
 
 
-            <div class="featured-info">
+            <div class="work-info">
 
 
               <div>
 
-                <h3 class="featured-title">
+                <h3 class="work-title">
                   Iceland Systems
                 </h3>
 
 
-                <div class="featured-meta">
+                <div class="work-meta">
 
                   VOLCANISM /
                   GLACIERS /
@@ -2192,8 +2277,8 @@ description: Geography, GIS, environmental research, cultural resources, and spa
               </div>
 
 
-              <span class="featured-arrow">
-                ↗
+              <span class="work-view">
+                VIEW ↗
               </span>
 
 
@@ -2205,7 +2290,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
 
-        <!-- SMUDGING SPACE -->
+        <!-- SMUDGING -->
 
         <div
           class="reveal"
@@ -2213,34 +2298,50 @@ description: Geography, GIS, environmental research, cultural resources, and spa
         >
 
           <a
-            class="featured-card"
+            class="work-feature"
             data-discover
-            data-log="SMUDGING SPACE"
             href="{{ '/projects/smudging-space-plaque/' | relative_url }}"
           >
 
             <img
+              class="project-image"
               src="{{ '/smudging-space-plaque.png' | relative_url }}"
               alt="Smudging Space commemorative plaque"
             >
 
 
-            <span class="project-number">
+            <img
+              class="hover-target"
+              src="{{ '/assets/art/target-01.png' | relative_url }}"
+              alt=""
+              aria-hidden="true"
+            >
+
+
+            <img
+              class="hover-corners"
+              src="{{ '/assets/art/rough-frame-02.png' | relative_url }}"
+              alt=""
+              aria-hidden="true"
+            >
+
+
+            <span class="work-number">
               03
             </span>
 
 
-            <div class="featured-info">
+            <div class="work-info">
 
 
               <div>
 
-                <h3 class="featured-title">
+                <h3 class="work-title">
                   Smudging Space
                 </h3>
 
 
-                <div class="featured-meta">
+                <div class="work-meta">
 
                   CULTURAL RESOURCES /
                   DESIGN
@@ -2250,8 +2351,8 @@ description: Geography, GIS, environmental research, cultural resources, and spa
               </div>
 
 
-              <span class="featured-arrow">
-                ↗
+              <span class="work-view">
+                VIEW ↗
               </span>
 
 
@@ -2273,177 +2374,297 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
   <!-- =====================================================
-       EXPLORE BY AREA
+       BROWSE BY AREA
   ====================================================== -->
 
-  <section class="explore">
+  <section class="browse-section">
 
 
-    <header class="explore-heading reveal">
+    <img
+      class="browse-fern"
+      data-parallax="-0.04"
+      src="{{ '/assets/art/fern-large-01.png' | relative_url }}"
+      alt=""
+      aria-hidden="true"
+    >
 
-      <h2>
-        BROWSE BY AREA
-      </h2>
 
-      <span>
-        PORTFOLIO SECTIONS
+    <img
+      class="browse-moon"
+      data-parallax="0.03"
+      src="{{ '/assets/art/moon-phases-01.png' | relative_url }}"
+      alt=""
+      aria-hidden="true"
+    >
+
+
+
+    <header class="section-head reveal">
+
+
+      <div class="section-head-left">
+
+        <span class="section-number">
+          02 /
+        </span>
+
+
+        <h2>
+          BROWSE BY AREA
+        </h2>
+
+      </div>
+
+
+      <span class="section-note">
+        HOVER TO PREVIEW
       </span>
+
 
     </header>
 
 
 
-    <div class="explore-list">
+    <div class="browse-layout">
 
 
-      <!-- ENVIRONMENT -->
+      <!-- LIST -->
 
-      <a
-        class="explore-row reveal"
-        data-log="ENVIRONMENTAL GEOGRAPHY"
-        href="{{ '/environmental-geography.html' | relative_url }}"
-      >
-
-        <span class="explore-number">
-          01
-        </span>
+      <div class="browse-list">
 
 
-        <h3 class="explore-name">
+        <!-- ENV -->
 
-          Environmental Geography
+        <a
+          class="browse-row reveal"
+          href="{{ '/environmental-geography.html' | relative_url }}"
+          data-preview-title="Environmental Geography"
+          data-preview-meta="Water systems, landscape change, environmental interpretation, and physical geography."
+          data-preview-image="/ghost-rivers-governed-land-poster-2026.png"
+        >
 
-        </h3>
-
-
-        <div class="explore-preview">
-
-          <img
-            src="{{ '/ghost-rivers-governed-land-poster-2026.png' | relative_url }}"
-            alt=""
-          >
-
-        </div>
-
-
-        <span class="explore-arrow">
-          ↗
-        </span>
-
-      </a>
-
-
-
-      <!-- GIS -->
-
-      <a
-        class="explore-row reveal"
-        data-log="GEOGRAPHY + SPATIAL ANALYSIS"
-        href="{{ '/geography-spatial-analysis.html' | relative_url }}"
-      >
-
-        <span class="explore-number">
-          02
-        </span>
-
-
-        <h3 class="explore-name">
-
-          Geography &amp; Spatial Analysis
-
-        </h3>
-
-
-        <div class="explore-preview">
-
-          <img
-            src="{{ '/california-casino-distribution-map.png' | relative_url }}"
-            alt=""
-          >
-
-        </div>
-
-
-        <span class="explore-arrow">
-          ↗
-        </span>
-
-      </a>
-
-
-
-      <!-- CULTURAL -->
-
-      <a
-        class="explore-row reveal"
-        data-log="CULTURAL RESOURCES"
-        href="{{ '/cultural-resources.html' | relative_url }}"
-      >
-
-        <span class="explore-number">
-          03
-        </span>
-
-
-        <h3 class="explore-name">
-
-          Cultural Resources
-
-        </h3>
-
-
-        <div class="explore-preview">
-
-          <img
-            src="{{ '/smudging-space-plaque.png' | relative_url }}"
-            alt=""
-          >
-
-        </div>
-
-
-        <span class="explore-arrow">
-          ↗
-        </span>
-
-      </a>
-
-
-
-      <!-- DATA -->
-
-      <a
-        class="explore-row reveal"
-        data-log="DATA + PROGRAMMING"
-        href="{{ '/data-programming.html' | relative_url }}"
-      >
-
-        <span class="explore-number">
-          04
-        </span>
-
-
-        <h3 class="explore-name">
-
-          Data &amp; Programming
-
-        </h3>
-
-
-        <div class="explore-preview explore-preview-empty">
-
-          <span>
-            PROJECTS IN DEVELOPMENT
+          <span class="browse-number">
+            01
           </span>
 
+
+          <div>
+
+            <h3 class="browse-name">
+              Environmental Geography
+            </h3>
+
+
+            <div class="browse-description">
+
+              Water, landscapes, hazards,
+              physical systems.
+
+            </div>
+
+          </div>
+
+
+          <span class="browse-arrow">
+            ↗
+          </span>
+
+        </a>
+
+
+
+        <!-- SPATIAL -->
+
+        <a
+          class="browse-row reveal"
+          href="{{ '/geography-spatial-analysis.html' | relative_url }}"
+          data-preview-title="Geography & Spatial Analysis"
+          data-preview-meta="Cartography, distribution, spatial relationships, mapping, and geographic comparison."
+          data-preview-image="/california-casino-distribution-map.png"
+        >
+
+          <span class="browse-number">
+            02
+          </span>
+
+
+          <div>
+
+            <h3 class="browse-name">
+
+              Geography &amp;
+              Spatial Analysis
+
+            </h3>
+
+
+            <div class="browse-description">
+
+              Mapping, distribution,
+              patterns, spatial relationships.
+
+            </div>
+
+          </div>
+
+
+          <span class="browse-arrow">
+            ↗
+          </span>
+
+        </a>
+
+
+
+        <!-- CULTURAL -->
+
+        <a
+          class="browse-row reveal"
+          href="{{ '/cultural-resources.html' | relative_url }}"
+          data-preview-title="Cultural Resources"
+          data-preview-meta="NAGPRA and CalNAGPRA communication, historical geography, public resources, and interpretation."
+          data-preview-image="/smudging-space-plaque.png"
+        >
+
+          <span class="browse-number">
+            03
+          </span>
+
+
+          <div>
+
+            <h3 class="browse-name">
+
+              Cultural Resources
+
+            </h3>
+
+
+            <div class="browse-description">
+
+              NAGPRA, historical geography,
+              communication, interpretation.
+
+            </div>
+
+          </div>
+
+
+          <span class="browse-arrow">
+            ↗
+          </span>
+
+        </a>
+
+
+
+        <!-- DATA -->
+
+        <a
+          class="browse-row reveal"
+          href="{{ '/data-programming.html' | relative_url }}"
+          data-preview-title="Data & Programming"
+          data-preview-meta="Python, automation, ArcPy, data workflows, and future technical projects currently in development."
+          data-preview-image="none"
+        >
+
+          <span class="browse-number">
+            04
+          </span>
+
+
+          <div>
+
+            <h3 class="browse-name">
+
+              Data &amp; Programming
+
+            </h3>
+
+
+            <div class="browse-description">
+
+              Technical work currently
+              in development.
+
+            </div>
+
+          </div>
+
+
+          <span class="browse-arrow">
+            ↗
+          </span>
+
+        </a>
+
+
+      </div>
+
+
+
+      <!-- PREVIEW -->
+
+      <div
+        class="browse-preview"
+        id="browse-preview"
+      >
+
+
+        <img
+          class="browse-preview-image"
+          id="browse-preview-image"
+          src="/ghost-rivers-governed-land-poster-2026.png"
+          alt=""
+        >
+
+
+        <img
+          class="preview-topography"
+          src="{{ '/assets/art/topography-01.png' | relative_url }}"
+          alt=""
+          aria-hidden="true"
+        >
+
+
+        <img
+          class="preview-celestial"
+          src="{{ '/assets/art/celestial-cross-01.png' | relative_url }}"
+          alt=""
+          aria-hidden="true"
+        >
+
+
+        <div class="browse-preview-info">
+
+
+          <span>
+            PORTFOLIO AREA /
+          </span>
+
+
+          <h3
+            id="browse-preview-title"
+          >
+            Environmental Geography
+          </h3>
+
+
+          <p
+            id="browse-preview-meta"
+          >
+
+            Water systems, landscape change,
+            environmental interpretation,
+            and physical geography.
+
+          </p>
+
+
         </div>
 
 
-        <span class="explore-arrow">
-          ↗
-        </span>
-
-      </a>
+      </div>
 
 
     </div>
@@ -2454,13 +2675,42 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
   <!-- =====================================================
+       GRAPHIC FLOW
+  ====================================================== -->
+
+  <div class="art-divider">
+
+
+    <img
+      class="divider-river"
+      data-parallax="0.035"
+      src="{{ '/assets/art/river-network-02.png' | relative_url }}"
+      alt=""
+      aria-hidden="true"
+    >
+
+
+    <img
+      class="divider-roots"
+      data-parallax="-0.04"
+      src="{{ '/assets/art/root-network-01.png' | relative_url }}"
+      alt=""
+      aria-hidden="true"
+    >
+
+
+  </div>
+
+
+
+  <!-- =====================================================
        OTHER WORK
   ====================================================== -->
 
-  <section class="archive reveal">
+  <section class="other-work reveal">
 
 
-    <div class="archive-top">
+    <div class="other-top">
 
 
       <h2>
@@ -2481,13 +2731,12 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
 
-    <div class="archive-grid">
+    <div class="other-grid">
 
 
       <a
-        class="archive-item"
+        class="other-item"
         data-discover
-        data-log="CALIFORNIA CASINO DISTRIBUTION"
         href="{{ '/projects/california-casino-distribution-map/' | relative_url }}"
       >
 
@@ -2497,7 +2746,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
         >
 
 
-        <div class="archive-label">
+        <div class="other-item-label">
 
           CALIFORNIA CASINO DISTRIBUTION ↗
 
@@ -2508,9 +2757,8 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
       <a
-        class="archive-item"
+        class="other-item"
         data-discover
-        data-log="NAGPRA EDUCATIONAL MEDIA"
         href="{{ '/projects/nagpra-educational-media/' | relative_url }}"
       >
 
@@ -2520,7 +2768,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
         >
 
 
-        <div class="archive-label">
+        <div class="other-item-label">
 
           NAGPRA EDUCATIONAL MEDIA ↗
 
@@ -2531,9 +2779,8 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
       <a
-        class="archive-item"
+        class="other-item"
         data-discover
-        data-log="CROWS LANDING + MEW-KO"
         href="{{ '/projects/crows-landing-mew-ko/' | relative_url }}"
       >
 
@@ -2543,7 +2790,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
         >
 
 
-        <div class="archive-label">
+        <div class="other-item-label">
 
           CROWS LANDING / MEW-KO ↗
 
@@ -2566,11 +2813,19 @@ description: Geography, GIS, environmental research, cultural resources, and spa
   <section class="home-contact reveal">
 
 
+    <img
+      class="contact-star"
+      src="{{ '/assets/art/sunburst-01.png' | relative_url }}"
+      alt=""
+      aria-hidden="true"
+    >
+
+
     <div>
 
-      <span>
+      <div class="home-contact-label">
         CONTACT /
-      </span>
+      </div>
 
 
       <h2>
