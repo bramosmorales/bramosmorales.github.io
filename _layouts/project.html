@@ -23,7 +23,6 @@
     {% endif %}
   </title>
 
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
   <link
@@ -32,12 +31,10 @@
     crossorigin
   >
 
-
   <link
-    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,500;0,600;1,500;1,600&family=Rock+Salt&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=Rock+Salt&display=swap"
     rel="stylesheet"
   >
-
 
   <link
     rel="stylesheet"
@@ -50,94 +47,51 @@
 <body>
 
 
-  <!-- =====================================================
-       PAGE ART
-  ====================================================== -->
+  <!-- BACKGROUND ART -->
 
   <div
-    class="site-background-art"
+    class="background-art"
     aria-hidden="true"
   >
 
     <svg
-      class="background-river"
+      class="bg-contours"
+      viewBox="0 0 800 800"
+    >
+      <path d="M390 45C600 50 760 180 730 400C705 600 555 745 350 725C155 705 35 565 65 355C90 155 195 40 390 45Z"/>
+      <path d="M390 105C555 105 675 215 660 390C645 555 525 665 365 660C205 650 105 535 120 375C135 215 230 100 390 105Z"/>
+      <path d="M390 170C505 165 600 250 595 385C590 510 500 595 375 595C250 590 175 500 180 385C190 265 270 175 390 170Z"/>
+      <path d="M390 235C465 230 530 290 530 385C530 470 465 530 385 530C300 525 245 465 250 390C255 305 310 240 390 235Z"/>
+    </svg>
+
+
+    <svg
+      class="bg-river"
       viewBox="0 0 500 1000"
       preserveAspectRatio="none"
     >
-
-      <path
-        d="
-          M120 -80
-          C430 100 40 240 300 390
-          C550 540 70 650 280 810
-          C430 920 220 1040 150 1100
-        "
-      />
-
-      <path
-        d="
-          M155 -80
-          C465 100 75 240 335 390
-          C585 540 105 650 315 810
-          C465 920 255 1040 185 1100
-        "
-      />
-
+      <path d="M90 -60C430 80 70 245 315 395C545 535 70 680 300 820C470 925 260 1035 160 1100"/>
+      <path d="M120 -60C460 80 100 245 345 395C575 535 100 680 330 820C500 925 290 1035 190 1100"/>
     </svg>
 
 
-    <svg
-      class="background-topo"
-      viewBox="0 0 600 600"
-    >
-
-      <path d="M300 30 C470 30 570 140 550 300 C530 465 430 565 270 550 C100 535 25 430 50 270 C75 115 150 35 300 30Z" />
-
-      <path d="M300 70 C430 65 520 155 510 290 C500 420 410 510 280 505 C145 500 80 410 90 285 C100 160 170 75 300 70Z" />
-
-      <path d="M300 115 C400 110 470 180 468 285 C465 390 390 460 290 460 C185 458 135 385 140 290 C145 195 200 118 300 115Z" />
-
-      <path d="M300 165 C370 160 420 210 420 290 C420 365 365 410 295 410 C225 408 188 360 190 295 C195 225 230 170 300 165Z" />
-
-      <path d="M300 215 C342 210 375 245 375 292 C375 337 340 365 300 365 C258 365 235 335 238 295 C240 250 260 217 300 215Z" />
-
-    </svg>
-
-
-    <div class="background-cross cross-one">
-      +
-    </div>
-
-    <div class="background-cross cross-two">
-      +
-    </div>
-
-    <div class="background-cross cross-three">
-      ×
-    </div>
+    <span class="bg-mark mark-one">×</span>
+    <span class="bg-mark mark-two">+</span>
+    <span class="bg-mark mark-three">↘</span>
 
   </div>
 
 
 
-  <!-- =====================================================
-       SCROLL PROGRESS
-  ====================================================== -->
+  <!-- SCROLL PROGRESS -->
 
-  <div
-    class="scroll-progress"
-    aria-hidden="true"
-  >
-
-    <span id="scroll-progress-bar"></span>
-
+  <div class="scroll-progress">
+    <span id="progress-bar"></span>
   </div>
 
 
 
-  <!-- =====================================================
-       HEADER
-  ====================================================== -->
+  <!-- HEADER -->
 
   <header class="site-header">
 
@@ -149,17 +103,16 @@
         href="{{ '/' | relative_url }}"
       >
 
-        <span class="brand-name">
+        <span class="brand-main">
           BRYAN<br>
           RAMOS-MORALES
         </span>
 
-        <span class="brand-note">
-          field notes ↘
+        <span class="brand-sub">
+          PORTFOLIO / 2026
         </span>
 
       </a>
-
 
 
       <nav
@@ -177,7 +130,6 @@
           Work
         </a>
 
-
         <a
           href="{{ '/professional-experience.html' | relative_url }}"
           {% if page.section == 'experience' %}
@@ -187,7 +139,6 @@
           Experience
         </a>
 
-
         <a
           href="{{ '/about.html' | relative_url }}"
           {% if page.section == 'about' %}
@@ -196,7 +147,6 @@
         >
           About
         </a>
-
 
         <a
           href="{{ '/contact.html' | relative_url }}"
@@ -210,15 +160,14 @@
       </nav>
 
 
-
       <div class="header-right">
 
-        <span class="header-coordinates">
-          PLACE / PEOPLE / ENVIRONMENT
+        <span class="header-field">
+          GEOGRAPHY / GIS / ENVIRONMENT
         </span>
 
         <a
-          class="header-resume"
+          class="resume-link"
           href="{{ '/resume.html' | relative_url }}"
         >
           Résumé ↗
@@ -227,17 +176,14 @@
       </div>
 
 
-
       <button
         class="nav-toggle"
         type="button"
         aria-label="Open navigation"
         aria-expanded="false"
       >
-
         <span></span>
         <span></span>
-
       </button>
 
 
@@ -247,9 +193,7 @@
 
 
 
-  <!-- =====================================================
-       MAIN CONTENT
-  ====================================================== -->
+  <!-- MAIN -->
 
   <main class="site-main">
 
@@ -259,61 +203,47 @@
 
 
 
-  <!-- =====================================================
-       FOOTER
-  ====================================================== -->
+  <!-- FOOTER -->
 
   <footer class="site-footer">
-
-
-    <div class="footer-scribble">
-      keep looking
-    </div>
-
 
     <div class="footer-grid">
 
 
-      <div class="footer-title">
+      <div>
 
-        BRYAN<br>
-        RAMOS-MORALES
+        <div class="footer-name">
+          BRYAN<br>
+          RAMOS-MORALES
+        </div>
 
-      </div>
-
-
-      <div class="footer-copy">
-
-        Geography, environmental systems,
-        GIS, cultural resources, field observation,
-        research, and whatever questions come next.
+        <div class="footer-role">
+          GEOGRAPHY / GIS / ENVIRONMENTAL RESOURCES
+        </div>
 
       </div>
 
 
-      <div class="footer-links">
+      <div class="footer-text">
 
-        <a href="{{ '/' | relative_url }}">
-          Work ↗
-        </a>
-
-        <a href="{{ '/professional-experience.html' | relative_url }}">
-          Experience ↗
-        </a>
-
-        <a href="{{ '/about.html' | relative_url }}">
-          About ↗
-        </a>
-
-        <a href="{{ '/contact.html' | relative_url }}">
-          Contact ↗
-        </a>
-
-        <a href="{{ '/resume.html' | relative_url }}">
-          Résumé ↗
-        </a>
+        A growing portfolio of spatial analysis,
+        environmental geography, cultural-resource work,
+        field experience, research, and technical projects.
 
       </div>
+
+
+      <nav class="footer-links">
+
+        <a href="{{ '/' | relative_url }}">Work ↗</a>
+
+        <a href="{{ '/about.html' | relative_url }}">About ↗</a>
+
+        <a href="{{ '/contact.html' | relative_url }}">Contact ↗</a>
+
+        <a href="{{ '/resume.html' | relative_url }}">Résumé ↗</a>
+
+      </nav>
 
 
     </div>
@@ -326,24 +256,18 @@
       </span>
 
       <span>
-        Built as an evolving field notebook.
+        Portfolio / California
       </span>
 
     </div>
-
 
   </footer>
 
 
 
-  <!-- =====================================================
-       JS
-  ====================================================== -->
-
   <script>
 
-
-    const reduceMotion =
+    const reducedMotion =
       window.matchMedia(
         "(prefers-reduced-motion: reduce)"
       ).matches;
@@ -363,14 +287,11 @@
       );
 
 
-    if (
-      navToggle &&
-      siteNav
-    ) {
+    if (navToggle && siteNav) {
 
       navToggle.addEventListener(
         "click",
-        function () {
+        () => {
 
           const open =
             siteNav.classList.toggle(
@@ -396,15 +317,15 @@
 
     /* SCROLL PROGRESS */
 
-    const progress =
+    const progressBar =
       document.getElementById(
-        "scroll-progress-bar"
+        "progress-bar"
       );
 
 
-    function updateScrollProgress() {
+    function updateProgress() {
 
-      if (!progress) return;
+      if (!progressBar) return;
 
       const max =
         document.documentElement.scrollHeight
@@ -416,18 +337,17 @@
           ? window.scrollY / max
           : 0;
 
-      progress.style.transform =
+      progressBar.style.transform =
         `scaleX(${value})`;
 
     }
 
 
-    updateScrollProgress();
-
+    updateProgress();
 
     window.addEventListener(
       "scroll",
-      updateScrollProgress,
+      updateProgress,
       { passive: true }
     );
 
@@ -435,15 +355,15 @@
 
     /* REVEALS */
 
-    const revealItems =
+    const reveals =
       document.querySelectorAll(
         ".reveal"
       );
 
 
-    if (reduceMotion) {
+    if (reducedMotion) {
 
-      revealItems.forEach(
+      reveals.forEach(
         item =>
           item.classList.add(
             "visible"
@@ -454,7 +374,7 @@
 
     else {
 
-      const revealObserver =
+      const observer =
         new IntersectionObserver(
 
           entries => {
@@ -462,15 +382,13 @@
             entries.forEach(
               entry => {
 
-                if (
-                  entry.isIntersecting
-                ) {
+                if (entry.isIntersecting) {
 
                   entry.target.classList.add(
                     "visible"
                   );
 
-                  revealObserver.unobserve(
+                  observer.unobserve(
                     entry.target
                   );
 
@@ -482,61 +400,17 @@
           },
 
           {
-            threshold: 0.12
+            threshold: 0.1
           }
 
         );
 
 
-      revealItems.forEach(
+      reveals.forEach(
         item =>
-          revealObserver.observe(
+          observer.observe(
             item
           )
-      );
-
-    }
-
-
-
-    /* BACKGROUND DRIFT */
-
-    const river =
-      document.querySelector(
-        ".background-river"
-      );
-
-    const topo =
-      document.querySelector(
-        ".background-topo"
-      );
-
-
-    if (
-      !reduceMotion &&
-      river &&
-      topo
-    ) {
-
-      window.addEventListener(
-        "scroll",
-        function () {
-
-          const y =
-            window.scrollY;
-
-          river.style.transform =
-            `translateY(${y * 0.025}px)`;
-
-          topo.style.transform =
-            `translateY(${y * -0.018}px) rotate(${y * 0.002}deg)`;
-
-        },
-
-        {
-          passive: true
-        }
-
       );
 
     }
@@ -552,7 +426,7 @@
 
 
     if (
-      !reduceMotion &&
+      !reducedMotion &&
       window.matchMedia(
         "(pointer: fine)"
       ).matches
@@ -592,6 +466,7 @@
 
               item.style.transform =
                 `
+                perspective(900px)
                 rotateX(${y * -3}deg)
                 rotateY(${x * 4}deg)
                 translateY(-4px)
