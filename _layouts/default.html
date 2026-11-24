@@ -23,6 +23,7 @@
     {% endif %}
   </title>
 
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
   <link
@@ -36,9 +37,16 @@
     rel="stylesheet"
   >
 
+
   <link
     rel="stylesheet"
     href="{{ '/assets/css/site.css' | relative_url }}"
+  >
+
+
+  <link
+    rel="stylesheet"
+    href="{{ '/assets/css/background.css' | relative_url }}"
   >
 
 </head>
@@ -52,7 +60,9 @@
 >
 
 
-  <!-- GLOBAL BACKGROUND -->
+  <!-- =====================================================
+       GLOBAL ART ENVIRONMENT
+  ====================================================== -->
 
   <div
     class="world"
@@ -80,7 +90,9 @@
 
 
 
-  <!-- CURSOR LIGHT -->
+  <!-- =====================================================
+       POINTER LIGHT
+  ====================================================== -->
 
   <div
     class="pointer-light"
@@ -89,7 +101,9 @@
 
 
 
-  <!-- PAGE PROGRESS -->
+  <!-- =====================================================
+       SCROLL PROGRESS
+  ====================================================== -->
 
   <div
     class="scroll-progress"
@@ -102,7 +116,9 @@
 
 
 
-  <!-- HEADER -->
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
 
   <header class="site-header">
 
@@ -228,6 +244,10 @@
 
 
 
+  <!-- =====================================================
+       PAGE
+  ====================================================== -->
+
   <main class="site-main">
 
     {{ content }}
@@ -236,7 +256,9 @@
 
 
 
-  <!-- FOOTER -->
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
 
   <footer class="site-footer">
 
@@ -322,7 +344,9 @@
 
 
 
-  <!-- CURSOR MOTH -->
+  <!-- =====================================================
+       CURSOR MOTH
+  ====================================================== -->
 
   <div
     class="moth-guide"
@@ -343,13 +367,15 @@
 
 
 
-  <!-- BEETLE INTERACTION -->
+  <!-- =====================================================
+       BEETLE
+  ====================================================== -->
 
   <button
     class="beetle-guide"
     id="beetle-guide"
     type="button"
-    aria-label="Toggle enhanced map layer"
+    aria-label="Toggle enhanced geographic layer"
   >
 
     <img
@@ -364,6 +390,10 @@
   </button>
 
 
+
+  <!-- =====================================================
+       INTERACTION SCRIPT
+  ====================================================== -->
 
   <script
     src="{{ '/assets/js/site.js' | relative_url }}"
