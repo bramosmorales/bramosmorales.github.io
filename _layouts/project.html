@@ -50,34 +50,54 @@
   <!-- BACKGROUND ART -->
 
   <div
-    class="background-art"
+    class="site-art"
     aria-hidden="true"
   >
 
-    <svg
-      class="bg-contours"
-      viewBox="0 0 800 800"
-    >
-      <path d="M390 45C600 50 760 180 730 400C705 600 555 745 350 725C155 705 35 565 65 355C90 155 195 40 390 45Z"/>
-      <path d="M390 105C555 105 675 215 660 390C645 555 525 665 365 660C205 650 105 535 120 375C135 215 230 100 390 105Z"/>
-      <path d="M390 170C505 165 600 250 595 385C590 510 500 595 375 595C250 590 175 500 180 385C190 265 270 175 390 170Z"/>
-      <path d="M390 235C465 230 530 290 530 385C530 470 465 530 385 530C300 525 245 465 250 390C255 305 310 240 390 235Z"/>
-    </svg>
+    <div class="art-red-glow"></div>
 
+    <div class="art-grid"></div>
+
+    <div class="art-halftone art-halftone-one"></div>
+
+    <div class="art-halftone art-halftone-two"></div>
 
     <svg
-      class="bg-river"
-      viewBox="0 0 500 1000"
+      class="art-lines"
+      viewBox="0 0 1000 1000"
       preserveAspectRatio="none"
     >
-      <path d="M90 -60C430 80 70 245 315 395C545 535 70 680 300 820C470 925 260 1035 160 1100"/>
-      <path d="M120 -60C460 80 100 245 345 395C575 535 100 680 330 820C500 925 290 1035 190 1100"/>
+
+      <path
+        d="
+        M-80 240
+        C170 80 250 400 500 230
+        C720 80 790 400 1080 180
+        "
+      />
+
+      <path
+        d="
+        M-70 275
+        C180 115 260 435 510 265
+        C730 115 800 435 1090 215
+        "
+      />
+
     </svg>
 
 
-    <span class="bg-mark mark-one">×</span>
-    <span class="bg-mark mark-two">+</span>
-    <span class="bg-mark mark-three">↘</span>
+    <div class="art-x art-x-one">
+      ×
+    </div>
+
+    <div class="art-x art-x-two">
+      +
+    </div>
+
+    <div class="art-x art-x-three">
+      /
+    </div>
 
   </div>
 
@@ -86,12 +106,14 @@
   <!-- SCROLL PROGRESS -->
 
   <div class="scroll-progress">
+
     <span id="progress-bar"></span>
+
   </div>
 
 
 
-  <!-- HEADER -->
+  <!-- NAV -->
 
   <header class="site-header">
 
@@ -103,16 +125,17 @@
         href="{{ '/' | relative_url }}"
       >
 
-        <span class="brand-main">
+        <span class="brand-name">
           BRYAN<br>
           RAMOS-MORALES
         </span>
 
-        <span class="brand-sub">
+        <span class="brand-year">
           PORTFOLIO / 2026
         </span>
 
       </a>
+
 
 
       <nav
@@ -130,6 +153,7 @@
           Work
         </a>
 
+
         <a
           href="{{ '/professional-experience.html' | relative_url }}"
           {% if page.section == 'experience' %}
@@ -139,6 +163,7 @@
           Experience
         </a>
 
+
         <a
           href="{{ '/about.html' | relative_url }}"
           {% if page.section == 'about' %}
@@ -147,6 +172,7 @@
         >
           About
         </a>
+
 
         <a
           href="{{ '/contact.html' | relative_url }}"
@@ -160,9 +186,10 @@
       </nav>
 
 
+
       <div class="header-right">
 
-        <span class="header-field">
+        <span class="header-tag">
           GEOGRAPHY / GIS / ENVIRONMENT
         </span>
 
@@ -174,6 +201,7 @@
         </a>
 
       </div>
+
 
 
       <button
@@ -193,7 +221,7 @@
 
 
 
-  <!-- MAIN -->
+  <!-- PAGE -->
 
   <main class="site-main">
 
@@ -206,6 +234,12 @@
   <!-- FOOTER -->
 
   <footer class="site-footer">
+
+
+    <div class="footer-stamp">
+      BRM
+    </div>
+
 
     <div class="footer-grid">
 
@@ -224,24 +258,36 @@
       </div>
 
 
-      <div class="footer-text">
+      <div class="footer-description">
 
-        A growing portfolio of spatial analysis,
-        environmental geography, cultural-resource work,
-        field experience, research, and technical projects.
+        Spatial analysis, environmental geography,
+        cultural resources, research, field observation,
+        and an expanding body of independent work.
 
       </div>
 
 
       <nav class="footer-links">
 
-        <a href="{{ '/' | relative_url }}">Work ↗</a>
+        <a href="{{ '/' | relative_url }}">
+          Work ↗
+        </a>
 
-        <a href="{{ '/about.html' | relative_url }}">About ↗</a>
+        <a href="{{ '/professional-experience.html' | relative_url }}">
+          Experience ↗
+        </a>
 
-        <a href="{{ '/contact.html' | relative_url }}">Contact ↗</a>
+        <a href="{{ '/about.html' | relative_url }}">
+          About ↗
+        </a>
 
-        <a href="{{ '/resume.html' | relative_url }}">Résumé ↗</a>
+        <a href="{{ '/contact.html' | relative_url }}">
+          Contact ↗
+        </a>
+
+        <a href="{{ '/resume.html' | relative_url }}">
+          Résumé ↗
+        </a>
 
       </nav>
 
@@ -256,12 +302,25 @@
       </span>
 
       <span>
-        Portfolio / California
+        Built / revised / still evolving.
       </span>
 
     </div>
 
+
   </footer>
+
+
+
+  <!-- CUSTOM HOVER BADGE -->
+
+  <div
+    class="cursor-tag"
+    id="cursor-tag"
+    aria-hidden="true"
+  >
+    VIEW ↗
+  </div>
 
 
 
@@ -273,30 +332,23 @@
       ).matches;
 
 
-
     /* MOBILE NAV */
 
     const navToggle =
-      document.querySelector(
-        ".nav-toggle"
-      );
+      document.querySelector(".nav-toggle");
 
     const siteNav =
-      document.querySelector(
-        ".site-nav"
-      );
+      document.querySelector(".site-nav");
 
 
     if (navToggle && siteNav) {
 
       navToggle.addEventListener(
         "click",
-        () => {
+        function () {
 
           const open =
-            siteNav.classList.toggle(
-              "open"
-            );
+            siteNav.classList.toggle("open");
 
           navToggle.classList.toggle(
             "open",
@@ -345,6 +397,7 @@
 
     updateProgress();
 
+
     window.addEventListener(
       "scroll",
       updateProgress,
@@ -353,9 +406,9 @@
 
 
 
-    /* REVEALS */
+    /* REVEAL */
 
-    const reveals =
+    const revealItems =
       document.querySelectorAll(
         ".reveal"
       );
@@ -363,18 +416,16 @@
 
     if (reducedMotion) {
 
-      reveals.forEach(
+      revealItems.forEach(
         item =>
-          item.classList.add(
-            "visible"
-          )
+          item.classList.add("visible")
       );
 
     }
 
     else {
 
-      const observer =
+      const revealObserver =
         new IntersectionObserver(
 
           entries => {
@@ -388,7 +439,7 @@
                     "visible"
                   );
 
-                  observer.unobserve(
+                  revealObserver.unobserve(
                     entry.target
                   );
 
@@ -400,17 +451,15 @@
           },
 
           {
-            threshold: 0.1
+            threshold: 0.08
           }
 
         );
 
 
-      reveals.forEach(
+      revealItems.forEach(
         item =>
-          observer.observe(
-            item
-          )
+          revealObserver.observe(item)
       );
 
     }
@@ -437,15 +486,14 @@
 
           item.addEventListener(
             "pointermove",
-            event => {
+            function (event) {
 
               const rect =
                 item.getBoundingClientRect();
 
               const x =
                 (
-                  event.clientX
-                  -
+                  event.clientX -
                   rect.left
                 )
                 /
@@ -455,8 +503,7 @@
 
               const y =
                 (
-                  event.clientY
-                  -
+                  event.clientY -
                   rect.top
                 )
                 /
@@ -466,10 +513,10 @@
 
               item.style.transform =
                 `
-                perspective(900px)
-                rotateX(${y * -3}deg)
-                rotateY(${x * 4}deg)
-                translateY(-4px)
+                perspective(1000px)
+                rotateX(${y * -3.5}deg)
+                rotateY(${x * 5}deg)
+                translateY(-5px)
                 `;
 
             }
@@ -478,7 +525,7 @@
 
           item.addEventListener(
             "pointerleave",
-            () => {
+            function () {
 
               item.style.transform =
                 "";
@@ -488,6 +535,77 @@
 
         }
       );
+
+    }
+
+
+
+    /* PROJECT CURSOR */
+
+    const cursor =
+      document.getElementById(
+        "cursor-tag"
+      );
+
+
+    if (
+      cursor &&
+      window.matchMedia(
+        "(pointer: fine)"
+      ).matches
+    ) {
+
+      document.addEventListener(
+        "pointermove",
+        function (event) {
+
+          cursor.style.left =
+            `${event.clientX}px`;
+
+          cursor.style.top =
+            `${event.clientY}px`;
+
+        }
+      );
+
+
+      document
+        .querySelectorAll(
+          "[data-cursor]"
+        )
+        .forEach(
+          item => {
+
+            item.addEventListener(
+              "pointerenter",
+              function () {
+
+                cursor.textContent =
+                  item.dataset.cursor
+                  ||
+                  "VIEW ↗";
+
+                cursor.classList.add(
+                  "visible"
+                );
+
+              }
+            );
+
+
+            item.addEventListener(
+              "pointerleave",
+              function () {
+
+                cursor.classList.remove(
+                  "visible"
+                );
+
+              }
+            );
+
+          }
+        );
 
     }
 
