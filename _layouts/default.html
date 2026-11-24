@@ -33,7 +33,7 @@
   >
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Pixelify+Sans:wght@400;500;600;700&family=Poiret+One&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&family=Pixelify+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
@@ -48,32 +48,30 @@
 
 <body
   class="
-    {% if page.url == '/' %}
-      is-home
-    {% endif %}
+    {% if page.url == '/' %}is-home{% endif %}
     page-{{ page.section | default: 'work' }}
   "
 >
 
 
   <!-- ====================================================
-       IMMERSIVE BACKGROUND
+       ART WORLD
   ===================================================== -->
 
   <div
-    class="world-art"
+    class="world"
     aria-hidden="true"
   >
 
-    <div class="world-base"></div>
+    <div class="world-black"></div>
 
-    <div class="world-primary"></div>
+    <div class="world-art-primary"></div>
 
-    <div class="world-alt"></div>
+    <div class="world-art-reveal"></div>
 
-    <div class="world-vignette"></div>
+    <div class="world-shadow"></div>
 
-    <div class="world-grain"></div>
+    <div class="world-noise"></div>
 
 
     <img
@@ -83,6 +81,17 @@
     >
 
   </div>
+
+
+
+  <!-- ====================================================
+       POINTER LIGHT
+  ===================================================== -->
+
+  <div
+    class="pointer-light"
+    aria-hidden="true"
+  ></div>
 
 
 
@@ -102,7 +111,7 @@
 
 
   <!-- ====================================================
-       SITE HEADER
+       HEADER
   ===================================================== -->
 
   <header class="site-header">
@@ -115,17 +124,18 @@
         href="{{ '/' | relative_url }}"
       >
 
-        <span class="brand-symbol">
+        <span class="brand-mark">
           BRM
         </span>
 
-        <span class="brand-copy">
+
+        <span class="brand-text">
 
           <span class="brand-name">
             BRYAN RAMOS-MORALES
           </span>
 
-          <span class="brand-field">
+          <span class="brand-sub">
             GEOGRAPHY / GIS / ENVIRONMENT
           </span>
 
@@ -186,12 +196,11 @@
 
       <div class="header-right">
 
+        <div class="site-status">
 
-        <div class="world-status">
+          <span class="status-light"></span>
 
-          <span class="status-dot"></span>
-
-          PORTFOLIO_2026
+          PORTFOLIO / 2026
 
         </div>
 
@@ -203,7 +212,6 @@
           RÉSUMÉ ↗
         </a>
 
-
       </div>
 
 
@@ -213,7 +221,6 @@
         type="button"
         aria-label="Open navigation"
         aria-expanded="false"
-        aria-controls="primary-navigation"
       >
 
         <span></span>
@@ -229,7 +236,7 @@
 
 
   <!-- ====================================================
-       CONTENT
+       MAIN
   ===================================================== -->
 
   <main class="site-main">
@@ -247,35 +254,35 @@
   <footer class="site-footer">
 
 
-    <div class="footer-coordinate">
-      37°N / 120°W / PORTFOLIO ARCHIVE
-    </div>
-
-
     <div class="footer-grid">
 
 
-      <div class="footer-identity">
+      <div>
 
         <div class="footer-name">
-          BRYAN
-          <br>
+
+          BRYAN<br>
           RAMOS-MORALES
+
         </div>
 
-        <div class="footer-sub">
-          GEOGRAPHY / GIS / ENVIRONMENTAL RESOURCES
+        <div class="footer-small">
+
+          GEOGRAPHY / GIS /
+          ENVIRONMENTAL RESOURCES
+
         </div>
 
       </div>
 
 
 
-      <div class="footer-description">
+      <div class="footer-copy">
 
-        GIS, environmental geography, cultural resources,
-        spatial research, field observation, cartography,
-        and a growing collection of independent work.
+        Spatial research, environmental geography,
+        cultural resources, GIS, cartography,
+        field observation, and an expanding
+        collection of independent work.
 
       </div>
 
@@ -317,7 +324,7 @@
       </span>
 
       <span>
-        END OF CURRENT MAP
+        PORTFOLIO / CALIFORNIA
       </span>
 
     </div>
@@ -328,7 +335,7 @@
 
 
   <!-- ====================================================
-       MOTH FOLLOWER
+       MOTH GUIDE
   ===================================================== -->
 
   <div
@@ -342,7 +349,8 @@
       alt=""
     >
 
-    <span class="moth-label">
+
+    <span class="moth-message">
       EXPLORE
     </span>
 
@@ -351,8 +359,29 @@
 
 
   <!-- ====================================================
-       JAVASCRIPT
+       HOVER HUD
   ===================================================== -->
+
+  <div
+    class="hover-hud"
+    id="hover-hud"
+    aria-hidden="true"
+  >
+
+    <span class="hover-hud-label">
+      ACTIVE
+    </span>
+
+    <span
+      class="hover-hud-value"
+      id="hover-hud-value"
+    >
+      PORTFOLIO
+    </span>
+
+  </div>
+
+
 
   <script>
 
@@ -364,19 +393,15 @@
 
 
 
-    /* ----------------------------------------------------
+    /* ======================================
        MOBILE NAV
-    ----------------------------------------------------- */
+    ====================================== */
 
     const navToggle =
-      document.querySelector(
-        ".nav-toggle"
-      );
+      document.querySelector(".nav-toggle");
 
     const siteNav =
-      document.querySelector(
-        ".site-nav"
-      );
+      document.querySelector(".site-nav");
 
 
     if (
@@ -389,9 +414,7 @@
         function () {
 
           const open =
-            siteNav.classList.toggle(
-              "open"
-            );
+            siteNav.classList.toggle("open");
 
           navToggle.classList.toggle(
             "open",
@@ -410,9 +433,9 @@
 
 
 
-    /* ----------------------------------------------------
+    /* ======================================
        SCROLL PROGRESS
-    ----------------------------------------------------- */
+    ====================================== */
 
     const progress =
       document.getElementById(
@@ -453,9 +476,9 @@
 
 
 
-    /* ----------------------------------------------------
-       BACKGROUND REVEAL
-    ----------------------------------------------------- */
+    /* ======================================
+       POINTER POSITION
+    ====================================== */
 
     if (
       !reducedMotion &&
@@ -469,12 +492,12 @@
         function (event) {
 
           document.documentElement.style.setProperty(
-            "--pointer-x",
+            "--mouse-x",
             event.clientX + "px"
           );
 
           document.documentElement.style.setProperty(
-            "--pointer-y",
+            "--mouse-y",
             event.clientY + "px"
           );
 
@@ -485,9 +508,9 @@
 
 
 
-    /* ----------------------------------------------------
+    /* ======================================
        REVEALS
-    ----------------------------------------------------- */
+    ====================================== */
 
     const revealItems =
       document.querySelectorAll(
@@ -499,16 +522,14 @@
 
       revealItems.forEach(
         item =>
-          item.classList.add(
-            "visible"
-          )
+          item.classList.add("visible")
       );
 
     }
 
     else {
 
-      const observer =
+      const revealObserver =
         new IntersectionObserver(
 
           entries => {
@@ -524,7 +545,7 @@
                     "visible"
                   );
 
-                  observer.unobserve(
+                  revealObserver.unobserve(
                     entry.target
                   );
 
@@ -544,94 +565,16 @@
 
       revealItems.forEach(
         item =>
-          observer.observe(
-            item
-          )
+          revealObserver.observe(item)
       );
 
     }
 
 
 
-    /* ----------------------------------------------------
-       PROJECT TILT
-    ----------------------------------------------------- */
-
-    const tiltTargets =
-      document.querySelectorAll(
-        "[data-tilt]"
-      );
-
-
-    if (
-      !reducedMotion &&
-      window.matchMedia(
-        "(pointer: fine)"
-      ).matches
-    ) {
-
-      tiltTargets.forEach(
-        element => {
-
-          element.addEventListener(
-            "pointermove",
-            function (event) {
-
-              const rect =
-                element.getBoundingClientRect();
-
-              const x =
-                (
-                  event.clientX -
-                  rect.left
-                )
-                /
-                rect.width
-                -
-                0.5;
-
-              const y =
-                (
-                  event.clientY -
-                  rect.top
-                )
-                /
-                rect.height
-                -
-                0.5;
-
-              element.style.transform =
-                `
-                perspective(1100px)
-                rotateX(${y * -2.4}deg)
-                rotateY(${x * 3.5}deg)
-                translateY(-5px)
-                `;
-
-            }
-          );
-
-
-          element.addEventListener(
-            "pointerleave",
-            function () {
-
-              element.style.transform =
-                "";
-
-            }
-          );
-
-        }
-      );
-
-    }
-
-
-
-    /* ----------------------------------------------------
-       MOTH FOLLOWER
-    ----------------------------------------------------- */
+    /* ======================================
+       MOTH
+    ====================================== */
 
     const moth =
       document.getElementById(
@@ -647,19 +590,19 @@
       ).matches
     ) {
 
-      let pointerX =
+      let mouseX =
         window.innerWidth / 2;
 
-      let pointerY =
+      let mouseY =
         window.innerHeight / 2;
 
       let mothX =
-        pointerX;
+        mouseX;
 
       let mothY =
-        pointerY;
+        mouseY;
 
-      let previousX =
+      let oldX =
         mothX;
 
 
@@ -667,11 +610,11 @@
         "pointermove",
         function (event) {
 
-          pointerX =
-            event.clientX + 45;
+          mouseX =
+            event.clientX + 50;
 
-          pointerY =
-            event.clientY + 32;
+          mouseY =
+            event.clientY + 35;
 
           moth.classList.add(
             "awake"
@@ -685,33 +628,35 @@
 
         mothX +=
           (
-            pointerX - mothX
+            mouseX - mothX
           )
           *
-          0.075;
+          0.065;
 
         mothY +=
           (
-            pointerY - mothY
+            mouseY - mothY
           )
           *
-          0.075;
+          0.065;
 
-        const movement =
-          mothX -
-          previousX;
 
-        previousX =
+        const velocity =
+          mothX - oldX;
+
+        oldX =
           mothX;
+
 
         const rotation =
           Math.max(
-            -12,
+            -10,
             Math.min(
-              12,
-              movement * 2
+              10,
+              velocity * 1.4
             )
           );
+
 
         moth.style.transform =
           `
@@ -723,6 +668,7 @@
           rotate(${rotation}deg)
           `;
 
+
         requestAnimationFrame(
           animateMoth
         );
@@ -733,33 +679,104 @@
       animateMoth();
 
 
-
-      const discoveries =
-        document.querySelectorAll(
+      document
+        .querySelectorAll(
           "[data-discover]"
+        )
+        .forEach(
+          element => {
+
+            element.addEventListener(
+              "pointerenter",
+              function () {
+
+                moth.classList.add(
+                  "active"
+                );
+
+                const label =
+                  moth.querySelector(
+                    ".moth-message"
+                  );
+
+                if (label) {
+
+                  label.textContent =
+                    "OPEN ↗";
+
+                }
+
+              }
+            );
+
+
+            element.addEventListener(
+              "pointerleave",
+              function () {
+
+                moth.classList.remove(
+                  "active"
+                );
+
+                const label =
+                  moth.querySelector(
+                    ".moth-message"
+                  );
+
+                if (label) {
+
+                  label.textContent =
+                    "EXPLORE";
+
+                }
+
+              }
+            );
+
+          }
         );
 
+    }
 
-      discoveries.forEach(
+
+
+    /* ======================================
+       HOVER FIELD HUD
+    ====================================== */
+
+    const hoverHud =
+      document.getElementById(
+        "hover-hud"
+      );
+
+    const hoverHudValue =
+      document.getElementById(
+        "hover-hud-value"
+      );
+
+
+    document
+      .querySelectorAll(
+        "[data-log]"
+      )
+      .forEach(
         item => {
 
           item.addEventListener(
             "pointerenter",
             function () {
 
-              moth.classList.add(
-                "discovering"
-              );
+              if (
+                hoverHud &&
+                hoverHudValue
+              ) {
 
-              const label =
-                moth.querySelector(
-                  ".moth-label"
+                hoverHudValue.textContent =
+                  item.dataset.log;
+
+                hoverHud.classList.add(
+                  "visible"
                 );
-
-              if (label) {
-
-                label.textContent =
-                  "OPEN FILE";
 
               }
 
@@ -771,19 +788,11 @@
             "pointerleave",
             function () {
 
-              moth.classList.remove(
-                "discovering"
-              );
+              if (hoverHud) {
 
-              const label =
-                moth.querySelector(
-                  ".moth-label"
+                hoverHud.classList.remove(
+                  "visible"
                 );
-
-              if (label) {
-
-                label.textContent =
-                  "EXPLORE";
 
               }
 
@@ -793,13 +802,86 @@
         }
       );
 
+
+
+    /* ======================================
+       PROJECT TILT
+    ====================================== */
+
+    if (
+      !reducedMotion &&
+      window.matchMedia(
+        "(pointer: fine)"
+      ).matches
+    ) {
+
+      document
+        .querySelectorAll(
+          "[data-tilt]"
+        )
+        .forEach(
+          item => {
+
+            item.addEventListener(
+              "pointermove",
+              function (event) {
+
+                const rect =
+                  item.getBoundingClientRect();
+
+                const x =
+                  (
+                    event.clientX -
+                    rect.left
+                  )
+                  /
+                  rect.width
+                  -
+                  0.5;
+
+                const y =
+                  (
+                    event.clientY -
+                    rect.top
+                  )
+                  /
+                  rect.height
+                  -
+                  0.5;
+
+
+                item.style.transform =
+                  `
+                  perspective(1100px)
+                  rotateX(${y * -2}deg)
+                  rotateY(${x * 3}deg)
+                  translateY(-4px)
+                  `;
+
+              }
+            );
+
+
+            item.addEventListener(
+              "pointerleave",
+              function () {
+
+                item.style.transform =
+                  "";
+
+              }
+            );
+
+          }
+        );
+
     }
 
 
 
-    /* ----------------------------------------------------
-       CLICK STAR
-    ----------------------------------------------------- */
+    /* ======================================
+       CLICK BURST
+    ====================================== */
 
     if (
       !reducedMotion &&
@@ -812,73 +894,34 @@
         "click",
         function (event) {
 
-          const burst =
+          const star =
             document.createElement(
               "span"
             );
 
-          burst.className =
-            "click-burst";
+          star.className =
+            "click-star";
 
-          burst.textContent =
+          star.textContent =
             "✦";
 
-          burst.style.left =
+          star.style.left =
             event.clientX + "px";
 
-          burst.style.top =
+          star.style.top =
             event.clientY + "px";
 
           document.body.appendChild(
-            burst
+            star
           );
 
 
           setTimeout(
             () =>
-              burst.remove(),
-            650
+              star.remove(),
+            550
           );
 
-        }
-      );
-
-    }
-
-
-
-    /* ----------------------------------------------------
-       FOREGROUND PARALLAX
-    ----------------------------------------------------- */
-
-    const foreground =
-      document.querySelector(
-        ".world-foreground"
-      );
-
-
-    if (
-      foreground &&
-      !reducedMotion
-    ) {
-
-      window.addEventListener(
-        "scroll",
-        function () {
-
-          foreground.style.transform =
-            `
-            translate3d(
-              0,
-              ${window.scrollY * 0.015}px,
-              0
-            )
-            `;
-
-        },
-
-        {
-          passive: true
         }
       );
 
