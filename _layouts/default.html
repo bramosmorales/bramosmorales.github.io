@@ -23,7 +23,6 @@
     {% endif %}
   </title>
 
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
   <link
@@ -36,7 +35,6 @@
     href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&family=Pixelify+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
-
 
   <link
     rel="stylesheet"
@@ -54,16 +52,14 @@
 >
 
 
-  <!-- =====================================================
-       GLOBAL ART ENVIRONMENT
-  ====================================================== -->
+  <!-- GLOBAL BACKGROUND -->
 
   <div
     class="world"
     aria-hidden="true"
   >
 
-    <div class="world-black"></div>
+    <div class="world-base"></div>
 
     <div class="world-primary"></div>
 
@@ -71,35 +67,7 @@
 
     <div class="world-vignette"></div>
 
-    <div class="world-halftone"></div>
-
-
-    <img
-      class="world-topography"
-      src="{{ '/assets/art/topography-05.png' | relative_url }}"
-      alt=""
-    >
-
-
-    <img
-      class="world-root world-root-one"
-      src="{{ '/assets/art/roots-large-01.png' | relative_url }}"
-      alt=""
-    >
-
-
-    <img
-      class="world-root world-root-two"
-      src="{{ '/assets/art/roots-large-02.png' | relative_url }}"
-      alt=""
-    >
-
-
-    <img
-      class="world-star"
-      src="{{ '/assets/art/starburst-01.png' | relative_url }}"
-      alt=""
-    >
+    <div class="world-dots"></div>
 
 
     <img
@@ -108,28 +76,11 @@
       alt=""
     >
 
-
-    <div class="field-overlay">
-
-      <img
-        src="{{ '/assets/art/river-network-01.png' | relative_url }}"
-        alt=""
-      >
-
-      <img
-        src="{{ '/assets/art/grid-cluster-01.png' | relative_url }}"
-        alt=""
-      >
-
-    </div>
-
   </div>
 
 
 
-  <!-- =====================================================
-       POINTER REVEAL
-  ====================================================== -->
+  <!-- CURSOR LIGHT -->
 
   <div
     class="pointer-light"
@@ -138,9 +89,7 @@
 
 
 
-  <!-- =====================================================
-       SCROLL PROGRESS
-  ====================================================== -->
+  <!-- PAGE PROGRESS -->
 
   <div
     class="scroll-progress"
@@ -153,9 +102,7 @@
 
 
 
-  <!-- =====================================================
-       HEADER
-  ====================================================== -->
+  <!-- HEADER -->
 
   <header class="site-header">
 
@@ -244,7 +191,7 @@
 
           <span class="status-dot"></span>
 
-          PORTFOLIO / 2026
+          2026
 
         </span>
 
@@ -281,10 +228,6 @@
 
 
 
-  <!-- =====================================================
-       CONTENT
-  ====================================================== -->
-
   <main class="site-main">
 
     {{ content }}
@@ -293,27 +236,9 @@
 
 
 
-  <!-- =====================================================
-       FOOTER
-  ====================================================== -->
+  <!-- FOOTER -->
 
   <footer class="site-footer">
-
-
-    <img
-      class="footer-art footer-art-one"
-      src="{{ '/assets/art/terrain-large-01.png' | relative_url }}"
-      alt=""
-      aria-hidden="true"
-    >
-
-
-    <img
-      class="footer-art footer-art-two"
-      src="{{ '/assets/art/moon-phases-01.png' | relative_url }}"
-      alt=""
-      aria-hidden="true"
-    >
 
 
     <div class="footer-grid">
@@ -397,9 +322,7 @@
 
 
 
-  <!-- =====================================================
-       MOTH
-  ====================================================== -->
+  <!-- CURSOR MOTH -->
 
   <div
     class="moth-guide"
@@ -420,15 +343,13 @@
 
 
 
-  <!-- =====================================================
-       BEETLE
-  ====================================================== -->
+  <!-- BEETLE INTERACTION -->
 
   <button
     class="beetle-guide"
     id="beetle-guide"
     type="button"
-    aria-label="Toggle geographic overlay"
+    aria-label="Toggle enhanced map layer"
   >
 
     <img
@@ -437,7 +358,7 @@
     >
 
     <span>
-      TOGGLE LAYER
+      SHIFT LAYER
     </span>
 
   </button>
