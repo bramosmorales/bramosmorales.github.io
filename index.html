@@ -27,17 +27,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 .hero {
 
   min-height:
-    calc(
-      100vh - 130px
-    );
-
-}
-
-
-
-/* TOP HUD */
-
-.hero-hud {
+    620px;
 
   display:
     flex;
@@ -45,88 +35,40 @@ description: Geography, GIS, environmental research, cultural resources, and spa
   align-items:
     center;
 
-  justify-content:
-    space-between;
-
-  margin-bottom:
-    38px;
-
-  padding-bottom:
-    11px;
-
-  border-bottom:
-    1px solid
-    var(--line);
-
-  color:
-    #77716d;
-
-  font-family:
-    var(--pixel);
-
-  font-size:
-    0.57rem;
-
-}
-
-
-.hero-hud-red {
-
-  color:
-    var(--red);
+  padding:
+    60px 0
+    90px;
 
 }
 
 
 
-/* INTRO */
+/* MAIN INTRO */
 
-.hero-intro {
+.hero-inner {
+
+  width:
+    min(
+      1050px,
+      100%
+    );
+
+}
+
+
+.hero-meta {
 
   display:
-    grid;
+    flex;
 
-  grid-template-columns:
-    minmax(0,0.78fr)
-    minmax(420px,1.22fr);
+  flex-wrap:
+    wrap;
 
   gap:
-    70px;
-
-  align-items:
-    center;
+    12px 24px;
 
   margin-bottom:
-    55px;
-
-}
-
-
-
-/* COPY */
-
-.hero-copy {
-
-  padding:
-    34px 36px;
-
-  background:
-    rgba(0,0,0,0.78);
-
-  border-left:
-    4px solid
-    var(--red);
-
-  backdrop-filter:
-    blur(14px);
-
-}
-
-
-.hero-overline {
-
-  margin-bottom:
-    15px;
+    28px;
 
   color:
     var(--red);
@@ -135,36 +77,67 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     var(--pixel);
 
   font-size:
-    0.62rem;
+    0.64rem;
 
 }
 
 
-.hero-title {
+.hero-meta span {
+
+  position:
+    relative;
+
+}
+
+
+.hero-meta span:not(:last-child)::after {
+
+  position:
+    absolute;
+
+  right:
+    -14px;
+
+  color:
+    #615c58;
+
+  content:
+    "/";
+
+}
+
+
+
+/* NAME */
+
+.hero-name {
 
   margin:
     0;
+
+  max-width:
+    1050px;
 
   font-family:
     var(--display);
 
   font-size:
     clamp(
-      4.6rem,
+      4.3rem,
       8vw,
-      8.7rem
+      8.8rem
     );
 
   letter-spacing:
     -0.075em;
 
   line-height:
-    0.83;
+    0.82;
 
 }
 
 
-.hero-title span {
+.hero-name span {
 
   display:
     block;
@@ -172,7 +145,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 }
 
 
-.hero-title-red {
+.hero-name-red {
 
   color:
     var(--red);
@@ -180,16 +153,49 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 }
 
 
+
+/* SUBHEAD */
+
+.hero-role {
+
+  max-width:
+    850px;
+
+  margin:
+    35px 0 0;
+
+  color:
+    white;
+
+  font-size:
+    clamp(
+      1.15rem,
+      2vw,
+      1.7rem
+    );
+
+  font-weight:
+    700;
+
+  line-height:
+    1.4;
+
+}
+
+
+
+/* DESCRIPTION */
+
 .hero-description {
 
   max-width:
-    590px;
+    730px;
 
   margin:
-    28px 0 0;
+    20px 0 0;
 
   color:
-    #c8c3bd;
+    #aaa49f;
 
   font-size:
     0.98rem;
@@ -200,6 +206,9 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 }
 
 
+
+/* BUTTONS */
+
 .hero-actions {
 
   display:
@@ -209,39 +218,116 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     wrap;
 
   gap:
-    12px;
+    14px;
 
   margin-top:
-    28px;
+    34px;
 
 }
 
 
 
-/* ART WINDOW */
+/* QUICK FIELDS */
 
-.hero-art-window {
+.hero-fields {
 
-  position:
-    relative;
+  display:
+    flex;
 
-  min-height:
-    400px;
+  flex-wrap:
+    wrap;
 
-  overflow:
-    hidden;
+  gap:
+    9px;
+
+  margin-top:
+    45px;
+
+}
+
+
+.hero-field {
+
+  padding:
+    7px 10px;
+
+  background:
+    rgba(
+      0,
+      0,
+      0,
+      0.75
+    );
 
   border:
     1px solid
     var(--line);
 
-  background:
-    rgba(0,0,0,0.35);
+  color:
+    #b1aba5;
+
+  font-family:
+    var(--pixel);
+
+  font-size:
+    0.57rem;
 
 }
 
 
-.hero-art-window::before {
+.hero-field:hover {
+
+  border-color:
+    var(--red);
+
+  color:
+    white;
+
+}
+
+
+
+/* =========================================================
+   ART BREAK
+========================================================= */
+
+.art-break {
+
+  position:
+    relative;
+
+  height:
+    clamp(
+      180px,
+      20vw,
+      300px
+    );
+
+  margin:
+    15px
+    calc(
+      50% - 50vw
+    )
+    90px;
+
+  overflow:
+    hidden;
+
+  border-top:
+    1px solid
+    var(--line);
+
+  border-bottom:
+    1px solid
+    var(--line);
+
+}
+
+
+
+/* PRIMARY ART */
+
+.art-break-primary {
 
   position:
     absolute;
@@ -253,7 +339,10 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     url("/assets/art/botanical-alt.png");
 
   background-position:
-    center;
+    center 46%;
+
+  background-repeat:
+    no-repeat;
 
   background-size:
     cover;
@@ -264,18 +353,62 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     sepia(1)
     saturate(10)
     hue-rotate(315deg)
-    contrast(1.5);
+    contrast(1.45)
+    brightness(0.6);
 
   opacity:
-    0.62;
+    0.72;
 
-  content:
-    "";
+  transition:
+
+    transform
+    800ms ease,
+
+    filter
+    500ms ease;
 
 }
 
 
-.hero-art-window::after {
+
+/* SECOND IMAGE */
+
+.art-break-secondary {
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  background-image:
+    url("/assets/art/botanical-red.png");
+
+  background-position:
+    center;
+
+  background-repeat:
+    no-repeat;
+
+  background-size:
+    cover;
+
+  mix-blend-mode:
+    screen;
+
+  opacity:
+    0;
+
+  transition:
+    opacity 500ms ease;
+
+}
+
+
+
+/* BLACK FADE */
+
+.art-break::after {
 
   position:
     absolute;
@@ -287,8 +420,18 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
     linear-gradient(
       90deg,
-      rgba(0,0,0,0.12),
-      rgba(0,0,0,0.6)
+
+      rgba(0,0,0,0.95)
+      0%,
+
+      rgba(0,0,0,0.22)
+      28%,
+
+      rgba(0,0,0,0.18)
+      70%,
+
+      rgba(0,0,0,0.9)
+      100%
     );
 
   content:
@@ -297,76 +440,103 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 }
 
 
-.hero-art-text {
+
+/* HOVER */
+
+.art-break:hover
+.art-break-primary {
+
+  transform:
+    scale(1.035);
+
+  filter:
+
+    grayscale(0.75)
+    sepia(1)
+    saturate(11)
+    hue-rotate(315deg)
+    contrast(1.5)
+    brightness(0.68);
+
+}
+
+
+.art-break:hover
+.art-break-secondary {
+
+  opacity:
+    0.22;
+
+}
+
+
+
+/* SMALL DECORATIVE CORNERS */
+
+.art-corner {
 
   position:
     absolute;
+
+  z-index:
+    4;
+
+  width:
+    24px;
+
+  height:
+    24px;
+
+}
+
+
+.art-corner-one {
+
+  top:
+    18px;
+
+  left:
+    28px;
+
+  border-top:
+    2px solid
+    var(--red);
+
+  border-left:
+    2px solid
+    var(--red);
+
+}
+
+
+.art-corner-two {
 
   right:
     28px;
 
   bottom:
-    28px;
+    18px;
 
-  z-index:
-    3;
-
-  max-width:
-    270px;
-
-  padding:
-    16px;
-
-  background:
-    rgba(0,0,0,0.82);
-
-  border-left:
-    3px solid
+  border-right:
+    2px solid
     var(--red);
 
-}
-
-
-.hero-art-text span {
-
-  color:
+  border-bottom:
+    2px solid
     var(--red);
-
-  font-family:
-    var(--pixel);
-
-  font-size:
-    0.56rem;
-
-}
-
-
-.hero-art-text p {
-
-  margin:
-    8px 0 0;
-
-  color:
-    #d3cec8;
-
-  font-size:
-    0.78rem;
-
-  line-height:
-    1.6;
 
 }
 
 
 
 /* =========================================================
-   FEATURED WORK
+   SELECTED WORK
 ========================================================= */
 
 .featured {
 
   margin-top:
-    25px;
+    0;
 
 }
 
@@ -386,7 +556,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     30px;
 
   margin-bottom:
-    32px;
+    34px;
 
 }
 
@@ -458,7 +628,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
 
-/* THREE PROJECTS */
+/* THREE FEATURED PROJECTS */
 
 .featured-grid {
 
@@ -466,8 +636,14 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     grid;
 
   grid-template-columns:
-    minmax(0,1.35fr)
-    minmax(300px,0.65fr);
+    minmax(
+      0,
+      1.35fr
+    )
+    minmax(
+      300px,
+      0.65fr
+    );
 
   gap:
     20px;
@@ -489,7 +665,10 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     grid;
 
   grid-template-rows:
-    repeat(2,1fr);
+    repeat(
+      2,
+      1fr
+    );
 
   gap:
     20px;
@@ -550,11 +729,19 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     var(--red);
 
   box-shadow:
-    0 0 35px
-    rgba(223,16,29,0.22);
+    0 0 38px
+    rgba(
+      223,
+      16,
+      29,
+      0.23
+    );
 
 }
 
+
+
+/* IMAGE */
 
 .featured-card img {
 
@@ -568,8 +755,18 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     cover;
 
   filter:
-    grayscale(0.8)
-    brightness(0.73);
+
+    grayscale(
+      0.85
+    )
+
+    brightness(
+      0.66
+    )
+
+    contrast(
+      1.05
+    );
 
   transition:
 
@@ -577,7 +774,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     180ms ease,
 
     transform
-    220ms ease;
+    230ms ease;
 
 }
 
@@ -588,13 +785,15 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     none;
 
   transform:
-    scale(1.018);
+    scale(
+      1.018
+    );
 
 }
 
 
 
-/* SCAN LINES */
+/* SCANLINES */
 
 .featured-card::after {
 
@@ -615,11 +814,18 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     repeating-linear-gradient(
       to bottom,
 
-      transparent 0,
+      transparent
+      0,
 
-      transparent 5px,
+      transparent
+      5px,
 
-      rgba(255,255,255,0.045)
+      rgba(
+        255,
+        255,
+        255,
+        0.045
+      )
       6px
     );
 
@@ -641,9 +847,9 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
 
-/* FILE NUMBER */
+/* NUMBER */
 
-.file-number {
+.project-number {
 
   position:
     absolute;
@@ -661,7 +867,12 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     5px 8px;
 
   background:
-    rgba(0,0,0,0.88);
+    rgba(
+      0,
+      0,
+      0,
+      0.9
+    );
 
   border:
     1px solid
@@ -712,17 +923,24 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     20px;
 
   padding:
-    17px;
+    18px;
 
   background:
-    rgba(0,0,0,0.86);
+    rgba(
+      0,
+      0,
+      0,
+      0.88
+    );
 
   border-left:
     3px solid
     var(--red);
 
   backdrop-filter:
-    blur(11px);
+    blur(
+      12px
+    );
 
 }
 
@@ -739,7 +957,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     clamp(
       1.3rem,
       2.5vw,
-      2.3rem
+      2.25rem
     );
 
   font-weight:
@@ -787,7 +1005,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
 /* =========================================================
-   EXPLORE
+   BROWSE AREAS
 ========================================================= */
 
 .explore {
@@ -808,6 +1026,9 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   justify-content:
     space-between;
+
+  gap:
+    25px;
 
   margin-bottom:
     35px;
@@ -869,7 +1090,10 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   grid-template-columns:
     52px
-    minmax(0,1fr)
+    minmax(
+      0,
+      1fr
+    )
     320px
     45px;
 
@@ -915,7 +1139,12 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     18px;
 
   background:
-    rgba(90,0,6,0.46);
+    rgba(
+      90,
+      0,
+      6,
+      0.46
+    );
 
 }
 
@@ -960,9 +1189,6 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 .explore-preview {
 
-  position:
-    relative;
-
   height:
     95px;
 
@@ -971,7 +1197,12 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   border:
     1px solid
-    rgba(255,255,255,0.08);
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
 
 }
 
@@ -988,12 +1219,21 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     cover;
 
   filter:
-    grayscale(1)
-    brightness(0.42)
-    contrast(1.35);
+
+    grayscale(
+      1
+    )
+
+    brightness(
+      0.4
+    )
+
+    contrast(
+      1.3
+    );
 
   opacity:
-    0.65;
+    0.58;
 
   transition:
 
@@ -1019,13 +1259,15 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     1;
 
   transform:
-    scale(1.04);
+    scale(
+      1.04
+    );
 
 }
 
 
 
-/* DATA EMPTY STATE */
+/* EMPTY DATA PREVIEW */
 
 .explore-preview-empty {
 
@@ -1039,15 +1281,39 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
     linear-gradient(
       45deg,
-      rgba(223,16,29,0.08)
+
+      rgba(
+        223,
+        16,
+        29,
+        0.07
+      )
       25%,
-      transparent 25%,
-      transparent 50%,
-      rgba(223,16,29,0.08)
+
+      transparent
+      25%,
+
+      transparent
       50%,
-      rgba(223,16,29,0.08)
+
+      rgba(
+        223,
+        16,
+        29,
+        0.07
+      )
+      50%,
+
+      rgba(
+        223,
+        16,
+        29,
+        0.07
+      )
       75%,
-      transparent 75%
+
+      transparent
+      75%
     );
 
   background-size:
@@ -1066,16 +1332,21 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   border:
     1px solid
-    var(--red);
+    rgba(
+      223,
+      16,
+      29,
+      0.7
+    );
 
   color:
-    #8d8782;
+    #817b76;
 
   font-family:
     var(--pixel);
 
   font-size:
-    0.53rem;
+    0.51rem;
 
 }
 
@@ -1105,7 +1376,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
 /* =========================================================
-   DEEPER ARCHIVE
+   ARCHIVE
 ========================================================= */
 
 .archive {
@@ -1117,14 +1388,21 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     40px;
 
   background:
-    rgba(0,0,0,0.78);
+    rgba(
+      0,
+      0,
+      0,
+      0.8
+    );
 
   border:
     1px solid
     var(--line);
 
   backdrop-filter:
-    blur(14px);
+    blur(
+      14px
+    );
 
 }
 
@@ -1183,7 +1461,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
 
-/* SMALL PROJECTS */
+/* ARCHIVE PROJECTS */
 
 .archive-grid {
 
@@ -1191,7 +1469,10 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     grid;
 
   grid-template-columns:
-    repeat(3,1fr);
+    repeat(
+      3,
+      1fr
+    );
 
   gap:
     14px;
@@ -1232,8 +1513,14 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     cover;
 
   filter:
-    grayscale(1)
-    brightness(0.52);
+
+    grayscale(
+      1
+    )
+
+    brightness(
+      0.5
+    );
 
   transition:
 
@@ -1252,7 +1539,9 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     none;
 
   transform:
-    scale(1.035);
+    scale(
+      1.035
+    );
 
 }
 
@@ -1275,7 +1564,12 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     9px;
 
   background:
-    rgba(0,0,0,0.85);
+    rgba(
+      0,
+      0,
+      0,
+      0.88
+    );
 
   border-left:
     2px solid
@@ -1295,7 +1589,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
 /* =========================================================
-   CONTACT CTA
+   CONTACT
 ========================================================= */
 
 .home-contact {
@@ -1304,7 +1598,8 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     grid;
 
   grid-template-columns:
-    1fr auto;
+    1fr
+    auto;
 
   align-items:
     center;
@@ -1319,14 +1614,21 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     42px;
 
   background:
-    rgba(0,0,0,0.82);
+    rgba(
+      0,
+      0,
+      0,
+      0.82
+    );
 
   border:
     1px solid
     var(--red);
 
   backdrop-filter:
-    blur(14px);
+    blur(
+      14px
+    );
 
 }
 
@@ -1374,28 +1676,12 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
 /* =========================================================
-   RESPONSIVE
+   TABLET
 ========================================================= */
 
 @media (
   max-width: 1050px
 ) {
-
-  .hero-intro {
-
-    grid-template-columns:
-      1fr;
-
-  }
-
-
-  .hero-art-window {
-
-    min-height:
-      320px;
-
-  }
-
 
   .featured-grid {
 
@@ -1416,7 +1702,8 @@ description: Geography, GIS, environmental research, cultural resources, and spa
   .featured-stack {
 
     grid-template-columns:
-      1fr 1fr;
+      1fr
+      1fr;
 
     grid-template-rows:
       auto;
@@ -1447,11 +1734,46 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
 
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media (
   max-width: 700px
 ) {
 
-  .hero-hud {
+  .hero {
+
+    min-height:
+      auto;
+
+    padding-top:
+      20px;
+
+  }
+
+
+  .hero-name {
+
+    font-size:
+      clamp(
+        4rem,
+        19vw,
+        6rem
+      );
+
+  }
+
+
+  .hero-meta {
+
+    gap:
+      8px 15px;
+
+  }
+
+
+  .hero-meta span::after {
 
     display:
       none;
@@ -1459,22 +1781,21 @@ description: Geography, GIS, environmental research, cultural resources, and spa
   }
 
 
-  .hero-copy {
+  .art-break {
 
-    padding:
-      26px;
+    height:
+      190px;
 
   }
 
 
-  .hero-title {
+  .featured-heading {
 
-    font-size:
-      clamp(
-        4rem,
-        18vw,
-        6rem
-      );
+    align-items:
+      start;
+
+    flex-direction:
+      column;
 
   }
 
@@ -1491,6 +1812,17 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
     grid-template-columns:
       1fr;
+
+  }
+
+
+  .explore-heading {
+
+    align-items:
+      start;
+
+    flex-direction:
+      column;
 
   }
 
@@ -1571,113 +1903,115 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
   <!-- =====================================================
-       HERO
+       INTRO
   ====================================================== -->
 
   <section class="hero">
 
 
-    <div class="hero-hud">
-
-      <span>
-        BRM / FIELD ARCHIVE
-      </span>
-
-      <span class="hero-hud-red">
-        PORTFOLIO ACTIVE
-      </span>
-
-      <span>
-        CALIFORNIA / 2026
-      </span>
-
-    </div>
+    <div class="hero-inner reveal">
 
 
+      <div class="hero-meta">
 
-    <div class="hero-intro">
+        <span>
+          GEOGRAPHY
+        </span>
 
+        <span>
+          GIS
+        </span>
 
-      <div class="hero-copy reveal">
+        <span>
+          ENVIRONMENTAL RESOURCES
+        </span>
 
-        <div class="hero-overline">
-
-          BRYAN RAMOS-MORALES
-
-        </div>
-
-
-        <h1 class="hero-title">
-
-          <span>
-            PLACE
-          </span>
-
-          <span class="hero-title-red">
-            SYSTEM
-          </span>
-
-          <span>
-            STORY
-          </span>
-
-        </h1>
-
-
-        <p class="hero-description">
-
-          Geography, GIS, environmental systems,
-          cultural resources, cartography, and spatial
-          research focused on understanding how places
-          work, change, and carry history.
-
-        </p>
-
-
-        <div class="hero-actions">
-
-          <a
-            class="button"
-            href="#featured"
-          >
-            VIEW WORK ↓
-          </a>
-
-
-          <a
-            class="button secondary"
-            href="{{ '/resume.html' | relative_url }}"
-          >
-            RÉSUMÉ ↗
-          </a>
-
-        </div>
+        <span>
+          CULTURAL RESOURCES
+        </span>
 
       </div>
 
 
 
-      <div
-        class="hero-art-window reveal"
-        data-log="FIELD ENVIRONMENT"
-      >
+      <h1 class="hero-name">
 
-        <div class="hero-art-text">
+        <span>
+          BRYAN
+        </span>
 
-          <span>
-            FIELD_NOTE_01
-          </span>
+        <span class="hero-name-red">
+          RAMOS-MORALES
+        </span>
 
-          <p>
+      </h1>
 
-            Maps are one layer.
-            Field observation, history,
-            environmental systems, imagery,
-            and people add the rest.
 
-          </p>
 
-        </div>
+      <div class="hero-role">
+
+        Geography &amp; Environmental Resources student
+        building work across GIS, environmental analysis,
+        cultural resources, and spatial research.
+
+      </div>
+
+
+
+      <p class="hero-description">
+
+        My portfolio includes university work,
+        independent GIS projects, cartography,
+        public-facing cultural-resource projects,
+        and research into environmental and geographic
+        systems.
+
+      </p>
+
+
+
+      <div class="hero-actions">
+
+        <a
+          class="button"
+          href="#featured"
+        >
+          VIEW SELECTED WORK ↓
+        </a>
+
+
+        <a
+          class="button secondary"
+          href="{{ '/resume.html' | relative_url }}"
+        >
+          RÉSUMÉ ↗
+        </a>
+
+      </div>
+
+
+
+      <div class="hero-fields">
+
+        <span class="hero-field">
+          GIS
+        </span>
+
+        <span class="hero-field">
+          CARTOGRAPHY
+        </span>
+
+        <span class="hero-field">
+          ENVIRONMENTAL GEOGRAPHY
+        </span>
+
+        <span class="hero-field">
+          CULTURAL RESOURCES
+        </span>
+
+        <span class="hero-field">
+          SPATIAL ANALYSIS
+        </span>
 
       </div>
 
@@ -1690,7 +2024,28 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
   <!-- =====================================================
-       FEATURED
+       ART TRANSITION
+  ====================================================== -->
+
+  <section
+    class="art-break reveal"
+    aria-hidden="true"
+  >
+
+    <div class="art-break-primary"></div>
+
+    <div class="art-break-secondary"></div>
+
+    <div class="art-corner art-corner-one"></div>
+
+    <div class="art-corner art-corner-two"></div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       SELECTED WORK
   ====================================================== -->
 
   <section
@@ -1716,7 +2071,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
       <div class="featured-note">
-        THREE CURRENT FILES
+        CURRENT FEATURED PROJECTS
       </div>
 
 
@@ -1747,8 +2102,8 @@ description: Geography, GIS, environmental research, cultural resources, and spa
           >
 
 
-          <span class="file-number">
-            FILE_001
+          <span class="project-number">
+            01
           </span>
 
 
@@ -1767,8 +2122,8 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
               <div class="featured-meta">
 
-                WATER / HISTORICAL LANDSCAPE /
-                FLOOD RISK / GIS
+                ENVIRONMENTAL GEOGRAPHY /
+                WATER / GIS
 
               </div>
 
@@ -1787,8 +2142,6 @@ description: Geography, GIS, environmental research, cultural resources, and spa
       </div>
 
 
-
-      <!-- RIGHT STACK -->
 
       <div class="featured-stack">
 
@@ -1813,8 +2166,8 @@ description: Geography, GIS, environmental research, cultural resources, and spa
             >
 
 
-            <span class="file-number">
-              FILE_002
+            <span class="project-number">
+              02
             </span>
 
 
@@ -1830,8 +2183,9 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
                 <div class="featured-meta">
 
-                  VOLCANOES / GLACIERS /
-                  TECTONICS
+                  VOLCANISM /
+                  GLACIERS /
+                  GIS
 
                 </div>
 
@@ -1871,8 +2225,8 @@ description: Geography, GIS, environmental research, cultural resources, and spa
             >
 
 
-            <span class="file-number">
-              FILE_003
+            <span class="project-number">
+              03
             </span>
 
 
@@ -1889,7 +2243,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
                 <div class="featured-meta">
 
                   CULTURAL RESOURCES /
-                  DESIGN / INTERPRETATION
+                  DESIGN
 
                 </div>
 
@@ -1919,7 +2273,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
   <!-- =====================================================
-       EXPLORE AREAS
+       EXPLORE BY AREA
   ====================================================== -->
 
   <section class="explore">
@@ -1928,11 +2282,11 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     <header class="explore-heading reveal">
 
       <h2>
-        EXPLORE
+        BROWSE BY AREA
       </h2>
 
       <span>
-        CHOOSE A FIELD
+        PORTFOLIO SECTIONS
       </span>
 
     </header>
@@ -1942,7 +2296,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     <div class="explore-list">
 
 
-      <!-- ENVIRONMENTAL -->
+      <!-- ENVIRONMENT -->
 
       <a
         class="explore-row reveal"
@@ -1956,7 +2310,9 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
         <h3 class="explore-name">
+
           Environmental Geography
+
         </h3>
 
 
@@ -1978,11 +2334,11 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
 
-      <!-- SPATIAL -->
+      <!-- GIS -->
 
       <a
         class="explore-row reveal"
-        data-log="SPATIAL ANALYSIS"
+        data-log="GEOGRAPHY + SPATIAL ANALYSIS"
         href="{{ '/geography-spatial-analysis.html' | relative_url }}"
       >
 
@@ -1992,7 +2348,9 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
         <h3 class="explore-name">
+
           Geography &amp; Spatial Analysis
+
         </h3>
 
 
@@ -2028,7 +2386,9 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
         <h3 class="explore-name">
+
           Cultural Resources
+
         </h3>
 
 
@@ -2064,14 +2424,16 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
         <h3 class="explore-name">
+
           Data &amp; Programming
+
         </h3>
 
 
         <div class="explore-preview explore-preview-empty">
 
           <span>
-            BUILDING / PROJECTS COMING
+            PROJECTS IN DEVELOPMENT
           </span>
 
         </div>
@@ -2092,7 +2454,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
   <!-- =====================================================
-       ARCHIVE
+       OTHER WORK
   ====================================================== -->
 
   <section class="archive reveal">
@@ -2102,18 +2464,15 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
       <h2>
-        DEEPER ARCHIVE
+        OTHER WORK
       </h2>
 
 
       <p>
 
-        Additional work in cartography,
+        Additional projects in cartography,
         cultural-resource communication,
         historical geography, and spatial analysis.
-
-        These stay available without competing
-        with the three featured projects above.
 
       </p>
 
@@ -2125,12 +2484,10 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     <div class="archive-grid">
 
 
-      <!-- CASINO -->
-
       <a
         class="archive-item"
         data-discover
-        data-log="CASINO DISTRIBUTION"
+        data-log="CALIFORNIA CASINO DISTRIBUTION"
         href="{{ '/projects/california-casino-distribution-map/' | relative_url }}"
       >
 
@@ -2138,6 +2495,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
           src="{{ '/california-casino-distribution-map.png' | relative_url }}"
           alt="California casino distribution map"
         >
+
 
         <div class="archive-label">
 
@@ -2149,12 +2507,10 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
 
-      <!-- NAGPRA MEDIA -->
-
       <a
         class="archive-item"
         data-discover
-        data-log="NAGPRA MEDIA"
+        data-log="NAGPRA EDUCATIONAL MEDIA"
         href="{{ '/projects/nagpra-educational-media/' | relative_url }}"
       >
 
@@ -2162,6 +2518,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
           src="{{ '/nagpra-brochure-outside.png' | relative_url }}"
           alt="NAGPRA educational media"
         >
+
 
         <div class="archive-label">
 
@@ -2173,12 +2530,10 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
 
-      <!-- CROWS LANDING -->
-
       <a
         class="archive-item"
         data-discover
-        data-log="CROWS LANDING"
+        data-log="CROWS LANDING + MEW-KO"
         href="{{ '/projects/crows-landing-mew-ko/' | relative_url }}"
       >
 
@@ -2186,6 +2541,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
           src="{{ '/crows-landing-map.jpg' | relative_url }}"
           alt="Crows Landing and Mew-ko Geography"
         >
+
 
         <div class="archive-label">
 
@@ -2216,10 +2572,11 @@ description: Geography, GIS, environmental research, cultural resources, and spa
         CONTACT /
       </span>
 
+
       <h2>
 
-        HAVE A QUESTION,
-        PROJECT, OR OPPORTUNITY?
+        QUESTIONS, PROJECTS,
+        OR OPPORTUNITIES?
 
       </h2>
 
