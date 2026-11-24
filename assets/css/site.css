@@ -1,44 +1,44 @@
 :root {
 
-  --bg: #eef1eb;
-  --paper: #fbfcf8;
+  --bg: #0d0f10;
+  --bg-soft: #131617;
+  --panel: #171a1c;
 
-  --ink: #111311;
-  --soft: #343834;
-  --muted: #686f68;
+  --text: #f1f0e9;
+  --text-soft: #c8cbc5;
+  --muted: #8d938e;
 
-  --moss: #355a3c;
-  --blue: #3d5cff;
-
+  --blue: #526dff;
   --acid: #dfff38;
-  --red: #ed503c;
+  --red: #ff503c;
+  --green: #51735b;
+  --sky: #8ed8ff;
 
-  --sky: #aedaff;
-
-  --line: rgba(17,19,17,0.22);
+  --line: rgba(241,240,233,0.2);
+  --line-soft: rgba(241,240,233,0.09);
 
   --display:
     "Archivo Black",
     sans-serif;
 
+  --serif:
+    "Instrument Serif",
+    serif;
+
   --mono:
     "IBM Plex Mono",
     monospace;
-
-  --serif:
-    "Newsreader",
-    serif;
-
-  --scribble:
-    "Rock Salt",
-    cursive;
 
   --body:
     "Inter",
     sans-serif;
 
+  --scribble:
+    "Rock Salt",
+    cursive;
+
   --max:
-    1420px;
+    1450px;
 
 }
 
@@ -68,7 +68,7 @@ body {
     var(--bg);
 
   color:
-    var(--ink);
+    var(--text);
 
   font-family:
     var(--body);
@@ -76,12 +76,18 @@ body {
   line-height:
     1.65;
 
+  -webkit-font-smoothing:
+    antialiased;
+
 }
 
 
 img {
+
   display: block;
+
   max-width: 100%;
+
 }
 
 
@@ -104,17 +110,15 @@ select {
     var(--acid);
 
   color:
-    var(--ink);
+    #000;
 
 }
 
 
 
-/* =========================================================
-   BACKGROUND
-========================================================= */
+/* BACKGROUND ART */
 
-.site-background-art {
+.background-art {
 
   position:
     fixed;
@@ -123,7 +127,7 @@ select {
     0;
 
   z-index:
-    -5;
+    -10;
 
   overflow:
     hidden;
@@ -134,7 +138,54 @@ select {
 }
 
 
-.site-background-art::after {
+.background-art::before {
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  background:
+
+    radial-gradient(
+      circle at 82% 16%,
+      rgba(82,109,255,0.12),
+      transparent 31rem
+    ),
+
+    radial-gradient(
+      circle at 9% 48%,
+      rgba(81,115,91,0.12),
+      transparent 30rem
+    ),
+
+    linear-gradient(
+      rgba(255,255,255,0.018)
+      1px,
+      transparent 1px
+    ),
+
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.018)
+      1px,
+      transparent 1px
+    );
+
+  background-size:
+    auto,
+    auto,
+    54px 54px,
+    54px 54px;
+
+  content:
+    "";
+
+}
+
+
+.background-art::after {
 
   position:
     absolute;
@@ -143,9 +194,8 @@ select {
     0;
 
   background-image:
-
     radial-gradient(
-      rgba(17,19,17,0.14)
+      rgba(255,255,255,0.16)
       0.5px,
       transparent 0.5px
     );
@@ -154,7 +204,7 @@ select {
     6px 6px;
 
   opacity:
-    0.12;
+    0.07;
 
   content:
     "";
@@ -162,67 +212,27 @@ select {
 }
 
 
-.background-river {
+.bg-contours {
 
   position:
     absolute;
 
   top:
-    -120px;
-
-  left:
-    -80px;
-
-  width:
-    420px;
-
-  height:
-    125%;
-
-  opacity:
-    0.13;
-
-}
-
-
-.background-river path {
-
-  fill:
-    none;
-
-  stroke:
-    var(--moss);
-
-  stroke-width:
-    4;
-
-}
-
-
-.background-topo {
-
-  position:
-    absolute;
-
-  top:
-    80px;
+    50px;
 
   right:
-    -170px;
+    -180px;
 
   width:
-    720px;
-
-  height:
-    720px;
+    750px;
 
   opacity:
-    0.12;
+    0.14;
 
 }
 
 
-.background-topo path {
+.bg-contours path {
 
   fill:
     none;
@@ -236,24 +246,58 @@ select {
 }
 
 
-.background-cross {
+.bg-river {
 
   position:
     absolute;
 
-  color:
-    var(--red);
+  top:
+    -100px;
+
+  left:
+    -80px;
+
+  width:
+    420px;
+
+  height:
+    130%;
+
+  opacity:
+    0.1;
+
+}
+
+
+.bg-river path {
+
+  fill:
+    none;
+
+  stroke:
+    var(--green);
+
+  stroke-width:
+    4;
+
+}
+
+
+.bg-mark {
+
+  position:
+    absolute;
 
   font-family:
     var(--scribble);
 
   opacity:
-    0.35;
+    0.32;
 
 }
 
 
-.cross-one {
+.mark-one {
 
   top:
     28%;
@@ -261,39 +305,42 @@ select {
   left:
     5%;
 
+  color:
+    var(--red);
+
   font-size:
     3rem;
 
   transform:
-    rotate(15deg);
+    rotate(12deg);
 
 }
 
 
-.cross-two {
+.mark-two {
 
   top:
-    68%;
+    63%;
 
   right:
     8%;
 
+  color:
+    var(--acid);
+
   font-size:
     4rem;
-
-  transform:
-    rotate(-12deg);
 
 }
 
 
-.cross-three {
+.mark-three {
 
   top:
-    52%;
+    78%;
 
   left:
-    50%;
+    45%;
 
   color:
     var(--blue);
@@ -305,20 +352,16 @@ select {
 
 
 
-/* =========================================================
-   PROGRESS
-========================================================= */
+/* PROGRESS */
 
 .scroll-progress {
 
   position:
     fixed;
 
-  top:
-    0;
+  top: 0;
 
-  left:
-    0;
+  left: 0;
 
   z-index:
     9999;
@@ -361,9 +404,7 @@ select {
 
 
 
-/* =========================================================
-   HEADER
-========================================================= */
+/* HEADER */
 
 .site-header {
 
@@ -376,20 +417,15 @@ select {
   z-index:
     1000;
 
-  border-bottom:
-    2px solid
-    var(--ink);
-
   background:
-    rgba(
-      238,
-      241,
-      235,
-      0.91
-    );
+    rgba(13,15,16,0.9);
+
+  border-bottom:
+    1px solid
+    var(--line);
 
   backdrop-filter:
-    blur(15px);
+    blur(16px);
 
 }
 
@@ -425,11 +461,17 @@ select {
 
 .site-brand {
 
-  position:
-    relative;
+  display:
+    flex;
+
+  align-items:
+    end;
 
   justify-self:
     start;
+
+  gap:
+    15px;
 
   text-decoration:
     none;
@@ -437,48 +479,42 @@ select {
 }
 
 
-.brand-name {
-
-  display:
-    block;
+.brand-main {
 
   font-family:
     var(--display);
 
   font-size:
-    1.05rem;
+    1rem;
 
   letter-spacing:
     -0.05em;
 
   line-height:
-    0.88;
+    0.86;
 
 }
 
 
-.brand-note {
+.brand-sub {
 
-  position:
-    absolute;
-
-  right:
-    -75px;
-
-  bottom:
-    -3px;
+  padding-bottom:
+    1px;
 
   color:
-    var(--moss);
+    var(--acid);
 
   font-family:
-    var(--scribble);
+    var(--mono);
 
   font-size:
-    0.54rem;
+    0.5rem;
 
-  transform:
-    rotate(-5deg);
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.08em;
 
 }
 
@@ -515,13 +551,13 @@ select {
     var(--mono);
 
   font-size:
-    0.67rem;
+    0.66rem;
 
   font-weight:
     700;
 
   letter-spacing:
-    0.08em;
+    0.07em;
 
   text-decoration:
     none;
@@ -541,13 +577,13 @@ select {
     0;
 
   bottom:
-    1px;
+    0;
 
   left:
     0;
 
   height:
-    5px;
+    4px;
 
   background:
     var(--acid);
@@ -596,7 +632,7 @@ select {
 }
 
 
-.header-coordinates {
+.header-field {
 
   color:
     var(--muted);
@@ -605,34 +641,34 @@ select {
     var(--mono);
 
   font-size:
-    0.51rem;
+    0.48rem;
 
   letter-spacing:
-    0.08em;
+    0.07em;
 
 }
 
 
-.header-resume {
+.resume-link {
 
   padding:
     10px 14px;
 
   background:
-    var(--ink);
+    var(--text);
 
   border:
-    2px solid
-    var(--ink);
+    1px solid
+    var(--text);
 
   color:
-    white;
+    var(--bg);
 
   font-family:
     var(--mono);
 
   font-size:
-    0.62rem;
+    0.61rem;
 
   font-weight:
     700;
@@ -644,33 +680,34 @@ select {
     uppercase;
 
   transition:
-    box-shadow 140ms ease,
-    transform 140ms ease,
-    background 140ms ease;
+    background 150ms ease,
+    box-shadow 150ms ease,
+    color 150ms ease,
+    transform 150ms ease;
 
 }
 
 
-.header-resume:hover {
+.resume-link:hover {
 
   background:
     var(--blue);
 
+  color:
+    white;
+
   box-shadow:
-    6px 6px 0
+    5px 5px 0
     var(--acid);
 
   transform:
-    translate(
-      -3px,
-      -3px
-    );
+    translate(-3px,-3px);
 
 }
 
 
 
-/* MOBILE MENU */
+/* MOBILE */
 
 .nav-toggle {
 
@@ -690,8 +727,8 @@ select {
     var(--acid);
 
   border:
-    2px solid
-    var(--ink);
+    1px solid
+    var(--text);
 
 }
 
@@ -711,15 +748,13 @@ select {
     5px auto;
 
   background:
-    var(--ink);
+    #000;
 
 }
 
 
 
-/* =========================================================
-   MAIN
-========================================================= */
+/* MAIN */
 
 .site-main {
 
@@ -733,16 +768,14 @@ select {
     auto;
 
   padding:
-    50px 0
+    52px 0
     120px;
 
 }
 
 
 
-/* =========================================================
-   TYPE
-========================================================= */
+/* TYPOGRAPHY */
 
 h1,
 h2,
@@ -763,14 +796,14 @@ h1 {
     clamp(
       4rem,
       7vw,
-      7.3rem
+      7rem
     );
 
   letter-spacing:
     -0.075em;
 
   line-height:
-    0.86;
+    0.88;
 
 }
 
@@ -788,10 +821,10 @@ h2 {
     );
 
   letter-spacing:
-    -0.065em;
+    -0.06em;
 
   line-height:
-    0.94;
+    0.95;
 
 }
 
@@ -813,7 +846,7 @@ h3 {
     1080px;
 
   margin:
-    30px 0
+    25px 0
     80px;
 
 }
@@ -825,20 +858,16 @@ h3 {
     block;
 
   width:
-    66px;
+    70px;
 
   height:
-    9px;
+    8px;
 
   margin-bottom:
-    26px;
+    25px;
 
   background:
     var(--red);
-
-  border:
-    2px solid
-    var(--ink);
 
   content:
     "";
@@ -853,19 +882,19 @@ h3 {
 .project-meta {
 
   color:
-    var(--moss);
+    var(--acid);
 
   font-family:
     var(--mono);
 
   font-size:
-    0.66rem;
+    0.64rem;
 
   font-weight:
     700;
 
   letter-spacing:
-    0.12em;
+    0.11em;
 
   text-transform:
     uppercase;
@@ -879,31 +908,29 @@ h3 {
     820px;
 
   color:
-    var(--soft);
+    var(--text-soft);
 
   font-family:
     var(--serif);
 
   font-size:
     clamp(
-      1.3rem,
+      1.4rem,
       2vw,
-      1.8rem
+      1.9rem
     );
 
   font-style:
     italic;
 
   line-height:
-    1.4;
+    1.35;
 
 }
 
 
 
-/* =========================================================
-   BUTTONS
-========================================================= */
+/* BUTTONS */
 
 .button {
 
@@ -923,20 +950,20 @@ h3 {
     11px 17px;
 
   background:
-    var(--ink);
+    var(--text);
 
   border:
-    2px solid
-    var(--ink);
+    1px solid
+    var(--text);
 
   color:
-    white;
+    var(--bg);
 
   font-family:
     var(--mono);
 
   font-size:
-    0.63rem;
+    0.62rem;
 
   font-weight:
     700;
@@ -951,9 +978,10 @@ h3 {
     uppercase;
 
   transition:
+    background 140ms ease,
     box-shadow 140ms ease,
-    transform 140ms ease,
-    background 140ms ease;
+    color 140ms ease,
+    transform 140ms ease;
 
 }
 
@@ -963,15 +991,15 @@ h3 {
   background:
     var(--blue);
 
+  color:
+    white;
+
   box-shadow:
     6px 6px 0
     var(--acid);
 
   transform:
-    translate(
-      -3px,
-      -3px
-    );
+    translate(-3px,-3px);
 
 }
 
@@ -979,18 +1007,16 @@ h3 {
 .button.secondary {
 
   background:
-    var(--paper);
+    transparent;
 
   color:
-    var(--ink);
+    var(--text);
 
 }
 
 
 
-/* =========================================================
-   CATEGORY GRIDS
-========================================================= */
+/* CATEGORY PROJECTS */
 
 .project-grid {
 
@@ -1011,30 +1037,31 @@ h3 {
 
 .project-card {
 
-  position:
-    relative;
-
   padding:
-    24px;
+    26px;
 
   background:
     rgba(
-      251,
-      252,
-      248,
-      0.73
+      23,
+      26,
+      28,
+      0.78
     );
 
   border:
-    2px solid
-    var(--ink);
+    1px solid
+    var(--line);
+
+  box-shadow:
+    9px 10px 0
+    rgba(0,0,0,0.25);
 
   clip-path:
     polygon(
       0 1%,
       99% 0,
-      100% 97%,
-      2% 100%
+      100% 98%,
+      1% 100%
     );
 
 }
@@ -1043,10 +1070,10 @@ h3 {
 .project-card:nth-child(even) {
 
   margin-top:
-    60px;
+    55px;
 
   transform:
-    rotate(0.5deg);
+    rotate(0.4deg);
 
 }
 
@@ -1054,7 +1081,7 @@ h3 {
 .project-card:nth-child(odd) {
 
   transform:
-    rotate(-0.4deg);
+    rotate(-0.3deg);
 
 }
 
@@ -1090,10 +1117,10 @@ h3 {
     wrap;
 
   gap:
-    6px;
+    7px;
 
   margin:
-    8px 0 24px;
+    8px 0 25px;
 
 }
 
@@ -1101,20 +1128,23 @@ h3 {
 .tag {
 
   padding:
-    4px 8px;
+    5px 8px;
 
   background:
-    var(--acid);
+    transparent;
 
   border:
     1px solid
-    var(--ink);
+    var(--line);
+
+  color:
+    var(--acid);
 
   font-family:
     var(--mono);
 
   font-size:
-    0.55rem;
+    0.54rem;
 
   font-weight:
     700;
@@ -1123,14 +1153,12 @@ h3 {
 
 
 
-/* =========================================================
-   PROJECT DETAILS
-========================================================= */
+/* PROJECT DETAIL */
 
 .project-hero {
 
   max-width:
-    1100px;
+    1120px;
 
   margin:
     auto auto
@@ -1151,24 +1179,27 @@ h3 {
     100%;
 
   padding:
-    12px;
+    10px;
 
   background:
-    white;
+    #050606;
 
   border:
-    2px solid
-    var(--ink);
+    1px solid
+    var(--line);
 
   box-shadow:
-    10px 12px 0
-    rgba(17,19,17,0.12);
+    12px 14px 0
+    rgba(0,0,0,0.4);
 
 }
 
 
 .project-image-button img {
-  width: 100%;
+
+  width:
+    100%;
+
 }
 
 
@@ -1189,18 +1220,14 @@ h3 {
   background:
     var(--acid);
 
-  border:
-    2px solid
-    var(--ink);
-
   color:
-    var(--ink);
+    #000;
 
   font-family:
     var(--mono);
 
   font-size:
-    0.56rem;
+    0.55rem;
 
   font-weight:
     700;
@@ -1212,6 +1239,9 @@ h3 {
 
   display:
     flex;
+
+  flex-wrap:
+    wrap;
 
   gap:
     10px;
@@ -1228,7 +1258,7 @@ h3 {
     grid;
 
   max-width:
-    1100px;
+    1120px;
 
   grid-template-columns:
     repeat(
@@ -1237,7 +1267,7 @@ h3 {
     );
 
   gap:
-    15px;
+    12px;
 
   margin:
     0 auto
@@ -1249,22 +1279,14 @@ h3 {
 .detail-card {
 
   padding:
-    20px;
+    22px;
 
   background:
-    var(--paper);
+    var(--panel);
 
   border:
-    2px solid
-    var(--ink);
-
-}
-
-
-.detail-card:nth-child(2) {
-
-  transform:
-    rotate(-0.6deg);
+    1px solid
+    var(--line);
 
 }
 
@@ -1278,13 +1300,13 @@ h3 {
     var(--mono);
 
   font-size:
-    0.59rem;
+    0.58rem;
 
   font-weight:
     700;
 
   letter-spacing:
-    0.1em;
+    0.08em;
 
   text-transform:
     uppercase;
@@ -1297,6 +1319,9 @@ h3 {
   margin-top:
     8px;
 
+  color:
+    var(--text-soft);
+
   font-size:
     0.9rem;
 
@@ -1307,14 +1332,12 @@ h3 {
 
 
 
-/* =========================================================
-   CASE STUDY
-========================================================= */
+/* CASE STUDY */
 
 .case-study {
 
   max-width:
-    880px;
+    900px;
 
   margin:
     auto;
@@ -1331,8 +1354,8 @@ h3 {
     18px;
 
   border-top:
-    2px solid
-    var(--ink);
+    1px solid
+    var(--line);
 
 }
 
@@ -1341,7 +1364,7 @@ h3 {
 .case-study li {
 
   color:
-    var(--soft);
+    var(--text-soft);
 
   font-size:
     1rem;
@@ -1355,7 +1378,7 @@ h3 {
 .case-study a:not(.button) {
 
   color:
-    var(--blue);
+    var(--sky);
 
   text-underline-offset:
     4px;
@@ -1372,28 +1395,36 @@ h3 {
     25px;
 
   border-top:
-    2px solid
-    var(--ink);
+    1px solid
+    var(--line);
 
 }
 
 
 
-/* =========================================================
-   CONTACT COMPATIBILITY
-========================================================= */
+/* CONTACT OVERRIDES */
 
 .contact-card {
+
+  background:
+    var(--panel) !important;
+
+  border-color:
+    var(--line) !important;
 
   border-radius:
     0 !important;
 
   box-shadow:
-    8px 9px 0
-    rgba(17,19,17,0.1) !important;
+    none !important;
 
-  border-width:
-    2px !important;
+}
+
+
+.contact-card p {
+
+  color:
+    var(--text-soft);
 
 }
 
@@ -1407,9 +1438,7 @@ h3 {
 
 
 
-/* =========================================================
-   REVEALS
-========================================================= */
+/* REVEALS */
 
 .reveal {
 
@@ -1417,12 +1446,11 @@ h3 {
     0;
 
   transform:
-    translateY(28px)
-    rotate(0.3deg);
+    translateY(26px);
 
   transition:
-    opacity 550ms ease,
-    transform 600ms ease;
+    opacity 520ms ease,
+    transform 620ms ease;
 
 }
 
@@ -1433,24 +1461,18 @@ h3 {
     1;
 
   transform:
-    translateY(0)
-    rotate(0);
+    translateY(0);
 
 }
 
 
 
-/* =========================================================
-   FOOTER
-========================================================= */
+/* FOOTER */
 
 .site-footer {
 
-  position:
-    relative;
-
   padding:
-    90px
+    80px
     max(
       28px,
       calc(
@@ -1460,44 +1482,12 @@ h3 {
     )
     28px;
 
-  overflow:
-    hidden;
-
   background:
-    var(--ink);
+    #070808;
 
-  color:
-    white;
-
-}
-
-
-.footer-scribble {
-
-  position:
-    absolute;
-
-  top:
-    28px;
-
-  right:
-    7%;
-
-  color:
-    var(--acid);
-
-  font-family:
-    var(--scribble);
-
-  font-size:
-    clamp(
-      1.6rem,
-      3vw,
-      3rem
-    );
-
-  transform:
-    rotate(-5deg);
+  border-top:
+    1px solid
+    var(--line);
 
 }
 
@@ -1508,9 +1498,9 @@ h3 {
     grid;
 
   grid-template-columns:
-    1.25fr
+    1.2fr
     0.8fr
-    0.5fr;
+    0.45fr;
 
   gap:
     60px;
@@ -1518,34 +1508,51 @@ h3 {
 }
 
 
-.footer-title {
-
-  color:
-    white;
+.footer-name {
 
   font-family:
     var(--display);
 
   font-size:
     clamp(
-      4rem,
-      7vw,
-      7rem
+      3rem,
+      6vw,
+      6rem
     );
 
   letter-spacing:
-    -0.08em;
+    -0.07em;
 
   line-height:
-    0.77;
+    0.78;
 
 }
 
 
-.footer-copy {
+.footer-role {
+
+  margin-top:
+    24px;
 
   color:
-    rgba(255,255,255,0.68);
+    var(--acid);
+
+  font-family:
+    var(--mono);
+
+  font-size:
+    0.58rem;
+
+  letter-spacing:
+    0.08em;
+
+}
+
+
+.footer-text {
+
+  color:
+    var(--muted);
 
 }
 
@@ -1566,14 +1573,11 @@ h3 {
 
 .footer-links a {
 
-  color:
-    white;
-
   font-family:
     var(--mono);
 
   font-size:
-    0.72rem;
+    0.66rem;
 
   font-weight:
     700;
@@ -1608,24 +1612,22 @@ h3 {
 
   border-top:
     1px solid
-    rgba(255,255,255,0.3);
+    var(--line);
 
   color:
-    rgba(255,255,255,0.52);
+    #686d68;
 
   font-family:
     var(--mono);
 
   font-size:
-    0.57rem;
+    0.54rem;
 
 }
 
 
 
-/* =========================================================
-   RESPONSIVE
-========================================================= */
+/* RESPONSIVE */
 
 @media (max-width: 950px) {
 
@@ -1638,10 +1640,7 @@ h3 {
 
 
   .header-right {
-
-    display:
-      none;
-
+    display: none;
   }
 
 
@@ -1678,8 +1677,8 @@ h3 {
       var(--bg);
 
     border-bottom:
-      2px solid
-      var(--ink);
+      1px solid
+      var(--line);
 
   }
 
@@ -1746,14 +1745,12 @@ h3 {
   .site-header-inner {
 
     width:
-      calc(
-        100% - 28px
-      );
+      calc(100% - 28px);
 
   }
 
 
-  .brand-note {
+  .brand-sub {
     display: none;
   }
 
@@ -1761,9 +1758,7 @@ h3 {
   .site-main {
 
     width:
-      calc(
-        100% - 28px
-      );
+      calc(100% - 28px);
 
   }
 
@@ -1787,8 +1782,7 @@ h3 {
 ) {
 
   html {
-    scroll-behavior:
-      auto;
+    scroll-behavior: auto;
   }
 
 
@@ -1803,9 +1797,7 @@ h3 {
   }
 
 
-  *,
-  *::before,
-  *::after {
+  * {
 
     transition-duration:
       0.01ms !important;
