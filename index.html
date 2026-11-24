@@ -1,113 +1,2219 @@
 ---
 layout: default
 title: Home
-description: GIS, geography, environmental, and cultural resources portfolio
+description: Geography, environmental research, GIS, cultural resources, and spatial analysis portfolio by Bryan Ramos-Morales.
 ---
 
-<header class="page-header">
-  <div class="eyebrow">GIS · Geography · Cultural Resources</div>
+<style>
 
-  <h1>Mapping places, systems, and human relationships.</h1>
+/* =========================================================
+   HOME — EDITORIAL / FIELD / COLLAGE
+========================================================= */
 
-  <p class="lede">
-    I’m Bryan Ramos-Morales, a geography student developing work in GIS,
-    environmental analysis, cultural resources, NAGPRA, spatial research,
-    and data-driven storytelling.
-  </p>
-</header>
+.home {
 
-<section class="project-grid">
+  --home-gap: clamp(42px, 7vw, 90px);
 
-  <article class="project-card">
-    <div class="project-card-body">
-      <div class="project-meta">Cultural Resources</div>
+}
 
-      <h2>Cultural Resources &amp; NAGPRA</h2>
 
-      <p>
-        Historical geography, public education, institutional resources,
-        culturally responsible communication, and NAGPRA-related projects.
-      </p>
+/* =========================================================
+   HERO
+========================================================= */
 
-      <div class="tag-list">
-        <span class="tag">NAGPRA</span>
-        <span class="tag">Cultural Geography</span>
-        <span class="tag">Public Communication</span>
+.home-hero {
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(420px, 0.95fr);
+
+  gap:
+    clamp(40px, 6vw, 90px);
+
+  min-height:
+    690px;
+
+  align-items:
+    center;
+
+  padding:
+    32px 0 90px;
+
+}
+
+
+.home-hero-copy {
+
+  position:
+    relative;
+
+  z-index:
+    5;
+
+}
+
+
+.home-kicker {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    14px;
+
+  margin-bottom:
+    32px;
+
+  color:
+    var(--wine);
+
+  font-size:
+    0.68rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.16em;
+
+  text-transform:
+    uppercase;
+
+}
+
+
+.home-kicker::before {
+
+  width:
+    44px;
+
+  height:
+    6px;
+
+  background:
+    var(--acid);
+
+  content:
+    "";
+
+}
+
+
+.home-hero h1 {
+
+  margin:
+    0;
+
+  max-width:
+    790px;
+
+  font-size:
+    clamp(
+      4.8rem,
+      8vw,
+      8.2rem
+    );
+
+  line-height:
+    0.78;
+
+}
+
+
+.home-hero h1 span {
+
+  display:
+    block;
+
+}
+
+
+.home-hero h1 .hero-serif {
+
+  margin-bottom:
+    12px;
+
+  font-family:
+    var(--serif);
+
+  font-size:
+    0.42em;
+
+  font-style:
+    italic;
+
+  font-weight:
+    500;
+
+  letter-spacing:
+    -0.03em;
+
+  line-height:
+    1;
+
+  text-transform:
+    none;
+
+}
+
+
+.home-hero-intro {
+
+  max-width:
+    620px;
+
+  margin:
+    38px 0 0;
+
+  color:
+    var(--ink-soft);
+
+  font-size:
+    1.02rem;
+
+  line-height:
+    1.8;
+
+}
+
+
+.home-hero-intro strong {
+
+  color:
+    var(--ink);
+
+}
+
+
+.hero-scroll {
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    10px;
+
+  margin-top:
+    32px;
+
+  color:
+    var(--wine);
+
+  font-size:
+    0.66rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.13em;
+
+  text-decoration:
+    none;
+
+  text-transform:
+    uppercase;
+
+}
+
+
+.hero-scroll span {
+
+  display:
+    inline-block;
+
+  font-size:
+    1.2rem;
+
+  transition:
+    transform 180ms ease;
+
+}
+
+
+.hero-scroll:hover span {
+
+  transform:
+    translateY(5px);
+
+}
+
+
+/* =========================================================
+   HERO COLLAGE
+========================================================= */
+
+.hero-collage {
+
+  position:
+    relative;
+
+  min-height:
+    620px;
+
+}
+
+
+.collage-piece {
+
+  position:
+    absolute;
+
+  display:
+    block;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid var(--ink);
+
+  background:
+    var(--paper);
+
+  color:
+    var(--ink);
+
+  text-decoration:
+    none;
+
+  box-shadow:
+    10px 12px 0 rgba(23, 23, 22, 0.12);
+
+  transition:
+    transform 260ms ease,
+    box-shadow 260ms ease;
+
+}
+
+
+.collage-piece img {
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  object-fit:
+    cover;
+
+  transition:
+    transform 500ms
+    cubic-bezier(
+      0.2,
+      0.7,
+      0.2,
+      1
+    );
+
+}
+
+
+.collage-piece:hover {
+
+  z-index:
+    10;
+
+  box-shadow:
+    16px 18px 0 var(--acid);
+
+}
+
+
+.collage-piece:hover img {
+
+  transform:
+    scale(1.035);
+
+}
+
+
+.collage-main {
+
+  top:
+    56px;
+
+  left:
+    6%;
+
+  width:
+    78%;
+
+  aspect-ratio:
+    1.12 / 1;
+
+  transform:
+    rotate(-2deg);
+
+}
+
+
+.collage-main:hover {
+
+  transform:
+    rotate(0deg)
+    translateY(-6px);
+
+}
+
+
+.collage-top {
+
+  top:
+    0;
+
+  right:
+    0;
+
+  width:
+    44%;
+
+  aspect-ratio:
+    1.15 / 1;
+
+  transform:
+    rotate(4deg);
+
+}
+
+
+.collage-top:hover {
+
+  transform:
+    rotate(1deg)
+    translateY(-5px);
+
+}
+
+
+.collage-bottom {
+
+  right:
+    3%;
+
+  bottom:
+    26px;
+
+  width:
+    50%;
+
+  aspect-ratio:
+    1.25 / 1;
+
+  transform:
+    rotate(2deg);
+
+}
+
+
+.collage-bottom:hover {
+
+  transform:
+    rotate(0deg)
+    translateY(-5px);
+
+}
+
+
+.collage-label {
+
+  position:
+    absolute;
+
+  right:
+    10px;
+
+  bottom:
+    10px;
+
+  padding:
+    7px 9px;
+
+  background:
+    var(--paper);
+
+  border:
+    1px solid var(--ink);
+
+  font-size:
+    0.58rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.08em;
+
+  text-transform:
+    uppercase;
+
+}
+
+
+.collage-sticker {
+
+  position:
+    absolute;
+
+  left:
+    -18px;
+
+  bottom:
+    95px;
+
+  z-index:
+    15;
+
+  display:
+    flex;
+
+  width:
+    104px;
+
+  height:
+    104px;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  padding:
+    18px;
+
+  background:
+    var(--acid);
+
+  border:
+    1px solid var(--ink);
+
+  border-radius:
+    50%;
+
+  font-family:
+    var(--display);
+
+  font-size:
+    1rem;
+
+  font-weight:
+    900;
+
+  line-height:
+    0.95;
+
+  text-align:
+    center;
+
+  text-transform:
+    uppercase;
+
+  transform:
+    rotate(-11deg);
+
+}
+
+
+/* =========================================================
+   PROCESS STRIP
+========================================================= */
+
+.investigation-strip {
+
+  margin:
+    10px 0
+    var(--home-gap);
+
+  padding:
+    22px 0;
+
+  border-top:
+    1px solid var(--ink);
+
+  border-bottom:
+    1px solid var(--ink);
+
+}
+
+
+.investigation-flow {
+
+  display:
+    flex;
+
+  flex-wrap:
+    wrap;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap:
+    14px;
+
+  font-family:
+    var(--display);
+
+  font-size:
+    clamp(
+      1.2rem,
+      2.1vw,
+      2rem
+    );
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.01em;
+
+  text-transform:
+    uppercase;
+
+}
+
+
+.investigation-flow .arrow {
+
+  color:
+    var(--wine);
+
+  font-family:
+    var(--body);
+
+  font-weight:
+    500;
+
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.home-section-heading {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    100px 1fr;
+
+  gap:
+    24px;
+
+  align-items:
+    end;
+
+  margin-bottom:
+    44px;
+
+}
+
+
+.home-section-number {
+
+  color:
+    var(--wine);
+
+  font-family:
+    var(--display);
+
+  font-size:
+    1.5rem;
+
+  font-weight:
+    900;
+
+}
+
+
+.home-section-title {
+
+  margin:
+    0;
+
+  font-size:
+    clamp(
+      3.4rem,
+      7vw,
+      6.3rem
+    );
+
+}
+
+
+/* =========================================================
+   SELECTED WORK
+========================================================= */
+
+.selected-work {
+
+  margin-bottom:
+    calc(
+      var(--home-gap)
+      * 1.2
+    );
+
+}
+
+
+.feature-grid {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      12,
+      minmax(0, 1fr)
+    );
+
+  gap:
+    54px 24px;
+
+}
+
+
+.feature-project {
+
+  position:
+    relative;
+
+  color:
+    inherit;
+
+  text-decoration:
+    none;
+
+}
+
+
+.feature-project:nth-child(1) {
+
+  grid-column:
+    1 / span 8;
+
+}
+
+
+.feature-project:nth-child(2) {
+
+  grid-column:
+    9 / span 4;
+
+  margin-top:
+    150px;
+
+}
+
+
+.feature-project:nth-child(3) {
+
+  grid-column:
+    2 / span 4;
+
+}
+
+
+.feature-project:nth-child(4) {
+
+  grid-column:
+    7 / span 6;
+
+  margin-top:
+    70px;
+
+}
+
+
+.feature-image {
+
+  position:
+    relative;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid var(--ink);
+
+  background:
+    var(--paper);
+
+}
+
+
+.feature-image::after {
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  background:
+    var(--wine);
+
+  content:
+    "";
+
+  opacity:
+    0;
+
+  mix-blend-mode:
+    multiply;
+
+  transition:
+    opacity 260ms ease;
+
+}
+
+
+.feature-project:hover
+.feature-image::after {
+
+  opacity:
+    0.08;
+
+}
+
+
+.feature-image img {
+
+  width:
+    100%;
+
+  transition:
+    transform 500ms ease;
+
+}
+
+
+.feature-project:hover
+.feature-image img {
+
+  transform:
+    scale(1.025);
+
+}
+
+
+.feature-index {
+
+  position:
+    absolute;
+
+  top:
+    -16px;
+
+  left:
+    -10px;
+
+  z-index:
+    5;
+
+  padding:
+    5px 10px;
+
+  background:
+    var(--acid);
+
+  border:
+    1px solid var(--ink);
+
+  font-family:
+    var(--display);
+
+  font-size:
+    1rem;
+
+  font-weight:
+    900;
+
+}
+
+
+.feature-info {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr auto;
+
+  gap:
+    20px;
+
+  align-items:
+    start;
+
+  padding-top:
+    17px;
+
+  border-top:
+    1px solid var(--ink);
+
+  margin-top:
+    12px;
+
+}
+
+
+.feature-title {
+
+  margin:
+    0;
+
+  font-family:
+    var(--display);
+
+  font-size:
+    clamp(
+      1.8rem,
+      3vw,
+      2.7rem
+    );
+
+  font-weight:
+    800;
+
+  line-height:
+    0.95;
+
+  text-transform:
+    uppercase;
+
+}
+
+
+.feature-meta {
+
+  margin-top:
+    8px;
+
+  color:
+    var(--muted);
+
+  font-size:
+    0.74rem;
+
+  font-weight:
+    600;
+
+  line-height:
+    1.5;
+
+}
+
+
+.feature-arrow {
+
+  font-size:
+    1.6rem;
+
+  transition:
+    transform 180ms ease;
+
+}
+
+
+.feature-project:hover
+.feature-arrow {
+
+  transform:
+    translate(
+      6px,
+      -6px
+    );
+
+}
+
+
+/* =========================================================
+   BIG IDEA
+========================================================= */
+
+.home-manifesto {
+
+  position:
+    relative;
+
+  margin:
+    0 calc(
+      50% - 50vw
+    );
+
+  padding:
+    clamp(
+      80px,
+      10vw,
+      140px
+    )
+    max(
+      28px,
+      calc(
+        (100vw - var(--max-width))
+        / 2
+      )
+    );
+
+  overflow:
+    hidden;
+
+  background:
+    var(--wine);
+
+  color:
+    var(--paper);
+
+}
+
+
+.manifesto-label {
+
+  margin-bottom:
+    32px;
+
+  color:
+    var(--acid);
+
+  font-size:
+    0.67rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.16em;
+
+  text-transform:
+    uppercase;
+
+}
+
+
+.home-manifesto blockquote {
+
+  max-width:
+    1100px;
+
+  margin:
+    0;
+
+  font-family:
+    var(--display);
+
+  font-size:
+    clamp(
+      4rem,
+      8vw,
+      8.6rem
+    );
+
+  font-weight:
+    900;
+
+  letter-spacing:
+    -0.035em;
+
+  line-height:
+    0.82;
+
+  text-transform:
+    uppercase;
+
+}
+
+
+.home-manifesto em {
+
+  color:
+    var(--acid);
+
+  font-family:
+    var(--serif);
+
+  font-size:
+    0.78em;
+
+  font-weight:
+    500;
+
+  text-transform:
+    none;
+
+}
+
+
+.manifesto-note {
+
+  max-width:
+    700px;
+
+  margin:
+    40px 0 0
+    auto;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.75
+    );
+
+  font-size:
+    1rem;
+
+  line-height:
+    1.8;
+
+}
+
+
+/* =========================================================
+   DIRECTIONS
+========================================================= */
+
+.work-directions {
+
+  padding:
+    var(--home-gap)
+    0;
+
+}
+
+
+.direction-list {
+
+  border-top:
+    1px solid var(--ink);
+
+}
+
+
+.direction {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    80px
+    minmax(0, 1fr)
+    auto;
+
+  gap:
+    24px;
+
+  align-items:
+    center;
+
+  padding:
+    25px 0;
+
+  border-bottom:
+    1px solid var(--ink);
+
+  color:
+    inherit;
+
+  text-decoration:
+    none;
+
+  transition:
+    padding 200ms ease,
+    background 200ms ease;
+
+}
+
+
+.direction:hover {
+
+  padding-right:
+    18px;
+
+  padding-left:
+    18px;
+
+  background:
+    var(--acid);
+
+}
+
+
+.direction-index {
+
+  color:
+    var(--wine);
+
+  font-family:
+    var(--display);
+
+  font-weight:
+    900;
+
+}
+
+
+.direction-title {
+
+  margin:
+    0;
+
+  font-family:
+    var(--display);
+
+  font-size:
+    clamp(
+      2.2rem,
+      5vw,
+      4.6rem
+    );
+
+  font-weight:
+    800;
+
+  line-height:
+    0.95;
+
+  text-transform:
+    uppercase;
+
+}
+
+
+.direction-arrow {
+
+  font-size:
+    2rem;
+
+}
+
+
+/* =========================================================
+   BUILDING NEXT
+========================================================= */
+
+.building-next {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    0.8fr 1.2fr;
+
+  gap:
+    70px;
+
+  align-items:
+    start;
+
+  margin:
+    30px 0
+    var(--home-gap);
+
+  padding-top:
+    36px;
+
+  border-top:
+    1px solid var(--ink);
+
+}
+
+
+.building-next h2 {
+
+  position:
+    sticky;
+
+  top:
+    140px;
+
+  margin:
+    0;
+
+  font-size:
+    clamp(
+      3rem,
+      6vw,
+      5.8rem
+    );
+
+}
+
+
+.building-next-copy {
+
+  display:
+    grid;
+
+  gap:
+    26px;
+
+}
+
+
+.building-note {
+
+  padding:
+    0 0
+    24px;
+
+  border-bottom:
+    1px solid var(--line);
+
+}
+
+
+.building-note-number {
+
+  display:
+    block;
+
+  margin-bottom:
+    8px;
+
+  color:
+    var(--wine);
+
+  font-size:
+    0.65rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.14em;
+
+  text-transform:
+    uppercase;
+
+}
+
+
+.building-note h3 {
+
+  margin-bottom:
+    9px;
+
+  font-size:
+    1.9rem;
+
+}
+
+
+.building-note p {
+
+  margin:
+    0;
+
+  color:
+    var(--muted);
+
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.home-end {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr auto;
+
+  gap:
+    40px;
+
+  align-items:
+    end;
+
+  padding:
+    50px 0 0;
+
+  border-top:
+    1px solid var(--ink);
+
+}
+
+
+.home-end h2 {
+
+  max-width:
+    800px;
+
+  margin:
+    0;
+
+  font-size:
+    clamp(
+      3rem,
+      6vw,
+      5.7rem
+    );
+
+}
+
+
+.home-end .button {
+
+  margin-bottom:
+    8px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (
+  max-width: 1000px
+) {
+
+  .home-hero {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .hero-collage {
+
+    min-height:
+      650px;
+
+  }
+
+
+  .feature-project:nth-child(1),
+  .feature-project:nth-child(2),
+  .feature-project:nth-child(3),
+  .feature-project:nth-child(4) {
+
+    grid-column:
+      1 / -1;
+
+    margin-top:
+      0;
+
+  }
+
+
+  .feature-grid {
+
+    gap:
+      58px;
+
+  }
+
+
+  .building-next {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .building-next h2 {
+
+    position:
+      static;
+
+  }
+
+}
+
+
+@media (
+  max-width: 700px
+) {
+
+  .home-hero {
+
+    min-height:
+      0;
+
+    padding-top:
+      10px;
+
+  }
+
+
+  .home-hero h1 {
+
+    font-size:
+      clamp(
+        4rem,
+        19vw,
+        6rem
+      );
+
+  }
+
+
+  .hero-collage {
+
+    min-height:
+      470px;
+
+  }
+
+
+  .collage-main {
+
+    top:
+      44px;
+
+    left:
+      0;
+
+    width:
+      82%;
+
+  }
+
+
+  .collage-top {
+
+    width:
+      42%;
+
+  }
+
+
+  .collage-bottom {
+
+    width:
+      55%;
+
+  }
+
+
+  .collage-sticker {
+
+    left:
+      0;
+
+    bottom:
+      48px;
+
+    width:
+      82px;
+
+    height:
+      82px;
+
+    font-size:
+      0.8rem;
+
+  }
+
+
+  .investigation-flow {
+
+    justify-content:
+      flex-start;
+
+  }
+
+
+  .home-section-heading {
+
+    grid-template-columns:
+      55px 1fr;
+
+  }
+
+
+  .feature-info {
+
+    grid-template-columns:
+      1fr auto;
+
+  }
+
+
+  .direction {
+
+    grid-template-columns:
+      42px
+      minmax(
+        0,
+        1fr
+      )
+      auto;
+
+    gap:
+      10px;
+
+  }
+
+
+  .direction-title {
+
+    font-size:
+      2.1rem;
+
+  }
+
+
+  .home-end {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+
+  .collage-piece,
+  .collage-piece img,
+  .feature-image img,
+  .feature-arrow,
+  .hero-scroll span {
+
+    transition:
+      none;
+
+  }
+
+}
+
+</style>
+
+
+<div class="home">
+
+
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
+
+  <section class="home-hero">
+
+    <div class="home-hero-copy">
+
+      <div class="home-kicker">
+        Geography · GIS · Environmental Resources
       </div>
 
-      <a class="button" href="cultural-resources.html">
-        Explore Projects
-      </a>
-    </div>
-  </article>
+      <h1>
 
-  <article class="project-card">
-    <div class="project-card-body">
-      <div class="project-meta">GIS &amp; Mapping</div>
+        <span class="hero-serif">
+          Work across
+        </span>
 
-      <h2>Geography &amp; Spatial Analysis</h2>
+        <span>
+          Land, people
+        </span>
 
-      <p>
-        Maps and spatial investigations examining distribution, location,
-        geographic relationships, and patterns across landscapes.
+        <span>
+          &amp; environment.
+        </span>
+
+      </h1>
+
+      <p class="home-hero-intro">
+
+        I’m Bryan Ramos-Morales. I use geography,
+        spatial analysis, research, design, and
+        environmental thinking to investigate how places
+        work, how they change, and what becomes visible
+        when different forms of evidence are brought
+        together.
+
       </p>
 
-      <div class="tag-list">
-        <span class="tag">GIS</span>
-        <span class="tag">Cartography</span>
-        <span class="tag">Spatial Analysis</span>
+      <a
+        class="hero-scroll"
+        href="#selected-work"
+      >
+        Explore the work
+        <span>↓</span>
+      </a>
+
+    </div>
+
+
+    <div class="hero-collage">
+
+      <a
+        class="collage-piece collage-main"
+        href="{{ '/projects/ghost-rivers-governed-land/' | relative_url }}"
+      >
+
+        <img
+          src="{{ '/ghost-rivers-governed-land-poster-2026.png' | relative_url }}"
+          alt="Ghost Rivers and Governed Land GIS project"
+        >
+
+        <span class="collage-label">
+          Ghost Rivers · 2026
+        </span>
+
+      </a>
+
+
+      <a
+        class="collage-piece collage-top"
+        href="{{ '/projects/stanislaus-nagpra-website/' | relative_url }}"
+      >
+
+        <img
+          src="{{ '/stanislaus-nagpra-landing-page.png' | relative_url }}"
+          alt="CSU Stanislaus NAGPRA website project"
+        >
+
+        <span class="collage-label">
+          Cultural Resources
+        </span>
+
+      </a>
+
+
+      <a
+        class="collage-piece collage-bottom"
+        href="{{ '/projects/iceland-volcanic-glacial-systems/' | relative_url }}"
+      >
+
+        <img
+          src="{{ '/iceland-volcanic-glacial-systems-enhanced.png' | relative_url }}"
+          alt="Iceland volcanic and glacial systems GIS project"
+        >
+
+        <span class="collage-label">
+          Iceland
+        </span>
+
+      </a>
+
+
+      <div class="collage-sticker">
+
+        Look
+        <br>
+        closer ↘
+
       </div>
 
-      <a class="button" href="geography-spatial-analysis.html">
-        Explore Projects
-      </a>
     </div>
-  </article>
 
-  <article class="project-card">
-    <div class="project-card-body">
-      <div class="project-meta">Environmental Systems</div>
+  </section>
 
-      <h2>Environmental Geography</h2>
 
-      <p>
-        Projects exploring rivers, climate, landforms, ecosystems,
-        environmental change, and relationships between people and landscapes.
-      </p>
+  <!-- =====================================================
+       PROCESS
+  ====================================================== -->
 
-      <div class="tag-list">
-        <span class="tag">Environment</span>
-        <span class="tag">Climate</span>
-        <span class="tag">Landscape Systems</span>
+  <section class="investigation-strip">
+
+    <div class="investigation-flow">
+
+      <span>Question</span>
+      <span class="arrow">→</span>
+
+      <span>Place</span>
+      <span class="arrow">→</span>
+
+      <span>Evidence</span>
+      <span class="arrow">→</span>
+
+      <span>Analysis</span>
+      <span class="arrow">→</span>
+
+      <span>Interpretation</span>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       SELECTED WORK
+  ====================================================== -->
+
+  <section
+    class="selected-work"
+    id="selected-work"
+  >
+
+    <header class="home-section-heading">
+
+      <div class="home-section-number">
+        01
       </div>
 
-      <a class="button" href="environmental-geography.html">
-        Explore Projects
+      <h2 class="home-section-title">
+        Selected Work
+      </h2>
+
+    </header>
+
+
+    <div class="feature-grid">
+
+
+      <!-- GHOST RIVERS -->
+
+      <a
+        class="feature-project"
+        href="{{ '/projects/ghost-rivers-governed-land/' | relative_url }}"
+      >
+
+        <div class="feature-index">
+          01
+        </div>
+
+        <div class="feature-image">
+
+          <img
+            src="{{ '/ghost-rivers-governed-land-poster-2026.png' | relative_url }}"
+            alt="Ghost Rivers and Governed Land project"
+          >
+
+        </div>
+
+        <div class="feature-info">
+
+          <div>
+
+            <h3 class="feature-title">
+              Ghost Rivers &amp;
+              Governed Land
+            </h3>
+
+            <div class="feature-meta">
+              Hydrology · Historical Landscapes · Flood Risk · GIS
+            </div>
+
+          </div>
+
+          <div class="feature-arrow">
+            ↗
+          </div>
+
+        </div>
+
       </a>
+
+
+      <!-- ICELAND -->
+
+      <a
+        class="feature-project"
+        href="{{ '/projects/iceland-volcanic-glacial-systems/' | relative_url }}"
+      >
+
+        <div class="feature-index">
+          02
+        </div>
+
+        <div class="feature-image">
+
+          <img
+            src="{{ '/iceland-volcanic-glacial-systems-enhanced.png' | relative_url }}"
+            alt="Iceland volcanic and glacial systems project"
+          >
+
+        </div>
+
+        <div class="feature-info">
+
+          <div>
+
+            <h3 class="feature-title">
+              Iceland’s Volcanic
+              &amp; Glacial Systems
+            </h3>
+
+            <div class="feature-meta">
+              Physical Geography · Volcanoes · Glaciers · Spatial Analysis
+            </div>
+
+          </div>
+
+          <div class="feature-arrow">
+            ↗
+          </div>
+
+        </div>
+
+      </a>
+
+
+      <!-- NAGPRA -->
+
+      <a
+        class="feature-project"
+        href="{{ '/projects/stanislaus-nagpra-website/' | relative_url }}"
+      >
+
+        <div class="feature-index">
+          03
+        </div>
+
+        <div class="feature-image">
+
+          <img
+            src="{{ '/stanislaus-nagpra-landing-page.png' | relative_url }}"
+            alt="Stanislaus State NAGPRA website"
+          >
+
+        </div>
+
+        <div class="feature-info">
+
+          <div>
+
+            <h3 class="feature-title">
+              NAGPRA Public Resources
+            </h3>
+
+            <div class="feature-meta">
+              Cultural Resources · Web Content · Public Communication
+            </div>
+
+          </div>
+
+          <div class="feature-arrow">
+            ↗
+          </div>
+
+        </div>
+
+      </a>
+
+
+      <!-- CROWS LANDING -->
+
+      <a
+        class="feature-project"
+        href="{{ '/projects/crows-landing-mew-ko/' | relative_url }}"
+      >
+
+        <div class="feature-index">
+          04
+        </div>
+
+        <div class="feature-image">
+
+          <img
+            src="{{ '/crows-landing-map.jpg' | relative_url }}"
+            alt="Crows Landing and Mew-ko historical geography project"
+          >
+
+        </div>
+
+        <div class="feature-info">
+
+          <div>
+
+            <h3 class="feature-title">
+              Crows Landing &amp;
+              Mew-ko Geography
+            </h3>
+
+            <div class="feature-meta">
+              Historical GIS · Cultural Geography · Source Interpretation
+            </div>
+
+          </div>
+
+          <div class="feature-arrow">
+            ↗
+          </div>
+
+        </div>
+
+      </a>
+
+
     </div>
-  </article>
 
-  <article class="project-card">
-    <div class="project-card-body">
-      <div class="project-meta">Technical Work</div>
+  </section>
 
-      <h2>Data &amp; Programming</h2>
 
-      <p>
-        Developing projects using Python, GIS automation, data organization,
-        reproducible workflows, and technical problem-solving.
-      </p>
+  <!-- =====================================================
+       MANIFESTO
+  ====================================================== -->
 
-      <div class="tag-list">
-        <span class="tag">Python</span>
-        <span class="tag">Data</span>
-        <span class="tag">Automation</span>
+  <section class="home-manifesto">
+
+    <div class="manifesto-label">
+      How I want to work
+    </div>
+
+    <blockquote>
+
+      The map
+      <em>isn’t</em>
+      the project.
+
+      <br>
+
+      The investigation is.
+
+    </blockquote>
+
+    <p class="manifesto-note">
+
+      I’m interested in projects where maps, field
+      observations, existing data, research, imagery,
+      historical evidence, and technical tools all work
+      toward answering a real geographic question.
+
+    </p>
+
+  </section>
+
+
+  <!-- =====================================================
+       DIRECTIONS
+  ====================================================== -->
+
+  <section class="work-directions">
+
+    <header class="home-section-heading">
+
+      <div class="home-section-number">
+        02
       </div>
 
-      <a class="button" href="data-programming.html">
-        Explore Projects
-      </a>
-    </div>
-  </article>
+      <h2 class="home-section-title">
+        Explore the Work
+      </h2>
 
-</section>
+    </header>
+
+
+    <div class="direction-list">
+
+
+      <a
+        class="direction"
+        href="{{ '/environmental-geography.html' | relative_url }}"
+      >
+
+        <span class="direction-index">
+          01
+        </span>
+
+        <h3 class="direction-title">
+          Environmental Geography
+        </h3>
+
+        <span class="direction-arrow">
+          ↗
+        </span>
+
+      </a>
+
+
+      <a
+        class="direction"
+        href="{{ '/geography-spatial-analysis.html' | relative_url }}"
+      >
+
+        <span class="direction-index">
+          02
+        </span>
+
+        <h3 class="direction-title">
+          Geography &amp; Spatial Analysis
+        </h3>
+
+        <span class="direction-arrow">
+          ↗
+        </span>
+
+      </a>
+
+
+      <a
+        class="direction"
+        href="{{ '/cultural-resources.html' | relative_url }}"
+      >
+
+        <span class="direction-index">
+          03
+        </span>
+
+        <h3 class="direction-title">
+          Cultural Resources
+        </h3>
+
+        <span class="direction-arrow">
+          ↗
+        </span>
+
+      </a>
+
+
+      <a
+        class="direction"
+        href="{{ '/data-programming.html' | relative_url }}"
+      >
+
+        <span class="direction-index">
+          04
+        </span>
+
+        <h3 class="direction-title">
+          Data &amp; Programming
+        </h3>
+
+        <span class="direction-arrow">
+          ↗
+        </span>
+
+      </a>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       BUILDING NEXT
+  ====================================================== -->
+
+  <section class="building-next">
+
+    <div>
+
+      <div class="eyebrow">
+        Growing Practice
+      </div>
+
+      <h2>
+        What I’m building next.
+      </h2>
+
+    </div>
+
+
+    <div class="building-next-copy">
+
+
+      <article class="building-note">
+
+        <span class="building-note-number">
+          01 · Field
+        </span>
+
+        <h3>
+          More time in the landscape
+        </h3>
+
+        <p>
+
+          Building stronger experience through environmental
+          volunteering, observation, field documentation, and
+          future research that starts with seeing places for
+          myself.
+
+        </p>
+
+      </article>
+
+
+      <article class="building-note">
+
+        <span class="building-note-number">
+          02 · Research
+        </span>
+
+        <h3>
+          Projects built around questions
+        </h3>
+
+        <p>
+
+          Developing independent work that combines existing
+          geographic data with field observations, imagery,
+          spatial analysis, and interpretation.
+
+        </p>
+
+      </article>
+
+
+      <article class="building-note">
+
+        <span class="building-note-number">
+          03 · Technical
+        </span>
+
+        <h3>
+          Python, automation &amp; new tools
+        </h3>
+
+        <p>
+
+          Expanding beyond desktop GIS into programming,
+          repeatable workflows, remote sensing, and technical
+          methods that strengthen how I investigate geographic
+          problems.
+
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       END
+  ====================================================== -->
+
+  <section class="home-end">
+
+    <h2>
+      Curious about the work?
+      Let’s talk.
+    </h2>
+
+    <a
+      class="button"
+      href="{{ '/contact.html' | relative_url }}"
+    >
+      Contact Me ↗
+    </a>
+
+  </section>
+
+
+</div>
