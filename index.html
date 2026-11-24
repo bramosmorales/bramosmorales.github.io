@@ -11,9 +11,9 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   --section-gap:
     clamp(
-      100px,
+      110px,
       12vw,
-      180px
+      185px
     );
 
 }
@@ -28,73 +28,49 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   min-height:
     calc(
-      100vh
-      -
-      120px
+      100vh - 130px
     );
-
-  padding:
-    20px 0
-    80px;
 
 }
 
 
 
-/* HERO HUD */
+/* TOP HUD */
 
 .hero-hud {
 
   display:
-    grid;
-
-  grid-template-columns:
-    1fr auto 1fr;
+    flex;
 
   align-items:
     center;
 
+  justify-content:
+    space-between;
+
   margin-bottom:
-    30px;
+    38px;
 
-  padding:
-    9px 12px;
+  padding-bottom:
+    11px;
 
-  background:
-    rgba(
-      0,
-      0,
-      0,
-      0.76
-    );
-
-  border:
+  border-bottom:
     1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.18
-    );
-
-  backdrop-filter:
-    blur(
-      12px
-    );
+    var(--line);
 
   color:
-    #8f8b86;
+    #77716d;
 
   font-family:
     var(--pixel);
 
   font-size:
-    0.58rem;
+    0.57rem;
 
 }
 
 
-.hero-hud-center {
+.hero-hud-red {
 
   color:
     var(--red);
@@ -102,54 +78,47 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 }
 
 
-.hero-hud-right {
 
-  text-align:
-    right;
+/* INTRO */
+
+.hero-intro {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(0,0.78fr)
+    minmax(420px,1.22fr);
+
+  gap:
+    70px;
+
+  align-items:
+    center;
+
+  margin-bottom:
+    55px;
 
 }
 
 
 
-/* HERO IDENTITY */
+/* COPY */
 
-.hero-title-block {
-
-  position:
-    relative;
-
-  z-index:
-    20;
-
-  width:
-    min(
-      810px,
-      100%
-    );
-
-  margin-bottom:
-    42px;
+.hero-copy {
 
   padding:
-    26px 30px
-    30px;
+    34px 36px;
 
   background:
-    rgba(
-      0,
-      0,
-      0,
-      0.82
-    );
+    rgba(0,0,0,0.78);
 
   border-left:
     4px solid
     var(--red);
 
   backdrop-filter:
-    blur(
-      13px
-    );
+    blur(14px);
 
 }
 
@@ -157,7 +126,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 .hero-overline {
 
   margin-bottom:
-    14px;
+    15px;
 
   color:
     var(--red);
@@ -167,9 +136,6 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   font-size:
     0.62rem;
-
-  letter-spacing:
-    0.05em;
 
 }
 
@@ -184,19 +150,16 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   font-size:
     clamp(
-      4rem,
+      4.6rem,
       8vw,
-      8.5rem
+      8.7rem
     );
 
-  font-weight:
-    400;
-
   letter-spacing:
-    0.12em;
+    -0.075em;
 
   line-height:
-    0.86;
+    0.83;
 
 }
 
@@ -209,7 +172,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 }
 
 
-.hero-title .red-word {
+.hero-title-red {
 
   color:
     var(--red);
@@ -220,19 +183,19 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 .hero-description {
 
   max-width:
-    660px;
+    590px;
 
   margin:
-    26px 0 0;
+    28px 0 0;
 
   color:
-    #d0cbc5;
+    #c8c3bd;
 
   font-size:
     0.98rem;
 
   line-height:
-    1.75;
+    1.8;
 
 }
 
@@ -246,7 +209,161 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     wrap;
 
   gap:
-    11px;
+    12px;
+
+  margin-top:
+    28px;
+
+}
+
+
+
+/* ART WINDOW */
+
+.hero-art-window {
+
+  position:
+    relative;
+
+  min-height:
+    400px;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    var(--line);
+
+  background:
+    rgba(0,0,0,0.35);
+
+}
+
+
+.hero-art-window::before {
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  background-image:
+    url("/assets/art/botanical-alt.png");
+
+  background-position:
+    center;
+
+  background-size:
+    cover;
+
+  filter:
+
+    grayscale(1)
+    sepia(1)
+    saturate(10)
+    hue-rotate(315deg)
+    contrast(1.5);
+
+  opacity:
+    0.62;
+
+  content:
+    "";
+
+}
+
+
+.hero-art-window::after {
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,0.12),
+      rgba(0,0,0,0.6)
+    );
+
+  content:
+    "";
+
+}
+
+
+.hero-art-text {
+
+  position:
+    absolute;
+
+  right:
+    28px;
+
+  bottom:
+    28px;
+
+  z-index:
+    3;
+
+  max-width:
+    270px;
+
+  padding:
+    16px;
+
+  background:
+    rgba(0,0,0,0.82);
+
+  border-left:
+    3px solid
+    var(--red);
+
+}
+
+
+.hero-art-text span {
+
+  color:
+    var(--red);
+
+  font-family:
+    var(--pixel);
+
+  font-size:
+    0.56rem;
+
+}
+
+
+.hero-art-text p {
+
+  margin:
+    8px 0 0;
+
+  color:
+    #d3cec8;
+
+  font-size:
+    0.78rem;
+
+  line-height:
+    1.6;
+
+}
+
+
+
+/* =========================================================
+   FEATURED WORK
+========================================================= */
+
+.featured {
 
   margin-top:
     25px;
@@ -254,50 +371,136 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 }
 
 
+.featured-heading {
 
-/* =========================================================
-   HERO PROJECT DISCOVERY
-========================================================= */
+  display:
+    flex;
 
-.discovery {
+  align-items:
+    end;
+
+  justify-content:
+    space-between;
+
+  gap:
+    30px;
+
+  margin-bottom:
+    32px;
+
+}
+
+
+.featured-heading-left {
+
+  display:
+    flex;
+
+  align-items:
+    end;
+
+  gap:
+    18px;
+
+}
+
+
+.featured-number {
+
+  padding-bottom:
+    8px;
+
+  color:
+    var(--red);
+
+  font-family:
+    var(--pixel);
+
+  font-size:
+    0.63rem;
+
+}
+
+
+.featured-heading h2 {
+
+  margin:
+    0;
+
+  font-family:
+    var(--display);
+
+  font-size:
+    clamp(
+      3rem,
+      5.5vw,
+      5.8rem
+    );
+
+  letter-spacing:
+    -0.06em;
+
+}
+
+
+.featured-note {
+
+  color:
+    #7d7772;
+
+  font-family:
+    var(--pixel);
+
+  font-size:
+    0.56rem;
+
+}
+
+
+
+/* THREE PROJECTS */
+
+.featured-grid {
 
   display:
     grid;
 
   grid-template-columns:
-    minmax(
-      0,
-      1.35fr
-    )
-    minmax(
-      260px,
-      0.65fr
-    );
+    minmax(0,1.35fr)
+    minmax(300px,0.65fr);
 
   gap:
-    18px;
+    20px;
+
+}
+
+
+.featured-main {
 
   min-height:
-    470px;
+    560px;
+
+}
+
+
+.featured-stack {
+
+  display:
+    grid;
+
+  grid-template-rows:
+    repeat(2,1fr);
+
+  gap:
+    20px;
 
 }
 
 
 
-/* PRIMARY FILE */
+/* CARD */
 
-.discovery-main {
-
-  position:
-    relative;
-
-  min-height:
-    470px;
-
-}
-
-
-.field-file {
+.featured-card {
 
   position:
     relative;
@@ -307,6 +510,9 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   height:
     100%;
+
+  min-height:
+    270px;
 
   padding:
     8px;
@@ -319,12 +525,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   border:
     1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.22
-    );
+    var(--line);
 
   color:
     white;
@@ -332,52 +533,30 @@ description: Geography, GIS, environmental research, cultural resources, and spa
   text-decoration:
     none;
 
-  clip-path:
-
-    polygon(
-      0 0,
-
-      calc(
-        100% - 14px
-      )
-      0,
-
-      100% 14px,
-
-      100% 100%,
-
-      14px 100%,
-
-      0
-      calc(
-        100% - 14px
-      )
-    );
-
   transition:
 
     border-color
-    120ms linear,
+    150ms ease,
 
     box-shadow
-    120ms linear;
+    150ms ease;
 
 }
 
 
-.field-file:hover {
+.featured-card:hover {
 
   border-color:
     var(--red);
 
   box-shadow:
-    10px 10px 0
-    var(--red-dark);
+    0 0 35px
+    rgba(223,16,29,0.22);
 
 }
 
 
-.field-file img {
+.featured-card img {
 
   width:
     100%;
@@ -388,210 +567,36 @@ description: Geography, GIS, environmental research, cultural resources, and spa
   object-fit:
     cover;
 
+  filter:
+    grayscale(0.8)
+    brightness(0.73);
+
+  transition:
+
+    filter
+    180ms ease,
+
+    transform
+    220ms ease;
+
 }
 
 
+.featured-card:hover img {
 
-/* LARGE PROJECT */
+  filter:
+    none;
 
-.discovery-main
-.field-file img {
-
-  object-position:
-    center;
-
-}
-
-
-
-/* STACK */
-
-.discovery-stack {
-
-  display:
-    grid;
-
-  grid-template-rows:
-    1fr 1fr;
-
-  gap:
-    18px;
+  transform:
+    scale(1.018);
 
 }
 
 
 
-/* FILE LABEL */
+/* SCAN LINES */
 
-.file-label {
-
-  position:
-    absolute;
-
-  top:
-    15px;
-
-  left:
-    15px;
-
-  z-index:
-    5;
-
-  padding:
-    6px 8px;
-
-  background:
-    rgba(
-      0,
-      0,
-      0,
-      0.87
-    );
-
-  border:
-    1px solid
-    white;
-
-  color:
-    white;
-
-  font-family:
-    var(--pixel);
-
-  font-size:
-    0.58rem;
-
-}
-
-
-.file-label strong {
-
-  color:
-    var(--red);
-
-  font-weight:
-    600;
-
-}
-
-
-
-/* FILE INFO */
-
-.file-info {
-
-  position:
-    absolute;
-
-  right:
-    16px;
-
-  bottom:
-    16px;
-
-  left:
-    16px;
-
-  z-index:
-    5;
-
-  display:
-    grid;
-
-  grid-template-columns:
-    1fr auto;
-
-  gap:
-    15px;
-
-  align-items:
-    end;
-
-  padding:
-    15px;
-
-  background:
-    rgba(
-      0,
-      0,
-      0,
-      0.84
-    );
-
-  border-left:
-    3px solid
-    var(--red);
-
-  backdrop-filter:
-    blur(
-      11px
-    );
-
-}
-
-
-.file-title {
-
-  margin:
-    0;
-
-  color:
-    white;
-
-  font-family:
-    var(--body);
-
-  font-size:
-    clamp(
-      1.15rem,
-      2vw,
-      2rem
-    );
-
-  font-weight:
-    800;
-
-  letter-spacing:
-    -0.04em;
-
-  line-height:
-    1;
-
-}
-
-
-.file-meta {
-
-  margin-top:
-    6px;
-
-  color:
-    #9c9792;
-
-  font-family:
-    var(--pixel);
-
-  font-size:
-    0.51rem;
-
-}
-
-
-.file-arrow {
-
-  color:
-    var(--red);
-
-  font-size:
-    1.5rem;
-
-}
-
-
-
-/* HOVER SCAN */
-
-.field-file::after {
+.featured-card::after {
 
   position:
     absolute;
@@ -610,19 +615,12 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     repeating-linear-gradient(
       to bottom,
 
-      transparent
-      0,
+      transparent 0,
 
-      transparent
-      4px,
+      transparent 5px,
 
-      rgba(
-        255,
-        255,
-        255,
-        0.055
-      )
-      5px
+      rgba(255,255,255,0.045)
+      6px
     );
 
   content:
@@ -631,14 +629,10 @@ description: Geography, GIS, environmental research, cultural resources, and spa
   opacity:
     0;
 
-  transition:
-    opacity
-    120ms linear;
-
 }
 
 
-.field-file:hover::after {
+.featured-card:hover::after {
 
   opacity:
     1;
@@ -647,110 +641,156 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
 
-/* =========================================================
-   RED MARQUEE
-========================================================= */
+/* FILE NUMBER */
 
-.signal-strip {
+.file-number {
 
-  margin:
-    55px
-    calc(
-      50%
-      -
-      50vw
-    )
-    0;
+  position:
+    absolute;
 
-  overflow:
-    hidden;
+  top:
+    16px;
 
-  background:
-    var(--red);
+  left:
+    16px;
 
-  border-top:
-    1px solid
-    white;
-
-  border-bottom:
-    1px solid
-    white;
-
-}
-
-
-.signal-track {
-
-  display:
-    flex;
-
-  width:
-    max-content;
+  z-index:
+    5;
 
   padding:
-    10px 0;
+    5px 8px;
 
-  animation:
-    signalMove
-    28s
-    linear
-    infinite;
+  background:
+    rgba(0,0,0,0.88);
 
-}
-
-
-.signal-track span {
-
-  padding-right:
-    38px;
+  border:
+    1px solid
+    white;
 
   color:
-    white;
+    var(--red);
 
   font-family:
     var(--pixel);
 
   font-size:
-    0.68rem;
-
-  white-space:
-    nowrap;
+    0.58rem;
 
 }
 
 
-.signal-track span::after {
 
-  margin-left:
-    38px;
+/* INFO */
 
-  content:
-    "✦";
+.featured-info {
+
+  position:
+    absolute;
+
+  right:
+    18px;
+
+  bottom:
+    18px;
+
+  left:
+    18px;
+
+  z-index:
+    5;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr auto;
+
+  align-items:
+    end;
+
+  gap:
+    20px;
+
+  padding:
+    17px;
+
+  background:
+    rgba(0,0,0,0.86);
+
+  border-left:
+    3px solid
+    var(--red);
+
+  backdrop-filter:
+    blur(11px);
 
 }
 
 
-@keyframes
-signalMove {
+.featured-title {
 
-  to {
+  margin:
+    0;
 
-    transform:
-      translateX(
-        -50%
-      );
+  font-family:
+    var(--body);
 
-  }
+  font-size:
+    clamp(
+      1.3rem,
+      2.5vw,
+      2.3rem
+    );
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    -0.045em;
+
+  line-height:
+    1;
+
+}
+
+
+.featured-meta {
+
+  margin-top:
+    7px;
+
+  color:
+    #918b86;
+
+  font-family:
+    var(--pixel);
+
+  font-size:
+    0.52rem;
+
+}
+
+
+.featured-arrow {
+
+  color:
+    var(--red);
+
+  font-family:
+    var(--pixel);
+
+  font-size:
+    1.4rem;
 
 }
 
 
 
 /* =========================================================
-   PORTFOLIO AREAS
+   EXPLORE
 ========================================================= */
 
-.portfolio-areas {
+.explore {
 
   margin-top:
     var(--section-gap);
@@ -758,7 +798,7 @@ signalMove {
 }
 
 
-.section-heading {
+.explore-heading {
 
   display:
     flex;
@@ -769,47 +809,13 @@ signalMove {
   justify-content:
     space-between;
 
-  gap:
-    30px;
-
   margin-bottom:
     35px;
 
 }
 
 
-.section-heading-left {
-
-  display:
-    flex;
-
-  align-items:
-    end;
-
-  gap:
-    20px;
-
-}
-
-
-.section-number {
-
-  padding-bottom:
-    8px;
-
-  color:
-    var(--red);
-
-  font-family:
-    var(--pixel);
-
-  font-size:
-    0.65rem;
-
-}
-
-
-.section-heading h2 {
+.explore-heading h2 {
 
   margin:
     0;
@@ -819,38 +825,35 @@ signalMove {
 
   font-size:
     clamp(
-      3rem,
+      3.5rem,
       6vw,
-      6rem
+      6.5rem
     );
 
-  font-weight:
-    400;
-
   letter-spacing:
-    0.12em;
+    -0.07em;
 
 }
 
 
-.section-note {
+.explore-heading span {
 
   color:
-    #817b77;
+    #817b76;
 
   font-family:
     var(--pixel);
 
   font-size:
-    0.56rem;
+    0.57rem;
 
 }
 
 
 
-/* AREA ROW */
+/* ROW */
 
-.area-list {
+.explore-list {
 
   border-top:
     1px solid
@@ -859,34 +862,28 @@ signalMove {
 }
 
 
-.area-row {
-
-  position:
-    relative;
+.explore-row {
 
   display:
     grid;
 
   grid-template-columns:
-    60px
-    1fr
-    300px
-    auto;
+    52px
+    minmax(0,1fr)
+    320px
+    45px;
 
   gap:
-    24px;
+    22px;
 
   align-items:
     center;
 
   min-height:
-    130px;
+    140px;
 
   padding:
-    18px 0;
-
-  overflow:
-    hidden;
+    20px 0;
 
   border-bottom:
     1px solid
@@ -900,16 +897,16 @@ signalMove {
 
   transition:
 
-    padding
+    background
     150ms ease,
 
-    background
+    padding
     150ms ease;
 
 }
 
 
-.area-row:hover {
+.explore-row:hover {
 
   padding-right:
     18px;
@@ -918,17 +915,12 @@ signalMove {
     18px;
 
   background:
-    rgba(
-      130,
-      0,
-      8,
-      0.48
-    );
+    rgba(90,0,6,0.46);
 
 }
 
 
-.area-number {
+.explore-number {
 
   color:
     var(--red);
@@ -939,22 +931,19 @@ signalMove {
 }
 
 
-.area-name {
+.explore-name {
 
   margin:
     0;
-
-  color:
-    white;
 
   font-family:
     var(--body);
 
   font-size:
     clamp(
-      1.8rem,
+      1.7rem,
       3vw,
-      3.2rem
+      3rem
     );
 
   font-weight:
@@ -963,38 +952,31 @@ signalMove {
   letter-spacing:
     -0.05em;
 
-  line-height:
-    1;
-
 }
 
 
-.area-preview {
 
-  width:
-    100%;
+/* PREVIEW */
+
+.explore-preview {
+
+  position:
+    relative;
 
   height:
-    92px;
+    95px;
 
   overflow:
     hidden;
 
-  opacity:
-    0.35;
-
-  transition:
-
-    opacity
-    160ms ease,
-
-    transform
-    160ms ease;
+  border:
+    1px solid
+    rgba(255,255,255,0.08);
 
 }
 
 
-.area-preview img {
+.explore-preview img {
 
   width:
     100%;
@@ -1006,40 +988,108 @@ signalMove {
     cover;
 
   filter:
-    grayscale(
-      1
-    )
-    contrast(
-      1.2
-    );
-
-}
-
-
-.area-row:hover
-.area-preview {
+    grayscale(1)
+    brightness(0.42)
+    contrast(1.35);
 
   opacity:
-    0.95;
+    0.65;
 
-  transform:
-    translateX(
-      -8px
-    );
+  transition:
+
+    filter
+    180ms ease,
+
+    opacity
+    180ms ease,
+
+    transform
+    180ms ease;
 
 }
 
 
-.area-row:hover
-.area-preview img {
+.explore-row:hover
+.explore-preview img {
 
   filter:
     none;
 
+  opacity:
+    1;
+
+  transform:
+    scale(1.04);
+
 }
 
 
-.area-arrow {
+
+/* DATA EMPTY STATE */
+
+.explore-preview-empty {
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  background:
+
+    linear-gradient(
+      45deg,
+      rgba(223,16,29,0.08)
+      25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(223,16,29,0.08)
+      50%,
+      rgba(223,16,29,0.08)
+      75%,
+      transparent 75%
+    );
+
+  background-size:
+    14px 14px;
+
+}
+
+
+.explore-preview-empty span {
+
+  padding:
+    6px 9px;
+
+  background:
+    black;
+
+  border:
+    1px solid
+    var(--red);
+
+  color:
+    #8d8782;
+
+  font-family:
+    var(--pixel);
+
+  font-size:
+    0.53rem;
+
+}
+
+
+.explore-row:hover
+.explore-preview-empty span {
+
+  color:
+    white;
+
+}
+
+
+.explore-arrow {
 
   color:
     var(--red);
@@ -1063,45 +1113,41 @@ signalMove {
   margin-top:
     var(--section-gap);
 
-}
-
-
-.archive-panel {
-
-  display:
-    grid;
-
-  grid-template-columns:
-    0.65fr
-    1.35fr;
-
-  gap:
-    55px;
-
   padding:
-    38px;
+    40px;
 
   background:
-    rgba(
-      0,
-      0,
-      0,
-      0.84
-    );
+    rgba(0,0,0,0.78);
 
   border:
     1px solid
     var(--line);
 
   backdrop-filter:
-    blur(
-      14px
-    );
+    blur(14px);
 
 }
 
 
-.archive-intro h2 {
+.archive-top {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    0.7fr
+    1.3fr;
+
+  gap:
+    60px;
+
+  margin-bottom:
+    35px;
+
+}
+
+
+.archive h2 {
 
   margin:
     0;
@@ -1111,44 +1157,44 @@ signalMove {
 
   font-size:
     clamp(
-      3rem,
+      2.8rem,
       5vw,
       5rem
     );
 
-  font-weight:
-    400;
-
   letter-spacing:
-    0.1em;
+    -0.055em;
 
 }
 
 
-.archive-intro p {
+.archive p {
 
   max-width:
-    430px;
+    620px;
+
+  margin:
+    0;
 
   color:
-    #aaa49e;
+    #918b86;
 
 }
 
 
-.archive-items {
+
+/* SMALL PROJECTS */
+
+.archive-grid {
 
   display:
     grid;
 
   grid-template-columns:
-    repeat(
-      3,
-      1fr
-    );
+    repeat(3,1fr);
 
   gap:
-    10px;
+    14px;
 
 }
 
@@ -1162,7 +1208,7 @@ signalMove {
     block;
 
   min-height:
-    230px;
+    250px;
 
   overflow:
     hidden;
@@ -1170,9 +1216,6 @@ signalMove {
   border:
     1px solid
     var(--line);
-
-  text-decoration:
-    none;
 
 }
 
@@ -1189,23 +1232,16 @@ signalMove {
     cover;
 
   filter:
-    grayscale(
-      1
-    )
-    brightness(
-      0.57
-    )
-    contrast(
-      1.15
-    );
+    grayscale(1)
+    brightness(0.52);
 
   transition:
 
     filter
-    160ms ease,
+    170ms ease,
 
     transform
-    200ms ease;
+    220ms ease;
 
 }
 
@@ -1216,37 +1252,34 @@ signalMove {
     none;
 
   transform:
-    scale(
-      1.04
-    );
+    scale(1.035);
 
 }
 
 
-.archive-caption {
+.archive-label {
 
   position:
     absolute;
 
   right:
-    8px;
+    10px;
 
   bottom:
-    8px;
+    10px;
 
   left:
-    8px;
+    10px;
 
   padding:
-    8px;
+    9px;
 
   background:
-    rgba(
-      0,
-      0,
-      0,
-      0.8
-    );
+    rgba(0,0,0,0.85);
+
+  border-left:
+    2px solid
+    var(--red);
 
   color:
     white;
@@ -1255,14 +1288,14 @@ signalMove {
     var(--pixel);
 
   font-size:
-    0.56rem;
+    0.57rem;
 
 }
 
 
 
 /* =========================================================
-   CONTACT
+   CONTACT CTA
 ========================================================= */
 
 .home-contact {
@@ -1273,42 +1306,32 @@ signalMove {
   grid-template-columns:
     1fr auto;
 
-  gap:
-    40px;
-
   align-items:
-    end;
+    center;
+
+  gap:
+    50px;
 
   margin-top:
     var(--section-gap);
 
   padding:
-    38px;
+    42px;
 
   background:
-    rgba(
-      0,
-      0,
-      0,
-      0.84
-    );
+    rgba(0,0,0,0.82);
 
   border:
     1px solid
     var(--red);
 
   backdrop-filter:
-    blur(
-      14px
-    );
+    blur(14px);
 
 }
 
 
-.contact-label {
-
-  margin-bottom:
-    12px;
+.home-contact span {
 
   color:
     var(--red);
@@ -1317,7 +1340,7 @@ signalMove {
     var(--pixel);
 
   font-size:
-    0.6rem;
+    0.58rem;
 
 }
 
@@ -1328,7 +1351,7 @@ signalMove {
     850px;
 
   margin:
-    0;
+    10px 0 0;
 
   font-family:
     var(--display);
@@ -1337,14 +1360,11 @@ signalMove {
     clamp(
       2.8rem,
       5vw,
-      5.2rem
+      5rem
     );
 
-  font-weight:
-    400;
-
   letter-spacing:
-    0.11em;
+    -0.06em;
 
   line-height:
     0.95;
@@ -1354,14 +1374,14 @@ signalMove {
 
 
 /* =========================================================
-   TABLET
+   RESPONSIVE
 ========================================================= */
 
 @media (
   max-width: 1050px
 ) {
 
-  .discovery {
+  .hero-intro {
 
     grid-template-columns:
       1fr;
@@ -1369,15 +1389,31 @@ signalMove {
   }
 
 
-  .discovery-main {
+  .hero-art-window {
 
     min-height:
-      420px;
+      320px;
 
   }
 
 
-  .discovery-stack {
+  .featured-grid {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .featured-main {
+
+    min-height:
+      470px;
+
+  }
+
+
+  .featured-stack {
 
     grid-template-columns:
       1fr 1fr;
@@ -1388,30 +1424,22 @@ signalMove {
   }
 
 
-  .discovery-stack
-  .field-file {
+  .featured-stack
+  .featured-card {
 
     min-height:
-      310px;
+      330px;
 
   }
 
 
-  .area-row {
+  .explore-row {
 
     grid-template-columns:
-      50px
+      45px
       1fr
-      210px
-      auto;
-
-  }
-
-
-  .archive-panel {
-
-    grid-template-columns:
-      1fr;
+      230px
+      35px;
 
   }
 
@@ -1419,23 +1447,11 @@ signalMove {
 
 
 
-/* =========================================================
-   MOBILE
-========================================================= */
-
 @media (
   max-width: 700px
 ) {
 
   .hero-hud {
-
-    grid-template-columns:
-      1fr auto;
-
-  }
-
-
-  .hero-hud-center {
 
     display:
       none;
@@ -1443,10 +1459,10 @@ signalMove {
   }
 
 
-  .hero-title-block {
+  .hero-copy {
 
     padding:
-      20px;
+      26px;
 
   }
 
@@ -1455,23 +1471,23 @@ signalMove {
 
     font-size:
       clamp(
-        3.4rem,
-        16vw,
-        5.4rem
+        4rem,
+        18vw,
+        6rem
       );
 
   }
 
 
-  .discovery-main {
+  .featured-main {
 
     min-height:
-      330px;
+      350px;
 
   }
 
 
-  .discovery-stack {
+  .featured-stack {
 
     grid-template-columns:
       1fr;
@@ -1479,45 +1495,20 @@ signalMove {
   }
 
 
-  .discovery-stack
-  .field-file {
-
-    min-height:
-      300px;
-
-  }
-
-
-  .section-heading {
-
-    align-items:
-      start;
-
-    flex-direction:
-      column;
-
-  }
-
-
-  .section-heading h2 {
-
-    font-size:
-      3rem;
-
-  }
-
-
-  .area-row {
+  .explore-row {
 
     grid-template-columns:
-      36px
+      34px
       1fr
-      auto;
+      25px;
+
+    min-height:
+      105px;
 
   }
 
 
-  .area-preview {
+  .explore-preview {
 
     display:
       none;
@@ -1525,34 +1516,37 @@ signalMove {
   }
 
 
-  .area-name {
+  .explore-name {
 
     font-size:
-      1.8rem;
+      1.6rem;
 
   }
 
 
-  .archive-panel {
+  .archive {
 
     padding:
-      22px;
+      24px;
 
   }
 
 
-  .archive-items {
+  .archive-top {
 
     grid-template-columns:
       1fr;
 
+    gap:
+      20px;
+
   }
 
 
-  .archive-item {
+  .archive-grid {
 
-    min-height:
-      260px;
+    grid-template-columns:
+      1fr;
 
   }
 
@@ -1563,22 +1557,7 @@ signalMove {
       1fr;
 
     padding:
-      24px;
-
-  }
-
-}
-
-
-@media (
-  prefers-reduced-motion:
-  reduce
-) {
-
-  .signal-track {
-
-    animation:
-      none;
+      26px;
 
   }
 
@@ -1592,7 +1571,7 @@ signalMove {
 
 
   <!-- =====================================================
-       HERO / SELECTED FILES
+       HERO
   ====================================================== -->
 
   <section class="hero">
@@ -1601,67 +1580,104 @@ signalMove {
     <div class="hero-hud">
 
       <span>
-        BRM_FIELD_SYSTEM
+        BRM / FIELD ARCHIVE
       </span>
 
-      <span class="hero-hud-center">
-        SELECTED WORK
+      <span class="hero-hud-red">
+        PORTFOLIO ACTIVE
       </span>
 
-      <span class="hero-hud-right">
-        003 FILES ACTIVE
+      <span>
+        CALIFORNIA / 2026
       </span>
 
     </div>
 
 
 
-    <div class="hero-title-block reveal">
+    <div class="hero-intro">
 
 
-      <div class="hero-overline">
-        BRYAN RAMOS-MORALES / PORTFOLIO
+      <div class="hero-copy reveal">
+
+        <div class="hero-overline">
+
+          BRYAN RAMOS-MORALES
+
+        </div>
+
+
+        <h1 class="hero-title">
+
+          <span>
+            PLACE
+          </span>
+
+          <span class="hero-title-red">
+            SYSTEM
+          </span>
+
+          <span>
+            STORY
+          </span>
+
+        </h1>
+
+
+        <p class="hero-description">
+
+          Geography, GIS, environmental systems,
+          cultural resources, cartography, and spatial
+          research focused on understanding how places
+          work, change, and carry history.
+
+        </p>
+
+
+        <div class="hero-actions">
+
+          <a
+            class="button"
+            href="#featured"
+          >
+            VIEW WORK ↓
+          </a>
+
+
+          <a
+            class="button secondary"
+            href="{{ '/resume.html' | relative_url }}"
+          >
+            RÉSUMÉ ↗
+          </a>
+
+        </div>
+
       </div>
 
 
-      <h1 class="hero-title">
 
-        <span>
-          GEOGRAPHY
-        </span>
+      <div
+        class="hero-art-window reveal"
+        data-log="FIELD ENVIRONMENT"
+      >
 
-        <span class="red-word">
-          IN MOTION
-        </span>
+        <div class="hero-art-text">
 
-      </h1>
+          <span>
+            FIELD_NOTE_01
+          </span>
 
+          <p>
 
-      <p class="hero-description">
+            Maps are one layer.
+            Field observation, history,
+            environmental systems, imagery,
+            and people add the rest.
 
-        GIS, environmental geography, cultural resources,
-        cartography, and spatial research built around
-        understanding how places work and change.
+          </p>
 
-      </p>
-
-
-      <div class="hero-actions">
-
-        <a
-          class="button"
-          href="#portfolio"
-        >
-          EXPLORE ↓
-        </a>
-
-
-        <a
-          class="button secondary"
-          href="{{ '/resume.html' | relative_url }}"
-        >
-          RÉSUMÉ ↗
-        </a>
+        </div>
 
       </div>
 
@@ -1669,61 +1685,97 @@ signalMove {
     </div>
 
 
+  </section>
 
-    <!-- THREE STRONGEST PROJECTS -->
 
-    <div
-      class="discovery"
-      id="portfolio"
-    >
+
+  <!-- =====================================================
+       FEATURED
+  ====================================================== -->
+
+  <section
+    class="featured"
+    id="featured"
+  >
+
+
+    <header class="featured-heading reveal">
+
+
+      <div class="featured-heading-left">
+
+        <span class="featured-number">
+          01 /
+        </span>
+
+        <h2>
+          SELECTED WORK
+        </h2>
+
+      </div>
+
+
+      <div class="featured-note">
+        THREE CURRENT FILES
+      </div>
+
+
+    </header>
+
+
+
+    <div class="featured-grid">
 
 
       <!-- GHOST RIVERS -->
 
       <div
-        class="discovery-main reveal"
+        class="featured-main reveal"
         data-tilt
       >
 
         <a
-          class="field-file"
+          class="featured-card"
           data-discover
+          data-log="GHOST RIVERS"
           href="{{ '/projects/ghost-rivers-governed-land/' | relative_url }}"
         >
 
           <img
             src="{{ '/ghost-rivers-governed-land-poster-2026.png' | relative_url }}"
-            alt="Ghost Rivers and Governed Land GIS project"
+            alt="Ghost Rivers and Governed Land"
           >
 
 
-          <div class="file-label">
-
-            FILE_001 /
-            <strong>
-              FEATURED
-            </strong>
-
-          </div>
+          <span class="file-number">
+            FILE_001
+          </span>
 
 
-          <div class="file-info">
+          <div class="featured-info">
 
 
             <div>
 
-              <h2 class="file-title">
-                Ghost Rivers &amp; Governed Land
-              </h2>
+              <h3 class="featured-title">
 
-              <div class="file-meta">
-                WATER / HISTORICAL LANDSCAPES / GIS
+                Ghost Rivers &amp;
+                Governed Land
+
+              </h3>
+
+
+              <div class="featured-meta">
+
+                WATER / HISTORICAL LANDSCAPE /
+                FLOOD RISK / GIS
+
               </div>
 
             </div>
 
 
-            <span class="file-arrow">
+            <span class="featured-arrow">
               ↗
             </span>
 
@@ -1736,9 +1788,9 @@ signalMove {
 
 
 
-      <!-- STACK -->
+      <!-- RIGHT STACK -->
 
-      <div class="discovery-stack">
+      <div class="featured-stack">
 
 
         <!-- ICELAND -->
@@ -1749,41 +1801,44 @@ signalMove {
         >
 
           <a
-            class="field-file"
+            class="featured-card"
             data-discover
+            data-log="ICELAND SYSTEMS"
             href="{{ '/projects/iceland-volcanic-glacial-systems/' | relative_url }}"
           >
 
             <img
               src="{{ '/iceland-volcanic-glacial-systems-enhanced.png' | relative_url }}"
-              alt="Iceland volcanic and glacial systems GIS project"
+              alt="Iceland volcanic and glacial systems"
             >
 
 
-            <div class="file-label">
-
+            <span class="file-number">
               FILE_002
+            </span>
 
-            </div>
 
-
-            <div class="file-info">
+            <div class="featured-info">
 
 
               <div>
 
-                <h2 class="file-title">
+                <h3 class="featured-title">
                   Iceland Systems
-                </h2>
+                </h3>
 
-                <div class="file-meta">
-                  FIRE / ICE / TECTONICS
+
+                <div class="featured-meta">
+
+                  VOLCANOES / GLACIERS /
+                  TECTONICS
+
                 </div>
 
               </div>
 
 
-              <span class="file-arrow">
+              <span class="featured-arrow">
                 ↗
               </span>
 
@@ -1804,8 +1859,9 @@ signalMove {
         >
 
           <a
-            class="field-file"
+            class="featured-card"
             data-discover
+            data-log="SMUDGING SPACE"
             href="{{ '/projects/smudging-space-plaque/' | relative_url }}"
           >
 
@@ -1815,30 +1871,32 @@ signalMove {
             >
 
 
-            <div class="file-label">
-
+            <span class="file-number">
               FILE_003
+            </span>
 
-            </div>
 
-
-            <div class="file-info">
+            <div class="featured-info">
 
 
               <div>
 
-                <h2 class="file-title">
+                <h3 class="featured-title">
                   Smudging Space
-                </h2>
+                </h3>
 
-                <div class="file-meta">
-                  CULTURAL RESOURCES / DESIGN
+
+                <div class="featured-meta">
+
+                  CULTURAL RESOURCES /
+                  DESIGN / INTERPRETATION
+
                 </div>
 
               </div>
 
 
-              <span class="file-arrow">
+              <span class="featured-arrow">
                 ↗
               </span>
 
@@ -1861,89 +1919,48 @@ signalMove {
 
 
   <!-- =====================================================
-       SIGNAL
+       EXPLORE AREAS
   ====================================================== -->
 
-  <section class="signal-strip">
-
-    <div class="signal-track">
-
-      <span>GEOGRAPHY</span>
-      <span>GIS</span>
-      <span>FIELD OBSERVATION</span>
-      <span>WATER</span>
-      <span>LANDSCAPE CHANGE</span>
-      <span>CULTURAL RESOURCES</span>
-      <span>SPATIAL ANALYSIS</span>
-      <span>CARTOGRAPHY</span>
-
-      <span>GEOGRAPHY</span>
-      <span>GIS</span>
-      <span>FIELD OBSERVATION</span>
-      <span>WATER</span>
-      <span>LANDSCAPE CHANGE</span>
-      <span>CULTURAL RESOURCES</span>
-      <span>SPATIAL ANALYSIS</span>
-      <span>CARTOGRAPHY</span>
-
-    </div>
-
-  </section>
+  <section class="explore">
 
 
+    <header class="explore-heading reveal">
 
-  <!-- =====================================================
-       PORTFOLIO AREAS
-  ====================================================== -->
+      <h2>
+        EXPLORE
+      </h2>
 
-  <section class="portfolio-areas">
-
-
-    <header class="section-heading reveal">
-
-
-      <div class="section-heading-left">
-
-        <span class="section-number">
-          01 /
-        </span>
-
-        <h2>
-          EXPLORE
-        </h2>
-
-      </div>
-
-
-      <div class="section-note">
+      <span>
         CHOOSE A FIELD
-      </div>
-
+      </span>
 
     </header>
 
 
 
-    <div class="area-list">
+    <div class="explore-list">
 
 
       <!-- ENVIRONMENTAL -->
 
       <a
-        class="area-row reveal"
+        class="explore-row reveal"
+        data-log="ENVIRONMENTAL GEOGRAPHY"
         href="{{ '/environmental-geography.html' | relative_url }}"
       >
 
-        <span class="area-number">
+        <span class="explore-number">
           01
         </span>
 
-        <h3 class="area-name">
+
+        <h3 class="explore-name">
           Environmental Geography
         </h3>
 
 
-        <div class="area-preview">
+        <div class="explore-preview">
 
           <img
             src="{{ '/ghost-rivers-governed-land-poster-2026.png' | relative_url }}"
@@ -1953,7 +1970,7 @@ signalMove {
         </div>
 
 
-        <span class="area-arrow">
+        <span class="explore-arrow">
           ↗
         </span>
 
@@ -1964,20 +1981,22 @@ signalMove {
       <!-- SPATIAL -->
 
       <a
-        class="area-row reveal"
+        class="explore-row reveal"
+        data-log="SPATIAL ANALYSIS"
         href="{{ '/geography-spatial-analysis.html' | relative_url }}"
       >
 
-        <span class="area-number">
+        <span class="explore-number">
           02
         </span>
 
-        <h3 class="area-name">
+
+        <h3 class="explore-name">
           Geography &amp; Spatial Analysis
         </h3>
 
 
-        <div class="area-preview">
+        <div class="explore-preview">
 
           <img
             src="{{ '/california-casino-distribution-map.png' | relative_url }}"
@@ -1987,7 +2006,7 @@ signalMove {
         </div>
 
 
-        <span class="area-arrow">
+        <span class="explore-arrow">
           ↗
         </span>
 
@@ -1998,20 +2017,22 @@ signalMove {
       <!-- CULTURAL -->
 
       <a
-        class="area-row reveal"
+        class="explore-row reveal"
+        data-log="CULTURAL RESOURCES"
         href="{{ '/cultural-resources.html' | relative_url }}"
       >
 
-        <span class="area-number">
+        <span class="explore-number">
           03
         </span>
 
-        <h3 class="area-name">
+
+        <h3 class="explore-name">
           Cultural Resources
         </h3>
 
 
-        <div class="area-preview">
+        <div class="explore-preview">
 
           <img
             src="{{ '/smudging-space-plaque.png' | relative_url }}"
@@ -2021,7 +2042,7 @@ signalMove {
         </div>
 
 
-        <span class="area-arrow">
+        <span class="explore-arrow">
           ↗
         </span>
 
@@ -2032,30 +2053,31 @@ signalMove {
       <!-- DATA -->
 
       <a
-        class="area-row reveal"
+        class="explore-row reveal"
+        data-log="DATA + PROGRAMMING"
         href="{{ '/data-programming.html' | relative_url }}"
       >
 
-        <span class="area-number">
+        <span class="explore-number">
           04
         </span>
 
-        <h3 class="area-name">
+
+        <h3 class="explore-name">
           Data &amp; Programming
         </h3>
 
 
-        <div class="area-preview">
+        <div class="explore-preview explore-preview-empty">
 
-          <img
-            src="{{ '/iceland-volcanic-glacial-systems-enhanced.png' | relative_url }}"
-            alt=""
-          >
+          <span>
+            BUILDING / PROJECTS COMING
+          </span>
 
         </div>
 
 
-        <span class="area-arrow">
+        <span class="explore-arrow">
           ↗
         </span>
 
@@ -2070,107 +2092,108 @@ signalMove {
 
 
   <!-- =====================================================
-       DEEPER ARCHIVE
+       ARCHIVE
   ====================================================== -->
 
-  <section class="archive">
+  <section class="archive reveal">
 
 
-    <div class="archive-panel reveal">
+    <div class="archive-top">
 
 
-      <div class="archive-intro">
+      <h2>
+        DEEPER ARCHIVE
+      </h2>
 
 
-        <div class="section-number">
-          02 / ARCHIVE
+      <p>
+
+        Additional work in cartography,
+        cultural-resource communication,
+        historical geography, and spatial analysis.
+
+        These stay available without competing
+        with the three featured projects above.
+
+      </p>
+
+
+    </div>
+
+
+
+    <div class="archive-grid">
+
+
+      <!-- CASINO -->
+
+      <a
+        class="archive-item"
+        data-discover
+        data-log="CASINO DISTRIBUTION"
+        href="{{ '/projects/california-casino-distribution-map/' | relative_url }}"
+      >
+
+        <img
+          src="{{ '/california-casino-distribution-map.png' | relative_url }}"
+          alt="California casino distribution map"
+        >
+
+        <div class="archive-label">
+
+          CALIFORNIA CASINO DISTRIBUTION ↗
+
         </div>
 
-
-        <h2>
-          MORE WORK
-        </h2>
-
-
-        <p>
-
-          Additional mapping, historical geography,
-          cultural-resource communication, and
-          cartographic work lives deeper in the portfolio.
-
-        </p>
-
-
-      </div>
+      </a>
 
 
 
-      <div class="archive-items">
+      <!-- NAGPRA MEDIA -->
 
+      <a
+        class="archive-item"
+        data-discover
+        data-log="NAGPRA MEDIA"
+        href="{{ '/projects/nagpra-educational-media/' | relative_url }}"
+      >
 
-        <!-- CASINO -->
-
-        <a
-          class="archive-item"
-          data-discover
-          href="{{ '/projects/california-casino-distribution-map/' | relative_url }}"
+        <img
+          src="{{ '/nagpra-brochure-outside.png' | relative_url }}"
+          alt="NAGPRA educational media"
         >
 
-          <img
-            src="{{ '/california-casino-distribution-map.png' | relative_url }}"
-            alt="California casino distribution map"
-          >
+        <div class="archive-label">
 
-          <div class="archive-caption">
-            CALIFORNIA CASINO DISTRIBUTION ↗
-          </div>
+          NAGPRA EDUCATIONAL MEDIA ↗
 
-        </a>
+        </div>
+
+      </a>
 
 
 
-        <!-- NAGPRA MEDIA -->
+      <!-- CROWS LANDING -->
 
-        <a
-          class="archive-item"
-          data-discover
-          href="{{ '/projects/nagpra-educational-media/' | relative_url }}"
+      <a
+        class="archive-item"
+        data-discover
+        data-log="CROWS LANDING"
+        href="{{ '/projects/crows-landing-mew-ko/' | relative_url }}"
+      >
+
+        <img
+          src="{{ '/crows-landing-map.jpg' | relative_url }}"
+          alt="Crows Landing and Mew-ko Geography"
         >
 
-          <img
-            src="{{ '/nagpra-brochure-outside.png' | relative_url }}"
-            alt="NAGPRA educational media"
-          >
+        <div class="archive-label">
 
-          <div class="archive-caption">
-            NAGPRA EDUCATIONAL MEDIA ↗
-          </div>
+          CROWS LANDING / MEW-KO ↗
 
-        </a>
+        </div>
 
-
-
-        <!-- CROWS LANDING -->
-
-        <a
-          class="archive-item"
-          data-discover
-          href="{{ '/projects/crows-landing-mew-ko/' | relative_url }}"
-        >
-
-          <img
-            src="{{ '/crows-landing-map.jpg' | relative_url }}"
-            alt="Crows Landing and Mew-ko geography"
-          >
-
-          <div class="archive-caption">
-            CROWS LANDING / MEW-KO ↗
-          </div>
-
-        </a>
-
-
-      </div>
+      </a>
 
 
     </div>
@@ -2189,16 +2212,16 @@ signalMove {
 
     <div>
 
-
-      <div class="contact-label">
-        NEXT DESTINATION /
-      </div>
-
+      <span>
+        CONTACT /
+      </span>
 
       <h2>
-        LET’S TALK ABOUT THE WORK.
-      </h2>
 
+        HAVE A QUESTION,
+        PROJECT, OR OPPORTUNITY?
+
+      </h2>
 
     </div>
 
@@ -2207,7 +2230,7 @@ signalMove {
       class="button"
       href="{{ '/contact.html' | relative_url }}"
     >
-      CONTACT ↗
+      GET IN TOUCH ↗
     </a>
 
 
