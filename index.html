@@ -6,18 +6,280 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 <style>
 
-
 .home {
-
-  --gap:
-    clamp(
-      120px,
-      13vw,
-      200px
-    );
-
+  --gap: clamp(120px, 13vw, 200px);
 }
 
+
+/* =========================================================
+   STATIC COLLAGE
+========================================================= */
+
+.static-collage {
+  z-index: 2;
+}
+
+
+/* make the actual artwork visible */
+
+.static-collage .collage-item {
+  opacity: var(--o, 0.52);
+}
+
+
+/* ---------------------------------------------------------
+   COLLAGE LAYOUT A
+--------------------------------------------------------- */
+
+.layout-a .collage-item:nth-child(1) {
+  --x: -3%;
+  --y: 1%;
+  --w: 320px;
+  --r: -11deg;
+  --o: .58;
+}
+
+.layout-a .collage-item:nth-child(2) {
+  --x: 15%;
+  --y: 68%;
+  --w: 150px;
+  --r: 8deg;
+  --o: .48;
+}
+
+.layout-a .collage-item:nth-child(3) {
+  --x: 78%;
+  --y: 2%;
+  --w: 250px;
+  --r: 10deg;
+  --o: .56;
+}
+
+.layout-a .collage-item:nth-child(4) {
+  --x: 88%;
+  --y: 58%;
+  --w: 270px;
+  --r: -10deg;
+  --o: .57;
+}
+
+.layout-a .collage-item:nth-child(5) {
+  --x: 2%;
+  --y: 66%;
+  --w: 210px;
+  --r: 4deg;
+  --o: .50;
+}
+
+.layout-a .collage-item:nth-child(6) {
+  --x: 44%;
+  --y: 3%;
+  --w: 110px;
+  --r: -5deg;
+  --o: .62;
+}
+
+.layout-a .collage-item:nth-child(7) {
+  --x: 58%;
+  --y: 72%;
+  --w: 120px;
+  --r: 7deg;
+  --o: .47;
+}
+
+.layout-a .collage-item:nth-child(8) {
+  --x: 68%;
+  --y: 31%;
+  --w: 245px;
+  --r: -12deg;
+  --o: .38;
+}
+
+.layout-a .collage-item:nth-child(9) {
+  --x: 25%;
+  --y: 8%;
+  --w: 105px;
+  --r: 9deg;
+  --o: .54;
+}
+
+.layout-a .collage-item:nth-child(10) {
+  --x: 37%;
+  --y: 77%;
+  --w: 95px;
+  --r: -9deg;
+  --o: .48;
+}
+
+
+/* ---------------------------------------------------------
+   COLLAGE LAYOUT B
+--------------------------------------------------------- */
+
+.layout-b .collage-item:nth-child(1) {
+  --x: 4%;
+  --y: 4%;
+  --w: 250px;
+  --r: 6deg;
+  --o: .62;
+}
+
+.layout-b .collage-item:nth-child(2) {
+  --x: 26%;
+  --y: 58%;
+  --w: 250px;
+  --r: -7deg;
+  --o: .55;
+}
+
+.layout-b .collage-item:nth-child(3) {
+  --x: 55%;
+  --y: 5%;
+  --w: 260px;
+  --r: 6deg;
+  --o: .49;
+}
+
+.layout-b .collage-item:nth-child(4) {
+  --x: 77%;
+  --y: 47%;
+  --w: 280px;
+  --r: -7deg;
+  --o: .64;
+}
+
+.layout-b .collage-item:nth-child(5) {
+  --x: 88%;
+  --y: 2%;
+  --w: 160px;
+  --r: 12deg;
+  --o: .46;
+}
+
+.layout-b .collage-item:nth-child(6) {
+  --x: -4%;
+  --y: 65%;
+  --w: 250px;
+  --r: -7deg;
+  --o: .54;
+}
+
+.layout-b .collage-item:nth-child(7) {
+  --x: 41%;
+  --y: 27%;
+  --w: 155px;
+  --r: 9deg;
+  --o: .44;
+}
+
+.layout-b .collage-item:nth-child(8) {
+  --x: 67%;
+  --y: 76%;
+  --w: 120px;
+  --r: -8deg;
+  --o: .53;
+}
+
+.layout-b .collage-item:nth-child(9) {
+  --x: 16%;
+  --y: 21%;
+  --w: 115px;
+  --r: 11deg;
+  --o: .51;
+}
+
+.layout-b .collage-item:nth-child(10) {
+  --x: 47%;
+  --y: 79%;
+  --w: 150px;
+  --r: 4deg;
+  --o: .43;
+}
+
+
+/* ---------------------------------------------------------
+   COLLAGE LAYOUT C
+--------------------------------------------------------- */
+
+.layout-c .collage-item:nth-child(1) {
+  --x: -5%;
+  --y: 42%;
+  --w: 380px;
+  --r: 8deg;
+  --o: .62;
+}
+
+.layout-c .collage-item:nth-child(2) {
+  --x: 9%;
+  --y: 0%;
+  --w: 210px;
+  --r: -10deg;
+  --o: .54;
+}
+
+.layout-c .collage-item:nth-child(3) {
+  --x: 34%;
+  --y: 65%;
+  --w: 180px;
+  --r: 12deg;
+  --o: .55;
+}
+
+.layout-c .collage-item:nth-child(4) {
+  --x: 51%;
+  --y: 4%;
+  --w: 300px;
+  --r: -8deg;
+  --o: .56;
+}
+
+.layout-c .collage-item:nth-child(5) {
+  --x: 82%;
+  --y: 14%;
+  --w: 300px;
+  --r: 7deg;
+  --o: .63;
+}
+
+.layout-c .collage-item:nth-child(6) {
+  --x: 75%;
+  --y: 72%;
+  --w: 150px;
+  --r: -12deg;
+  --o: .53;
+}
+
+.layout-c .collage-item:nth-child(7) {
+  --x: 24%;
+  --y: 31%;
+  --w: 120px;
+  --r: 4deg;
+  --o: .47;
+}
+
+.layout-c .collage-item:nth-child(8) {
+  --x: 60%;
+  --y: 54%;
+  --w: 115px;
+  --r: -6deg;
+  --o: .58;
+}
+
+.layout-c .collage-item:nth-child(9) {
+  --x: 42%;
+  --y: 18%;
+  --w: 105px;
+  --r: 9deg;
+  --o: .46;
+}
+
+.layout-c .collage-item:nth-child(10) {
+  --x: 91%;
+  --y: 58%;
+  --w: 125px;
+  --r: -10deg;
+  --o: .49;
+}
 
 
 /* =========================================================
@@ -44,14 +306,6 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 }
 
 
-.home-hero
-.collage-zone {
-
-  opacity: 0.82;
-
-}
-
-
 .hero-content {
 
   width:
@@ -60,8 +314,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
       100%
     );
 
-  padding:
-    42px;
+  padding: 42px;
 
 }
 
@@ -201,19 +454,17 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
 /* =========================================================
-   LAND / WATER COLLAGE TRANSITION
+   LANDSCAPE
 ========================================================= */
 
 .landscape-band {
 
   position: relative;
 
-  min-height: 430px;
+  min-height: 520px;
 
   margin:
-
     0
-
     calc(
       50% - 50vw
     );
@@ -224,15 +475,15 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
 .landscape-band
-.collage-zone {
+.static-collage {
 
-  top: -40px;
+  top: 0;
 
-  right: -3vw;
+  right: 0;
 
-  bottom: -40px;
+  bottom: 0;
 
-  left: -3vw;
+  left: 0;
 
 }
 
@@ -247,7 +498,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   left: 0;
 
-  z-index: 3;
+  z-index: 4;
 
   width: 100%;
 
@@ -255,11 +506,11 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   margin: auto;
 
-  pointer-events: none;
-
-  opacity: 0.83;
+  opacity: .88;
 
   mix-blend-mode: screen;
+
+  pointer-events: none;
 
 }
 
@@ -279,10 +530,10 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     linear-gradient(
       to bottom,
 
-      rgba(0,0,0,0.94),
-      transparent 28%,
+      rgba(0,0,0,.92),
+      transparent 25%,
       transparent 73%,
-      rgba(0,0,0,0.94)
+      rgba(0,0,0,.93)
     );
 
   content: "";
@@ -292,7 +543,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
 /* =========================================================
-   HEADINGS
+   SECTION HEADINGS
 ========================================================= */
 
 .section-heading {
@@ -333,7 +584,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   font-family: var(--pixel);
 
-  font-size: 0.62rem;
+  font-size: .62rem;
 
 }
 
@@ -351,9 +602,9 @@ description: Geography, GIS, environmental research, cultural resources, and spa
       6rem
     );
 
-  letter-spacing: -0.07em;
+  letter-spacing: -.07em;
 
-  line-height: 0.9;
+  line-height: .9;
 
 }
 
@@ -364,7 +615,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   font-family: var(--pixel);
 
-  font-size: 0.54rem;
+  font-size: .54rem;
 
 }
 
@@ -379,18 +630,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
   position: relative;
 
   padding:
-    120px 0
-    120px;
-
-}
-
-
-.selected-work
-.collage-zone {
-
-  top: 0;
-
-  bottom: -80px;
+    140px 0;
 
 }
 
@@ -410,28 +650,17 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     linear-gradient(
       110deg,
 
-      rgba(0,0,0,0.98),
-      rgba(0,0,0,0.93) 64%,
-      rgba(0,0,0,0.82)
+      rgba(0,0,0,.97),
+      rgba(0,0,0,.91) 62%,
+      rgba(0,0,0,.78)
     );
 
   border:
     1px solid
     var(--line);
 
-  box-shadow:
-
-    0 0 0 1px
-    rgba(223,16,29,0.08),
-
-    0 35px 90px
-    rgba(0,0,0,0.55);
-
 }
 
-
-
-/* GRID */
 
 .selected-grid {
 
@@ -439,7 +668,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   grid-template-columns:
     minmax(0,1.32fr)
-    minmax(300px,0.68fr);
+    minmax(300px,.68fr);
 
   gap: 22px;
 
@@ -467,9 +696,6 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 }
 
-
-
-/* FEATURE */
 
 .work-feature {
 
@@ -509,10 +735,10 @@ description: Geography, GIS, environmental research, cultural resources, and spa
   box-shadow:
 
     0 0 35px
-    rgba(223,16,29,0.23),
+    rgba(223,16,29,.24),
 
     9px 9px 0
-    rgba(98,0,7,0.46);
+    rgba(100,0,8,.46);
 
 }
 
@@ -526,8 +752,8 @@ description: Geography, GIS, environmental research, cultural resources, and spa
   object-fit: cover;
 
   filter:
-    grayscale(0.88)
-    brightness(0.59)
+    grayscale(.88)
+    brightness(.59)
     contrast(1.11);
 
   transition:
@@ -542,7 +768,8 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   filter: none;
 
-  transform: scale(1.02);
+  transform:
+    scale(1.02);
 
 }
 
@@ -570,7 +797,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   font-family: var(--pixel);
 
-  font-size: 0.56rem;
+  font-size: .56rem;
 
 }
 
@@ -600,13 +827,14 @@ description: Geography, GIS, environmental research, cultural resources, and spa
   padding: 18px;
 
   background:
-    rgba(0,0,0,0.90);
+    rgba(0,0,0,.9);
 
   border-left:
     3px solid
     var(--red);
 
-  backdrop-filter: blur(12px);
+  backdrop-filter:
+    blur(12px);
 
 }
 
@@ -624,7 +852,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   font-weight: 800;
 
-  letter-spacing: -0.05em;
+  letter-spacing: -.05em;
 
   line-height: 1;
 
@@ -639,7 +867,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   font-family: var(--pixel);
 
-  font-size: 0.5rem;
+  font-size: .5rem;
 
 }
 
@@ -650,7 +878,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   font-family: var(--pixel);
 
-  font-size: 0.58rem;
+  font-size: .58rem;
 
 }
 
@@ -664,12 +892,10 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   position: relative;
 
-  min-height: 390px;
+  min-height: 470px;
 
   margin:
-
     0
-
     calc(
       50% - 50vw
     );
@@ -690,11 +916,11 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   z-index: 5;
 
-  height: 110px;
-
-  pointer-events: none;
+  height: 90px;
 
   content: "";
+
+  pointer-events: none;
 
 }
 
@@ -735,8 +961,8 @@ description: Geography, GIS, environmental research, cultural resources, and spa
   position: relative;
 
   padding:
-    110px 0
-    130px;
+    120px 0
+    140px;
 
 }
 
@@ -747,11 +973,10 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   z-index: 10;
 
-  padding:
-    55px;
+  padding: 55px;
 
   background:
-    rgba(0,0,0,0.91);
+    rgba(0,0,0,.90);
 
   border:
     1px solid
@@ -765,16 +990,13 @@ description: Geography, GIS, environmental research, cultural resources, and spa
   display: grid;
 
   grid-template-columns:
-    minmax(0,0.9fr)
+    minmax(0,.9fr)
     minmax(390px,1.1fr);
 
   gap: 55px;
 
 }
 
-
-
-/* ROWS */
 
 .browse-list {
 
@@ -790,9 +1012,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
   display: grid;
 
   grid-template-columns:
-    40px
-    1fr
-    25px;
+    40px 1fr 25px;
 
   gap: 16px;
 
@@ -824,7 +1044,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
   padding-left: 15px;
 
   background:
-    rgba(95,0,7,0.42);
+    rgba(95,0,7,.42);
 
 }
 
@@ -835,7 +1055,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   font-family: var(--pixel);
 
-  font-size: 0.57rem;
+  font-size: .57rem;
 
 }
 
@@ -853,7 +1073,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   font-weight: 800;
 
-  letter-spacing: -0.05em;
+  letter-spacing: -.05em;
 
 }
 
@@ -864,7 +1084,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   color: #7e7772;
 
-  font-size: 0.76rem;
+  font-size: .76rem;
 
 }
 
@@ -875,9 +1095,6 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 }
 
-
-
-/* PREVIEW */
 
 .browse-preview {
 
@@ -912,7 +1129,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   filter:
     grayscale(1)
-    brightness(0.52);
+    brightness(.52);
 
   transition:
     filter 200ms ease,
@@ -927,7 +1144,8 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   filter: none;
 
-  transform: scale(1.02);
+  transform:
+    scale(1.02);
 
 }
 
@@ -939,8 +1157,8 @@ description: Geography, GIS, environmental research, cultural resources, and spa
     repeating-linear-gradient(
       45deg,
 
-      rgba(223,16,29,0.05) 0,
-      rgba(223,16,29,0.05) 8px,
+      rgba(223,16,29,.05) 0,
+      rgba(223,16,29,.05) 8px,
 
       transparent 8px,
       transparent 18px
@@ -974,7 +1192,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
   padding: 20px;
 
   background:
-    rgba(0,0,0,0.90);
+    rgba(0,0,0,.9);
 
   border-left:
     3px solid
@@ -989,7 +1207,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   font-family: var(--pixel);
 
-  font-size: 0.53rem;
+  font-size: .53rem;
 
 }
 
@@ -1006,7 +1224,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
       2.3rem
     );
 
-  letter-spacing: -0.045em;
+  letter-spacing: -.045em;
 
 }
 
@@ -1017,7 +1235,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   color: #938c86;
 
-  font-size: 0.78rem;
+  font-size: .78rem;
 
 }
 
@@ -1046,7 +1264,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
   padding: 48px;
 
   background:
-    rgba(0,0,0,0.91);
+    rgba(0,0,0,.9);
 
   border:
     1px solid
@@ -1060,7 +1278,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
   display: grid;
 
   grid-template-columns:
-    0.7fr
+    .7fr
     1.3fr;
 
   gap: 45px;
@@ -1083,7 +1301,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
       5rem
     );
 
-  letter-spacing: -0.06em;
+  letter-spacing: -.06em;
 
 }
 
@@ -1141,7 +1359,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   filter:
     grayscale(1)
-    brightness(0.5);
+    brightness(.5);
 
   transition:
     filter 180ms ease,
@@ -1154,7 +1372,8 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   filter: none;
 
-  transform: scale(1.035);
+  transform:
+    scale(1.035);
 
 }
 
@@ -1172,7 +1391,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
   padding: 10px;
 
   background:
-    rgba(0,0,0,0.89);
+    rgba(0,0,0,.89);
 
   border-left:
     2px solid
@@ -1180,7 +1399,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   font-family: var(--pixel);
 
-  font-size: 0.55rem;
+  font-size: .55rem;
 
 }
 
@@ -1210,8 +1429,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
   display: grid;
 
   grid-template-columns:
-    1fr
-    auto;
+    1fr auto;
 
   align-items: center;
 
@@ -1220,7 +1438,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
   padding: 48px;
 
   background:
-    rgba(0,0,0,0.92);
+    rgba(0,0,0,.91);
 
   border:
     1px solid
@@ -1235,7 +1453,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   font-family: var(--pixel);
 
-  font-size: 0.56rem;
+  font-size: .56rem;
 
 }
 
@@ -1256,16 +1474,16 @@ description: Geography, GIS, environmental research, cultural resources, and spa
       5rem
     );
 
-  letter-spacing: -0.06em;
+  letter-spacing: -.06em;
 
-  line-height: 0.95;
+  line-height: .95;
 
 }
 
 
 
 /* =========================================================
-   MOBILE
+   RESPONSIVE
 ========================================================= */
 
 @media (max-width: 1050px) {
@@ -1322,7 +1540,6 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 }
 
 
-
 @media (max-width: 720px) {
 
   .home-hero {
@@ -1357,7 +1574,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   .landscape-band {
 
-    min-height: 260px;
+    min-height: 300px;
 
   }
 
@@ -1387,13 +1604,6 @@ description: Geography, GIS, environmental research, cultural resources, and spa
   }
 
 
-  .selected-work {
-
-    padding-top: 80px;
-
-  }
-
-
   .selected-safe-zone,
   .browse-safe-zone,
   .other-safe-zone {
@@ -1419,7 +1629,7 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
   .collage-break {
 
-    min-height: 260px;
+    min-height: 300px;
 
   }
 
@@ -1460,7 +1670,6 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 </style>
 
 
-
 <div class="home">
 
 
@@ -1472,10 +1681,22 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
     <div
-      class="collage-zone"
-      data-collage="hero"
+      class="collage-zone static-collage layout-a"
       aria-hidden="true"
-    ></div>
+    >
+
+      <img class="collage-item" src="{{ '/assets/art/topography-03.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/compass-star-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/orbit-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/root-network-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/fern-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/small-stars-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/pixel-cluster-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/branching-tree-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/circle-x-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/diamond-star-01.png' | relative_url }}" alt="">
+
+    </div>
 
 
 
@@ -1485,15 +1706,11 @@ description: Geography, GIS, environmental research, cultural resources, and spa
       <div class="hero-meta">
 
         <span>GEOGRAPHY</span>
-
         <span>GIS</span>
-
         <span>ENVIRONMENTAL RESOURCES</span>
-
         <span>CULTURAL RESOURCES</span>
 
       </div>
-
 
 
       <h1 class="hero-name">
@@ -1509,7 +1726,6 @@ description: Geography, GIS, environmental research, cultural resources, and spa
       </h1>
 
 
-
       <div class="hero-role">
 
         Geography &amp; Environmental Resources student
@@ -1517,7 +1733,6 @@ description: Geography, GIS, environmental research, cultural resources, and spa
         cultural resources, cartography, and spatial research.
 
       </div>
-
 
 
       <p class="hero-description">
@@ -1531,7 +1746,6 @@ description: Geography, GIS, environmental research, cultural resources, and spa
       </p>
 
 
-
       <div class="hero-actions">
 
         <a
@@ -1540,7 +1754,6 @@ description: Geography, GIS, environmental research, cultural resources, and spa
         >
           VIEW SELECTED WORK ↓
         </a>
-
 
         <a
           class="button secondary"
@@ -1552,32 +1765,14 @@ description: Geography, GIS, environmental research, cultural resources, and spa
       </div>
 
 
-
       <div class="hero-fields">
 
-        <span class="hero-field">
-          GIS
-        </span>
-
-        <span class="hero-field">
-          CARTOGRAPHY
-        </span>
-
-        <span class="hero-field">
-          WATER
-        </span>
-
-        <span class="hero-field">
-          PHYSICAL GEOGRAPHY
-        </span>
-
-        <span class="hero-field">
-          CULTURAL RESOURCES
-        </span>
-
-        <span class="hero-field">
-          SPATIAL ANALYSIS
-        </span>
+        <span class="hero-field">GIS</span>
+        <span class="hero-field">CARTOGRAPHY</span>
+        <span class="hero-field">WATER</span>
+        <span class="hero-field">PHYSICAL GEOGRAPHY</span>
+        <span class="hero-field">CULTURAL RESOURCES</span>
+        <span class="hero-field">SPATIAL ANALYSIS</span>
 
       </div>
 
@@ -1590,17 +1785,29 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
   <!-- =====================================================
-       LANDSCAPE TRANSITION
+       LANDSCAPE COLLAGE
   ====================================================== -->
 
   <section class="landscape-band collage-host">
 
 
     <div
-      class="collage-zone"
-      data-collage="landscape"
+      class="collage-zone static-collage layout-b"
       aria-hidden="true"
-    ></div>
+    >
+
+      <img class="collage-item" src="{{ '/assets/art/mountain-range-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/volcano-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/strata-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/cliff-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/rock-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/cracked-earth-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/stump-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/drainage-tree-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/river-network-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/river-network-02.png' | relative_url }}" alt="">
+
+    </div>
 
 
     <img
@@ -1626,10 +1833,22 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
     <div
-      class="collage-zone"
-      data-collage="selected"
+      class="collage-zone static-collage layout-c"
       aria-hidden="true"
-    ></div>
+    >
+
+      <img class="collage-item" src="{{ '/assets/art/corner-brackets-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/corner-brackets-02.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/rough-frame-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/rough-frame-02.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/target-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/target-x-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/skew-frame-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/stripe-mark-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/x-mark-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/crosshair-01.png' | relative_url }}" alt="">
+
+    </div>
 
 
 
@@ -1644,7 +1863,6 @@ description: Geography, GIS, environmental research, cultural resources, and spa
           <span class="section-number">
             01 /
           </span>
-
 
           <h2>
             SELECTED WORK
@@ -1664,8 +1882,6 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
       <div class="selected-grid">
 
-
-        <!-- GHOST RIVERS -->
 
         <div
           class="selected-primary reveal"
@@ -1729,8 +1945,6 @@ description: Geography, GIS, environmental research, cultural resources, and spa
         <div class="selected-stack">
 
 
-          <!-- ICELAND -->
-
           <div
             class="reveal"
             data-tilt
@@ -1787,8 +2001,6 @@ description: Geography, GIS, environmental research, cultural resources, and spa
           </div>
 
 
-
-          <!-- SMUDGING -->
 
           <div
             class="reveal"
@@ -1859,17 +2071,29 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
   <!-- =====================================================
-       COLLAGE BREATHER
+       ROOT / PLANT COLLAGE
   ====================================================== -->
 
   <section class="collage-break collage-host">
 
 
     <div
-      class="collage-zone"
-      data-collage="break"
+      class="collage-zone static-collage layout-a"
       aria-hidden="true"
-    ></div>
+    >
+
+      <img class="collage-item" src="{{ '/assets/art/roots-large-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/roots-large-02.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/fern-large-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/terrain-large-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/pine-branch-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/hanging-plant-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/leaf-vine-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/thorn-vine-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/cattails-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/reeds-01.png' | relative_url }}" alt="">
+
+    </div>
 
 
   </section>
@@ -1884,10 +2108,22 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
     <div
-      class="collage-zone"
-      data-collage="browse"
+      class="collage-zone static-collage layout-b"
       aria-hidden="true"
-    ></div>
+    >
+
+      <img class="collage-item" src="{{ '/assets/art/moon-pair-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/moon-phases-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/sunburst-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/starburst-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/celestial-cross-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/small-star-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/contour-symbol-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/grid-cluster-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/location-pin-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/survey-tripod-01.png' | relative_url }}" alt="">
+
+    </div>
 
 
 
@@ -1926,8 +2162,6 @@ description: Geography, GIS, environmental research, cultural resources, and spa
         <div class="browse-list">
 
 
-          <!-- ENVIRONMENTAL -->
-
           <a
             class="browse-row reveal"
             href="{{ '/environmental-geography.html' | relative_url }}"
@@ -1965,8 +2199,6 @@ description: Geography, GIS, environmental research, cultural resources, and spa
           </a>
 
 
-
-          <!-- GIS -->
 
           <a
             class="browse-row reveal"
@@ -2009,8 +2241,6 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
 
-          <!-- CULTURAL -->
-
           <a
             class="browse-row reveal"
             href="{{ '/cultural-resources.html' | relative_url }}"
@@ -2048,8 +2278,6 @@ description: Geography, GIS, environmental research, cultural resources, and spa
           </a>
 
 
-
-          <!-- DATA -->
 
           <a
             class="browse-row reveal"
@@ -2092,8 +2320,6 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
 
-        <!-- DYNAMIC PREVIEW -->
-
         <div
           class="browse-preview"
           id="browse-preview"
@@ -2116,16 +2342,14 @@ description: Geography, GIS, environmental research, cultural resources, and spa
             </span>
 
 
-            <h3
-              id="browse-preview-title"
-            >
+            <h3 id="browse-preview-title">
+
               Environmental Geography
+
             </h3>
 
 
-            <p
-              id="browse-preview-text"
-            >
+            <p id="browse-preview-text">
 
               Water systems, landscape change,
               environmental interpretation,
@@ -2151,17 +2375,29 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
   <!-- =====================================================
-       COLLAGE BREAK 2
+       LARGE OVERLAY COLLAGE
   ====================================================== -->
 
   <section class="collage-break collage-host">
 
 
     <div
-      class="collage-zone"
-      data-collage="archive-break"
+      class="collage-zone static-collage layout-c"
       aria-hidden="true"
-    ></div>
+    >
+
+      <img class="collage-item" src="{{ '/assets/art/overlay-topography-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/overlay-topography-02.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/overlay-topography-03.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/overlay-topography-04.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/overlay-topography-05.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/overlay-terrain-left.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/overlay-terrain-center.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/overlay-terrain-right.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/overlay-celestial-left.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/overlay-celestial-right.png' | relative_url }}" alt="">
+
+    </div>
 
 
   </section>
@@ -2176,10 +2412,22 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
     <div
-      class="collage-zone"
-      data-collage="other"
+      class="collage-zone static-collage layout-a"
       aria-hidden="true"
-    ></div>
+    >
+
+      <img class="collage-item" src="{{ '/assets/art/moth-02.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/beetle-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/bird-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/firefly-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/wildflower-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/field-arrow-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/arrow-02.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/triangle-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/survey-hash-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/slash-marks-01.png' | relative_url }}" alt="">
+
+    </div>
 
 
 
@@ -2286,17 +2534,59 @@ description: Geography, GIS, environmental research, cultural resources, and spa
 
 
   <!-- =====================================================
-       FINAL COLLAGE
+       BOTANICAL / MARK COLLAGE
   ====================================================== -->
 
   <section class="collage-break collage-host">
 
 
     <div
-      class="collage-zone"
-      data-collage="final-art"
+      class="collage-zone static-collage layout-b"
       aria-hidden="true"
-    ></div>
+    >
+
+      <img class="collage-item" src="{{ '/assets/art/overlay-botanical-left.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/overlay-botanical-center.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/overlay-botanical-right.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/overlay-botanical-far-right.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/overlay-bottom-creatures.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/overlay-marks-left.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/overlay-marks-right.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/star-pixel-cluster-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/halftone-dots-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/pixel-steps-01.png' | relative_url }}" alt="">
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- =====================================================
+       FINAL MAP / MARK COLLAGE
+  ====================================================== -->
+
+  <section class="collage-break collage-host">
+
+
+    <div
+      class="collage-zone static-collage layout-c"
+      aria-hidden="true"
+    >
+
+      <img class="collage-item" src="{{ '/assets/art/topography-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/topography-02.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/topography-04.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/topography-05.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/blur-lines-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/cross-marks-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/scribble-lines-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/scribble-oval-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/waveform-01.png' | relative_url }}" alt="">
+      <img class="collage-item" src="{{ '/assets/art/terrain-large-01.png' | relative_url }}" alt="">
+
+    </div>
 
 
   </section>
@@ -2308,14 +2598,6 @@ description: Geography, GIS, environmental research, cultural resources, and spa
   ====================================================== -->
 
   <section class="home-contact collage-host">
-
-
-    <div
-      class="collage-zone"
-      data-collage="contact"
-      aria-hidden="true"
-    ></div>
-
 
 
     <div class="contact-safe-zone reveal">
@@ -2342,7 +2624,9 @@ description: Geography, GIS, environmental research, cultural resources, and spa
         class="button"
         href="{{ '/contact.html' | relative_url }}"
       >
+
         GET IN TOUCH ↗
+
       </a>
 
 
