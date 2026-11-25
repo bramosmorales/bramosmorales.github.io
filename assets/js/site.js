@@ -1,38 +1,75 @@
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const finePointer = window.matchMedia("(pointer: fine)").matches;
+const reducedMotion =
+  window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+const desktopInteractive =
+  window.matchMedia(
+    "(min-width: 651px)"
+  ).matches;
+
+const anyFinePointer =
+  window.matchMedia(
+    "(any-pointer: fine)"
+  ).matches;
+
 
 /* =========================================================
    MOBILE NAVIGATION
 ========================================================= */
 
-const navToggle = document.querySelector(".nav-toggle");
-const siteNav = document.querySelector(".site-nav");
+const navToggle =
+  document.querySelector(".nav-toggle");
+
+const siteNav =
+  document.querySelector(".site-nav");
 
 if (navToggle && siteNav) {
-  navToggle.addEventListener("click", () => {
-    const open = siteNav.classList.toggle("open");
-    navToggle.setAttribute("aria-expanded", String(open));
-  });
+
+  navToggle.addEventListener(
+    "click",
+    () => {
+
+      const open =
+        siteNav.classList.toggle("open");
+
+      navToggle.setAttribute(
+        "aria-expanded",
+        String(open)
+      );
+
+    }
+  );
+
 }
+
 
 /* =========================================================
    SCROLL PROGRESS
 ========================================================= */
 
-const progressBar = document.getElementById("scroll-progress-bar");
+const progressBar =
+  document.getElementById(
+    "scroll-progress-bar"
+  );
 
 function updateScrollProgress() {
+
   if (!progressBar) return;
 
   const availableScroll =
-    document.documentElement.scrollHeight - window.innerHeight;
+    document.documentElement.scrollHeight
+    -
+    window.innerHeight;
 
   const progress =
     availableScroll > 0
       ? window.scrollY / availableScroll
       : 0;
 
-  progressBar.style.transform = `scaleX(${progress})`;
+  progressBar.style.transform =
+    `scaleX(${progress})`;
+
 }
 
 updateScrollProgress();
@@ -40,7 +77,9 @@ updateScrollProgress();
 window.addEventListener(
   "scroll",
   updateScrollProgress,
-  { passive: true }
+  {
+    passive: true
+  }
 );
 
 window.addEventListener(
@@ -48,157 +87,305 @@ window.addEventListener(
   updateScrollProgress
 );
 
+
 /* =========================================================
    POINTER POSITION + BACKGROUND PARALLAX
 ========================================================= */
 
-let pointerX = window.innerWidth / 2;
-let pointerY = window.innerHeight / 2;
+let pointerX =
+  window.innerWidth / 2;
 
-if (finePointer && !reducedMotion) {
-  document.addEventListener("pointermove", event => {
-    pointerX = event.clientX;
-    pointerY = event.clientY;
+let pointerY =
+  window.innerHeight / 2;
 
-    document.documentElement.style.setProperty(
-      "--mouse-x",
-      `${pointerX}px`
-    );
+if (desktopInteractive) {
 
-    document.documentElement.style.setProperty(
-      "--mouse-y",
-      `${pointerY}px`
-    );
+  document.addEventListener(
+    "pointermove",
+    event => {
 
-    const shiftX =
-      (pointerX / window.innerWidth - 0.5) * 13;
+      if (
+        event.pointerType === "touch"
+      ) {
+        return;
+      }
 
-    const shiftY =
-      (pointerY / window.innerHeight - 0.5) * 9;
+      pointerX =
+        event.clientX;
 
-    document.documentElement.style.setProperty(
-      "--collage-shift-x",
-      `${shiftX}px`
-    );
+      pointerY =
+        event.clientY;
 
-    document.documentElement.style.setProperty(
-      "--collage-shift-y",
-      `${shiftY}px`
-    );
-  });
+      document.documentElement.style.setProperty(
+        "--mouse-x",
+        `${pointerX}px`
+      );
+
+      document.documentElement.style.setProperty(
+        "--mouse-y",
+        `${pointerY}px`
+      );
+
+      const shiftX =
+        (
+          pointerX /
+          window.innerWidth -
+          0.5
+        )
+        *
+        13;
+
+      const shiftY =
+        (
+          pointerY /
+          window.innerHeight -
+          0.5
+        )
+        *
+        9;
+
+      document.documentElement.style.setProperty(
+        "--collage-shift-x",
+        `${shiftX}px`
+      );
+
+      document.documentElement.style.setProperty(
+        "--collage-shift-y",
+        `${shiftY}px`
+      );
+
+    }
+  );
+
 }
+
 
 /* =========================================================
    SCROLL REVEALS
 ========================================================= */
 
 const revealItems =
-  document.querySelectorAll(".reveal");
+  document.querySelectorAll(
+    ".reveal"
+  );
 
 if (reducedMotion) {
-  revealItems.forEach(item => {
-    item.classList.add("visible");
-  });
-} else {
+
+  revealItems.forEach(
+    item => {
+
+      item.classList.add(
+        "visible"
+      );
+
+    }
+  );
+
+}
+
+else {
+
   const revealObserver =
     new IntersectionObserver(
+
       entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            revealObserver.unobserve(entry.target);
+
+        entries.forEach(
+          entry => {
+
+            if (
+              entry.isIntersecting
+            ) {
+
+              entry.target.classList.add(
+                "visible"
+              );
+
+              revealObserver.unobserve(
+                entry.target
+              );
+
+            }
+
           }
-        });
+        );
+
       },
+
       {
         threshold: 0.07
       }
+
     );
 
-  revealItems.forEach(item => {
-    revealObserver.observe(item);
-  });
+  revealItems.forEach(
+    item => {
+
+      revealObserver.observe(
+        item
+      );
+
+    }
+  );
+
 }
+
 
 /* =========================================================
    COLLAGE HOVER DEPTH
 ========================================================= */
 
-if (finePointer && !reducedMotion) {
-  document
-    .querySelectorAll(".collage-item")
-    .forEach(item => {
-      item.addEventListener(
-        "pointerenter",
-        () => {
-          item.style.opacity = "0.95";
-        }
-      );
+if (
+  desktopInteractive &&
+  anyFinePointer &&
+  !reducedMotion
+) {
 
-      item.addEventListener(
-        "pointerleave",
-        () => {
-          item.style.opacity = "";
-        }
-      );
-    });
+  document
+    .querySelectorAll(
+      ".collage-item"
+    )
+    .forEach(
+      item => {
+
+        item.addEventListener(
+          "pointerenter",
+          () => {
+
+            item.style.opacity =
+              "0.95";
+
+          }
+        );
+
+        item.addEventListener(
+          "pointerleave",
+          () => {
+
+            item.style.opacity =
+              "";
+
+          }
+        );
+
+      }
+    );
+
 }
+
 
 /* =========================================================
    MOTH CURSOR FOLLOWER
+
+   IMPORTANT:
+   This NO LONGER depends on pointer:fine or reduced motion.
+   Desktop width = moth exists.
 ========================================================= */
 
 const moth =
-  document.getElementById("moth-guide");
+  document.getElementById(
+    "moth-guide"
+  );
 
 if (
   moth &&
-  finePointer &&
-  !reducedMotion
+  desktopInteractive
 ) {
-  let mothX = pointerX + 58;
-  let mothY = pointerY + 40;
-  let previousX = mothX;
-  let idleTimer = null;
 
-  moth.classList.add("awake");
+  let mothX =
+    pointerX + 58;
 
-  function wakeMoth() {
-    moth.classList.add("awake");
-    moth.classList.remove("idle");
+  let mothY =
+    pointerY + 40;
+
+  let previousX =
+    mothX;
+
+  let idleTimer =
+    null;
+
+
+  moth.classList.add(
+    "awake"
+  );
+
+
+  function wakeMoth(event) {
+
+    if (
+      event &&
+      event.pointerType === "touch"
+    ) {
+      return;
+    }
+
+    moth.classList.add(
+      "awake"
+    );
+
+    moth.classList.remove(
+      "idle"
+    );
 
     if (idleTimer) {
-      clearTimeout(idleTimer);
+
+      clearTimeout(
+        idleTimer
+      );
+
     }
 
     idleTimer =
       window.setTimeout(
         () => {
-          moth.classList.add("idle");
+
+          moth.classList.add(
+            "idle"
+          );
+
         },
         1400
       );
+
   }
+
 
   document.addEventListener(
     "pointermove",
     wakeMoth
   );
 
+
   function animateMoth() {
-    const targetX = pointerX + 56;
-    const targetY = pointerY + 42;
+
+    const targetX =
+      pointerX + 56;
+
+    const targetY =
+      pointerY + 42;
 
     mothX +=
-      (targetX - mothX) * 0.07;
+      (
+        targetX -
+        mothX
+      )
+      *
+      0.075;
 
     mothY +=
-      (targetY - mothY) * 0.07;
+      (
+        targetY -
+        mothY
+      )
+      *
+      0.075;
 
     const velocityX =
-      mothX - previousX;
+      mothX -
+      previousX;
 
-    previousX = mothX;
+    previousX =
+      mothX;
 
     const rotation =
       Math.max(
@@ -215,71 +402,114 @@ if (
     requestAnimationFrame(
       animateMoth
     );
+
   }
 
+
   animateMoth();
+
 
   document
     .querySelectorAll(
       "[data-discover], .project-card, .other-item, .work-feature"
     )
-    .forEach(element => {
-      element.addEventListener(
-        "pointerenter",
-        () => {
-          moth.classList.add("active");
+    .forEach(
+      element => {
 
-          const label =
-            moth.querySelector(".moth-label");
+        element.addEventListener(
+          "pointerenter",
+          () => {
 
-          if (label) {
-            label.textContent = "VIEW ↗";
+            moth.classList.add(
+              "active"
+            );
+
+            const label =
+              moth.querySelector(
+                ".moth-label"
+              );
+
+            if (label) {
+
+              label.textContent =
+                "VIEW ↗";
+
+            }
+
           }
-        }
-      );
+        );
 
-      element.addEventListener(
-        "pointerleave",
-        () => {
-          moth.classList.remove("active");
 
-          const label =
-            moth.querySelector(".moth-label");
+        element.addEventListener(
+          "pointerleave",
+          () => {
 
-          if (label) {
-            label.textContent = "EXPLORE";
+            moth.classList.remove(
+              "active"
+            );
+
+            const label =
+              moth.querySelector(
+                ".moth-label"
+              );
+
+            if (label) {
+
+              label.textContent =
+                "EXPLORE";
+
+            }
+
           }
-        }
-      );
-    });
+        );
+
+      }
+    );
+
 }
+
 
 /* =========================================================
    CURSOR PIXEL TRAIL
 ========================================================= */
 
-let lastParticleTime = 0;
+let lastParticleTime =
+  0;
 
 if (
-  finePointer &&
+  desktopInteractive &&
+  anyFinePointer &&
   !reducedMotion
 ) {
+
   document.addEventListener(
     "pointermove",
     event => {
-      const now =
-        performance.now();
 
       if (
-        now - lastParticleTime < 100
+        event.pointerType === "touch"
       ) {
         return;
       }
 
-      lastParticleTime = now;
+      const now =
+        performance.now();
+
+      if (
+        now -
+        lastParticleTime <
+        100
+      ) {
+        return;
+      }
+
+      lastParticleTime =
+        now;
 
       const particle =
-        document.createElement("span");
+        document.createElement(
+          "span"
+        );
 
       particle.className =
         "cursor-particle";
@@ -291,7 +521,8 @@ if (
         `${event.clientY + 30}px`;
 
       const size =
-        2 + Math.random() * 3;
+        2 +
+        Math.random() * 3;
 
       particle.style.width =
         `${size}px`;
@@ -304,53 +535,82 @@ if (
       );
 
       window.setTimeout(
-        () => particle.remove(),
+        () => {
+
+          particle.remove();
+
+        },
         650
       );
+
     }
   );
+
 }
+
 
 /* =========================================================
    BEETLE INTERACTION
 ========================================================= */
 
 const beetle =
-  document.getElementById("beetle-guide");
+  document.getElementById(
+    "beetle-guide"
+  );
 
 const browseSection =
-  document.querySelector(".browse-section");
+  document.querySelector(
+    ".browse-section"
+  );
 
 if (
   beetle &&
-  finePointer
+  desktopInteractive
 ) {
+
   if (browseSection) {
+
     const beetleObserver =
       new IntersectionObserver(
+
         entries => {
-          entries.forEach(entry => {
-            beetle.classList.toggle(
-              "visible",
-              entry.isIntersecting
-            );
-          });
+
+          entries.forEach(
+            entry => {
+
+              beetle.classList.toggle(
+                "visible",
+                entry.isIntersecting
+              );
+
+            }
+          );
+
         },
+
         {
           threshold: 0.08
         }
+
       );
 
     beetleObserver.observe(
       browseSection
     );
-  } else {
-    const updateInnerPageBeetle = () => {
-      beetle.classList.toggle(
-        "visible",
-        window.scrollY > 500
-      );
-    };
+
+  }
+
+  else {
+
+    const updateInnerPageBeetle =
+      () => {
+
+        beetle.classList.toggle(
+          "visible",
+          window.scrollY > 500
+        );
+
+      };
 
     updateInnerPageBeetle();
 
@@ -361,72 +621,104 @@ if (
         passive: true
       }
     );
+
   }
+
 
   beetle.addEventListener(
     "click",
     () => {
+
       document.body.classList.toggle(
         "field-mode"
       );
+
     }
   );
+
 }
+
 
 /* =========================================================
    PROJECT TILT
 ========================================================= */
 
 if (
-  finePointer &&
+  desktopInteractive &&
+  anyFinePointer &&
   !reducedMotion
 ) {
+
   document
-    .querySelectorAll("[data-tilt]")
-    .forEach(element => {
-      element.addEventListener(
-        "pointermove",
-        event => {
-          const bounds =
-            element.getBoundingClientRect();
+    .querySelectorAll(
+      "[data-tilt]"
+    )
+    .forEach(
+      element => {
 
-          const x =
-            (
-              event.clientX - bounds.left
-            ) /
-            bounds.width -
-            0.5;
+        element.addEventListener(
+          "pointermove",
+          event => {
 
-          const y =
-            (
-              event.clientY - bounds.top
-            ) /
-            bounds.height -
-            0.5;
+            const bounds =
+              element.getBoundingClientRect();
 
-          element.style.transform =
-            `perspective(1200px) rotateX(${y * -1.7}deg) rotateY(${x * 2.4}deg) translateY(-4px)`;
-        }
-      );
+            const x =
+              (
+                event.clientX -
+                bounds.left
+              )
+              /
+              bounds.width
+              -
+              0.5;
 
-      element.addEventListener(
-        "pointerleave",
-        () => {
-          element.style.transform = "";
-        }
-      );
-    });
+            const y =
+              (
+                event.clientY -
+                bounds.top
+              )
+              /
+              bounds.height
+              -
+              0.5;
+
+            element.style.transform =
+              `perspective(1200px) rotateX(${y * -1.7}deg) rotateY(${x * 2.4}deg) translateY(-4px)`;
+
+          }
+        );
+
+
+        element.addEventListener(
+          "pointerleave",
+          () => {
+
+            element.style.transform =
+              "";
+
+          }
+        );
+
+      }
+    );
+
 }
+
 
 /* =========================================================
    BROWSE-BY-AREA PREVIEW
 ========================================================= */
 
 const browseRows =
-  document.querySelectorAll(".browse-row");
+  document.querySelectorAll(
+    ".browse-row"
+  );
 
 const browsePreview =
-  document.getElementById("browse-preview");
+  document.getElementById(
+    "browse-preview"
+  );
 
 const browsePreviewImage =
   document.getElementById(
@@ -443,7 +735,9 @@ const browsePreviewText =
     "browse-preview-text"
   );
 
+
 function setBrowsePreview(row) {
+
   if (
     !browsePreview ||
     !browsePreviewTitle ||
@@ -452,11 +746,19 @@ function setBrowsePreview(row) {
     return;
   }
 
-  browseRows.forEach(item => {
-    item.classList.remove("active");
-  });
+  browseRows.forEach(
+    item => {
 
-  row.classList.add("active");
+      item.classList.remove(
+        "active"
+      );
+
+    }
+  );
+
+  row.classList.add(
+    "active"
+  );
 
   browsePreviewTitle.textContent =
     row.dataset.previewTitle || "";
@@ -471,60 +773,97 @@ function setBrowsePreview(row) {
     !image ||
     image === "none"
   ) {
+
     browsePreview.classList.add(
       "empty"
     );
 
-    if (browsePreviewImage) {
+    if (
+      browsePreviewImage
+    ) {
+
       browsePreviewImage.removeAttribute(
         "src"
       );
+
     }
-  } else {
+
+  }
+
+  else {
+
     browsePreview.classList.remove(
       "empty"
     );
 
-    if (browsePreviewImage) {
+    if (
+      browsePreviewImage
+    ) {
+
       browsePreviewImage.src =
         image;
+
     }
+
   }
+
 }
 
-browseRows.forEach(row => {
-  row.addEventListener(
-    "pointerenter",
-    () => {
-      setBrowsePreview(row);
-    }
-  );
 
-  row.addEventListener(
-    "focus",
-    () => {
-      setBrowsePreview(row);
-    }
-  );
-});
+browseRows.forEach(
+  row => {
 
-if (browseRows.length) {
+    row.addEventListener(
+      "pointerenter",
+      () => {
+
+        setBrowsePreview(
+          row
+        );
+
+      }
+    );
+
+    row.addEventListener(
+      "focus",
+      () => {
+
+        setBrowsePreview(
+          row
+        );
+
+      }
+    );
+
+  }
+);
+
+
+if (
+  browseRows.length
+) {
+
   setBrowsePreview(
     browseRows[0]
   );
+
 }
+
 
 /* =========================================================
    CLICK STAR
 ========================================================= */
 
 if (
-  finePointer &&
+  desktopInteractive &&
+  anyFinePointer &&
   !reducedMotion
 ) {
+
   document.addEventListener(
     "click",
     event => {
+
       if (
         event.target.closest(
           "input, textarea, select"
@@ -534,7 +873,9 @@ if (
       }
 
       const star =
-        document.createElement("span");
+        document.createElement(
+          "span"
+        );
 
       star.className =
         "click-star";
@@ -553,9 +894,15 @@ if (
       );
 
       window.setTimeout(
-        () => star.remove(),
+        () => {
+
+          star.remove();
+
+        },
         580
       );
+
     }
   );
+
 }
